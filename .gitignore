@@ -2,3 +2,7 @@
 \.vscode/
 
 frontend/\.env
+
+backend/serverConstants\.js
+
+backend/superUsers\.js

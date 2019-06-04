@@ -1,0 +1,60 @@
+{
+  "name": "accessibilitylab3",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/preset-react": "latest",
+    "@fortawesome/fontawesome-svg-core": "latest",
+    "@fortawesome/free-solid-svg-icons": "latest",
+    "@fortawesome/react-fontawesome": "latest",
+    "@reach/dialog": "latest",
+    "chart.js": "latest",
+    "copy-webpack-plugin": "latest",
+    "dotenv": "latest",
+    "hex-rgb": "latest",
+    "hex-to-rgba": "latest",
+    "html-loader": "latest",
+    "i": "latest",
+    "image-webpack-loader": "latest",
+    "npm": "^6.9.0",
+    "react": "^16.8.6",
+    "react-bell-icon": "latest",
+    "react-chartjs-2": "latest",
+    "react-color": "latest",
+    "react-confirm-alert": "latest",
+    "react-countdown-now": "latest",
+    "react-dom": "^16.8.6",
+    "react-ga": "latest",
+    "react-google-button": "latest",
+    "react-redux": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest",
+    "react-scripts": "latest",
+    "redux": "latest",
+    "semantic-ui-react": "latest",
+    "typescript": "^3.5.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production --env.ENVIRONMENT=production --config webpack.config.js",
+    "start": "webpack-dev-server --mode development --port 3000 --env.ENVIRONMENT=production --config webpack.config.js --host 129.21.198.149",
+    "test": "webpack-dev-server --mode development --port 3000 --env.ENVIRONMENT=local --config webpack.config.js --host 127.0.0.1",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && npm run build"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-core": "latest",
+    "css-loader": "latest",
+    "html-webpack-plugin": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  }
+}
