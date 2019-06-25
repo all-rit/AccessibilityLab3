@@ -8,3 +8,5 @@ backend/serverConstants\.js
 backend/superUsers\.js
 
 backend/\.env
+
+.DS_Store
