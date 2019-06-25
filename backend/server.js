@@ -9,7 +9,7 @@ const auth = require('./auth');
 const key = require('./serverConstants');
 const googleLogin = require('./google-util');
 const admins = require('./superUsers');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const cors = require('cors');
 const expressSession = require('express-session');
 const Pool = require('pg').Pool
@@ -196,7 +196,7 @@ const recordUser = (user, existingUser, res, req) => {
       existing = true;
       req.session.token = req.user.profile.id;
       req.session.save((err) => {if(err){console.log(err)}});
-      res.redirect('http://all.rit.edu/Lab2');
+      res.redirect('http://all.rit.edu/Lab3');
     } else {
       console.log('Adding new user');
       let admin = false;
@@ -243,13 +243,13 @@ const recordUser = (user, existingUser, res, req) => {
       });
       req.session.token = req.user.profile.id;
       req.session.save((err) => {if(err){console.log(err)}});
-      res.redirect('http://all.rit.edu/Lab2');
+      res.redirect('http://all.rit.edu/Lab3');
     }
 }
 
 app.get('/auth/google/callback', 
     passport.authenticate('google', {
-      failureRedirect: '/Lab2'
+      failureRedirect: '/Lab3'
     }),
     (req, res) => {
     	pool.query(`SELECT Users.FirstName, Users.UserID, Login.UserSessionID from Users INNER JOIN Login ON Login.UserID=Users.UserID WHERE Login.UserSessionID=${req.user.profile.id}`, (error, results) => {
