@@ -12,10 +12,10 @@ const ColorUpdate = ({openColorChange}) => {
         className="updateColorButton"
         onClick={openColorChange}
       >
-        Update Colors
+        Update Code
       </button>
     </div>
   );
-}
+};
 
 export default ColorUpdate;

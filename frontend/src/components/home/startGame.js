@@ -24,10 +24,10 @@ const StartGame = ({selectOption, startGame,gameOption,gamesPlayed}) => {
           {gamesPlayed===1?
             <div>
               <p style={{marginBottom: '10px', marginTop: '10px'}}>
-                You will now conduct the same game of clicking on the correct
-                colored circle, but this time with a vision deficiency emulation
+                You will now conduct the same game of clicking on the cat image,
+                  but this time with a blindness emulation
                 feature turned on. You will now experience the game just as
-                someone with colorblindness would.
+                someone with blindness would.
               </p>
               <p>
                 Click the button to start the game.

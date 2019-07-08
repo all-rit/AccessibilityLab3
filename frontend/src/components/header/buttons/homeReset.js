@@ -9,7 +9,7 @@ const HomeReset = ({gameEnded, changeGameColors, colors}) => {
   const handleClick = () => {
     changeGameColors(colors);
     gameEnded();
-  }
+  };
 
   return (
     <div>
@@ -22,6 +22,6 @@ const HomeReset = ({gameEnded, changeGameColors, colors}) => {
       </button>
     </div>
   );
-}
+};
 
 export default HomeReset;

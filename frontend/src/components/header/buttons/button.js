@@ -9,7 +9,7 @@ const Button = ({clickMethod, message, fontSizing}) => {
   //Handles a click by the user
   const onClick = () => {
     clickMethod();
-  }
+  };
 
   return (
     <button
@@ -19,6 +19,6 @@ const Button = ({clickMethod, message, fontSizing}) => {
       {message}
     </button>
   );
-}
+};
 
 export default Button;

@@ -32,6 +32,7 @@ import {
   RESET,
   BACK_GAME
 } from './constants.js';
+import {GAME_ENABLED} from "./constants";
 
 /*
 Used to update the colors for the entire system (from popup)
@@ -78,6 +79,10 @@ Used to declare the game state has ended
 */
 export const endGame = () => ({
   type: END_GAME
+});
+
+export const enableGame = () => ({
+  type: GAME_ENABLED
 });
 
 /*
