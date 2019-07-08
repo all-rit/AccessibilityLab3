@@ -125,7 +125,7 @@ const initialGameState = {
   fourthInfoState: false,
   endSystem: false,
   colorChangeState: false,
-}
+};
 
 //Function for changing to other pages in the application
 export const changeGameState = (state = initialGameState, action = {}) => {
@@ -187,11 +187,11 @@ export const changeGameState = (state = initialGameState, action = {}) => {
         endSystem: false,
         infoStateFourPrevOpen: false,
         colorChangeState: false,
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 //Initial state for user information
 const initialLoginState = {
@@ -199,7 +199,7 @@ const initialLoginState = {
   loggedIn: false,
   infoPopup: false,
   admin: null
-}
+};
 
 //Function for changing the user information to include login information
 export const changeUser = (state = initialLoginState, action = {}) => {
@@ -212,4 +212,4 @@ export const changeUser = (state = initialLoginState, action = {}) => {
     default:
       return state;
   }
-}
+};

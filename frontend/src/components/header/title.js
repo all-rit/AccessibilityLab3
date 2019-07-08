@@ -33,7 +33,7 @@ const Title = ({gameState, replay}) => {
             <p
               className='secondTitle'
             >
-              Check out your score and click the button when ready to move on!
+              Try again?
             </p>
           </div>
           :
@@ -41,12 +41,12 @@ const Title = ({gameState, replay}) => {
             <p
               className='mainTitle'
             >
-              Color Clicker
+              Blindness Accessibility
             </p>
             <p
               className='secondTitle'
             >
-              How fast can you click the correct colored circle?
+              Have you wondered how blind persons use computers?
             </p>
           </div>
         }

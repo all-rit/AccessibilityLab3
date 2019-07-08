@@ -6,7 +6,6 @@ import Home from './buttons/homeReset.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from './buttons/button';
 import { Dialog } from "@reach/dialog";
-import '../secondaryInstructions/secondaryInstructions.css';
 
 /*
 Component for the header of the pages. Controls the buttons and options
@@ -15,7 +14,7 @@ displayed to the users on each page of the appilcation
 class Header extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       openHelp: false,
     }
@@ -30,22 +29,22 @@ class Header extends Component {
       endSystem} = this.props;
 
     const backButton = () => {
-      if (gamesPlayed == 2) {
+      if (gamesPlayed === 2) {
         closeColorChange();
         openSecondInfoState();
       } else {
         changeGameColors(colors);
         closeColorChange();
       }
-    }
+    };
 
     const openHelpDialog = () => {
       this.setState({openHelp: true})
-    }
+    };
 
     const closeHelpDialog = () => {
       this.setState({openHelp: false})
-    }
+    };
 
     if (gameState) {
       return (

@@ -1,18 +1,16 @@
 import React from 'react';
 import Start from './start';
-import Dropdown from './dropdown';
 import './homeStyle.css';
 
 /*
 Start game component for rendering all of the instructions for starting a game
 */
-const StartGame = ({selectOption, startGame, gameOption,
-  onChangeGameColors, colors, gamesPlayed}) => {
+const StartGame = ({selectOption, startGame,gameOption,gamesPlayed}) => {
 
   //Handles a game option changing in the dropdown
   const changeOption = (event) => {
     selectOption(event.target.value);
-  }
+  };
 
   return (
     <div>
@@ -50,8 +48,7 @@ const StartGame = ({selectOption, startGame, gameOption,
               </div>
               :
               <p style={{marginBottom: '10px', marginTop: '10px'}}>
-                Choose a color vision deficiency and click the button to start the
-                game!
+                Click the button to start the game!
               </p>
             }
             </div>
@@ -65,8 +62,6 @@ const StartGame = ({selectOption, startGame, gameOption,
             <Start
               startGame={startGame}
               gameOption={gameOption}
-              onChangeGameColors={onChangeGameColors}
-              colors={colors}
             />
           </div>
           :
@@ -76,20 +71,13 @@ const StartGame = ({selectOption, startGame, gameOption,
               <Start
                 startGame={startGame}
                 gameOption={gameOption}
-                onChangeGameColors={onChangeGameColors}
-                colors={colors}
               />
               </div>
             :
             <div className='center'>
-              <Dropdown
-                selectOption = {changeOption}
-              />
               <Start
                 startGame={startGame}
                 gameOption={gameOption}
-                onChangeGameColors={onChangeGameColors}
-                colors={colors}
               />
             </div>
           }
@@ -98,6 +86,6 @@ const StartGame = ({selectOption, startGame, gameOption,
       </div>
     </div>
   );
-}
+};
 
 export default StartGame;

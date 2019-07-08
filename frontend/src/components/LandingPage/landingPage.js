@@ -7,7 +7,7 @@ const LandingPage = ({endFirstGame, toWhiteBackground, background, loggedIn}) =>
 
   const closePage = () => {
     endFirstGame();
-  }
+  };
 
   if (background !== 'white') {
     toWhiteBackground();
@@ -54,6 +54,6 @@ const LandingPage = ({endFirstGame, toWhiteBackground, background, loggedIn}) =>
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

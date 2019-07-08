@@ -1,47 +1,22 @@
 import React from 'react';
 import './homeStyle.css'
-import Instructions from '../instructions/instructions';
 import StartGame from './startGame';
 
 /*
 Component for the main home page
 */
-const Home = ({correctColor, incorrectColorOne, incorrectColorTwo,
-  startGame, selectOption, background, gameOption, onChangeGameColors,
-  enterInfoState, gamesPlayed, enterSecondInfoState, alreadyCalled,
-  resetBackground, baseBackground}) => {
+const Home = ({
+  startGame, enterSecondInfoState}) => {
 
-  const colors = [background, correctColor, incorrectColorOne, incorrectColorTwo];
-
-  //Handles switching the colors to a simulation for a selected game option
-  if(gameOption !== 'default') {
-    onChangeGameColors(colors);
-  }
-
-  if (background === 'white') {
-    resetBackground(baseBackground);
-  }
 
   return (
     <div>
       <div>
         <StartGame
-          selectOption = {selectOption}
           startGame = {startGame}
-          gameOption = {gameOption}
-          onChangeGameColors = {onChangeGameColors}
-          colors = {colors}
-          enterInfoState = {enterInfoState}
-          gamesPlayed={gamesPlayed}
           enterSecondInfoState={enterSecondInfoState}
-          alreadyCalled={alreadyCalled}
         />
       </div>
-      <Instructions
-        correctColor={correctColor}
-        incorrectColorOne={incorrectColorOne}
-        incorrectColorTwo={incorrectColorTwo}
-      />
       <br></br>
       <p className='center noBottomMargin fourthTitle'>
         For educational purposes, we record all scores and actions taken in the

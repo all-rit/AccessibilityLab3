@@ -5,8 +5,6 @@ import "@reach/dialog/styles.css";
 import './App.css';
 import Title from './components/header/title';
 import Home from './components/home/Home';
-import GameCenter from './components/game/GameCenter';
-import ColorChangePopup from './components/home/colorChangePopup';
 import Header from './components/header/headerMain';
 import SuccessMessage from './components/home/successMessage';
 import Countdown from 'react-countdown-now';
@@ -14,16 +12,11 @@ import Form from './components/forms/form';
 import AboutInfo from './components/aboutInformation/aboutInfo';
 import UserStats from './components/userStatistics/userStats';
 import LandingPage from './components/LandingPage/landingPage';
-import SecondInstructions from './components/secondaryInstructions/secondInstructions';
-import ThirdInstructions from './components/secondaryInstructions/thirdInstructions';
-import FourthInstructions from './components/secondaryInstructions/fourthInstructions';
 import Leaderboard from './components/userStatistics/leaderboard';
-import Conclusion from './components/secondaryInstructions/conclusion';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faQuestionCircle)
+library.add(faQuestionCircle);
 
 //Imports from redux actions
 import {changeDefaultColors, changeGameColors, selectGameOption, activatePopup,
@@ -38,72 +31,32 @@ import {changeDefaultColors, changeGameColors, selectGameOption, activatePopup,
 //State mapping for redux
 const mapStateToProps = state => {
   return {
-    baseBackground: state.changeColors.baseBackground,
-    baseRightCircle: state.changeColors.baseRightCircle,
-    baseWrongCircleOne: state.changeColors.baseWrongCircleOne,
-    baseWrongCircleTwo: state.changeColors.baseWrongCircleTwo,
-    gameBackground: state.changeColors.gameBackground,
-    gameRightCircle: state.changeColors.gameRightCircle,
-    gameWrongCircleOne: state.changeColors.gameWrongCircleOne,
-    gameWrongCircleTwo: state.changeColors.gameWrongCircleTwo,
-    gameOption: state.selectGameOption.option,
-    popup: state.changeColors.popup,
-    gameState: state.changeGameState.gameState,
     user: state.changeUser.user,
     loggedIn: state.changeUser.loggedIn,
-    changed: state.changeColors.changed,
-    infoPopup: state.changeUser.infoPopup,
+    gamesPlayed: state.changeGameState.gamesPlayed,
+    gameState: state.changeGameState.gameState,
     aboutState: state.changeGameState.aboutState,
     admin: state.changeUser.admin,
     statState: state.changeGameState.statState,
     firstGame: state.changeGameState.firstGame,
-    secondInfoState: state.changeGameState.secondInfoState,
-    thirdInfoState: state.changeGameState.thirdInfoState,
-    gamesPlayed: state.changeGameState.gamesPlayed,
-    leaderboardState: state.changeGameState.leaderboardState,
-    fourthInfoState: state.changeGameState.fourthInfoState,
-    endSystem: state.changeGameState.endSystem,
+    gameOption: state.selectGameOption.option,
+    baseBackground: state.changeColors.baseBackground,
+    changed: state.changeColors.changed,
     colorChange: state.changeGameState.colorChangeState,
+    gameBackground: state.changeColors.gameBackground,
   }
-}
+};
 
 //Mapping dispatches for redux
 const mapDispatchToProps = (dispatch) => {
   return{
-    onChangeDefaultColors: (event) => dispatch(changeDefaultColors(event)),
-    onChangeGameColors: (event) => dispatch(changeGameColors(event)),
-    onSelectOption: (event) => dispatch(selectGameOption(event)),
-    popupController: (event) => dispatch(activatePopup(event)),
+    onLogin: (event) => dispatch(login(event)),
+    onToWhiteBackground: (event) => dispatch(toWhiteBackground(event)),
     onStartGame: () => dispatch(startGame()),
     onEndGame: () => dispatch(endGame()),
-    onResetOption: () => dispatch(resetOption()),
-    onResetColors: () => dispatch(resetColors()),
-    onLogin: (event) => dispatch(login(event)),
-    onResetChange: () => dispatch(resetChange()),
-    onCloseInfoPopup: () => dispatch(closeInfoPopup()),
-    onOpenAboutPage: () => dispatch(openAboutPage()),
-    onCloseAboutPage: () => dispatch(closeAboutPage()),
-    onOpenStatPage: () => dispatch(openStatPage()),
-    onCloseStatPage: () => dispatch(closeStatPage()),
-    onEndFirstGame: () => dispatch(endFirstGame()),
-    onEnterInfoState: () => dispatch(enterInfoState()),
-    onCloseInfoState: () => dispatch(closeInfoState()),
-    onEnterSecondInfoState: () => dispatch(enterSecondInfoState()),
-    onCloseSecondInfoState: () => dispatch(closeSecondInfoState()),
-    onOpenLeaderboard: () => dispatch(openLeaderboard()),
-    onCloseLeaderboard: () => dispatch(closeLeaderboard()),
-    onOpenThirdInfoState: () => dispatch(openThirdInfoState()),
-    onCloseThirdInfoState: () => dispatch(closeThirdInfoState()),
-    onOpenConclusion: () => dispatch(openConclusion()),
-    onToWhiteBackground: () => dispatch(toWhiteBackground()),
-    onResetBackground: (event) => dispatch(resetBackground(event)),
-    onOpenColorChange: () => dispatch(openColorChange()),
-    onCloseColorChange: () => dispatch(closeColorChange()),
-    onToGreyBackground: () => dispatch(toGreyBackground()),
-    onResetSystem: () => dispatch(resetSystem()),
-    onGoBackFromGame: () => dispatch(goBackFromGame())
+    onSelectOption: (event) => dispatch(selectGameOption(event))
   }
-}
+};
 
 /*
 Class declaration for main application
@@ -160,7 +113,7 @@ class App extends Component {
       onOpenThirdInfoState, onCloseThirdInfoState, endSystem, onOpenConclusion,
       onToWhiteBackground, onResetBackground, onOpenColorChange,
       onCloseColorChange, colorChange, infoStateThreePrevOpen, onToGreyBackground,
-      onResetSystem, onGoBackFromGame} = this.props
+      onResetSystem, onGoBackFromGame} = this.props;
 
     //establishing array of current colors for the system
     const colors = [baseBackground, baseRightCircle, baseWrongCircleOne,
@@ -179,7 +132,7 @@ class App extends Component {
         onResetChange();
         return null;
       }
-    }
+    };
 
     //Return statement for rendering of the application
     return (

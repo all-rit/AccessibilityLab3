@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7eb5489b-4f52-43f8-9616-7d80e3366e17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/airbnb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/caseStudy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LandingPage/mainInstructions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LandingPage/mainInstructions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/GameCenter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/circle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/game.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/previousGames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/replay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/score.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/scoreBreakdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/scoreComparison.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/game/secondTimer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/colorChangePopup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/homeStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/startGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/startGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/instructions/instructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/secondaryInstructions/conclusion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/secondaryInstructions/fourthInstructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/secondaryInstructions/secondInstructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/secondaryInstructions/secondaryInstructions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/secondaryInstructions/thirdInstructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/controllers/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/controllers/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/suppMaterials.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/suppMaterials.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1470">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/home/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/src/controllers/reducers.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/AccessibilityLab3.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2090" />
+    <option name="y" value="66" />
+    <option name="width" value="1400" />
+    <option name="height" value="941" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AccessibilityLab3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AccessibilityLab3" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Backend Nodejs" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eb5489b-4f52-43f8-9616-7d80e3366e17" name="Default Changelist" comment="" />
+      <created>1562170065659</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562170065659</updated>
+      <workItem from="1562170067847" duration="1611000" />
+      <workItem from="1562172335155" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1612000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2090" y="66" width="1400" height="941" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39929327" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/frontend/src/controllers/constants.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/controllers/reducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="110" column="1" lean-forward="true" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/controllers/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
