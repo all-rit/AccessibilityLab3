@@ -8,3 +8,4 @@ backend/serverConstants\.js
 backend/superUsers\.js
 
 .DS_Store
+\.idea/
