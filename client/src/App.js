@@ -7,7 +7,7 @@ import { actions } from './reducers/AppReducer';
 
 import Main from './pages/Main';
 import Game from './pages/Game';
-
+import CssBaseline from '@material-ui/core/CssBaseline'
 const mapDispatchToProps = {
 	login: actions.login
 };

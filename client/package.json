@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/Lab3",
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
     "@reach/router": "latest",
     "@uiw/react-codemirror": "latest",
     "classnames": "latest",
