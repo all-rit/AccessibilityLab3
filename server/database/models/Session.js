@@ -1,22 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
 	const Session = sequelize.define(
-		'Session',
+		'session',
 		{
-			UserSessionID: {
+			usersessionid : {
 				type: DataTypes.NUMBER(21),
 				allowNull: false,
 				unique: true,
 				primaryKey: true,
 				autoIncrement: true
+			},
+			userid: {
+				type: DataTypes.INTEGER
 			}
 		},
 		{ tableName: 'session' }
 	);
-
-	Session.associate = (models) => {
-		Session.belongsTo(models.User, { as: 'user', foreignKey: 'UserID' });
-		Session.hasMany(models.Login, { as: 'logins', foreignKey: 'UserSessionID' });
-	};
 
 	return Session;
 };

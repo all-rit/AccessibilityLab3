@@ -1,18 +1,18 @@
 const db = require('../database');
 
-const createLogin = (UserID, UserSessionID) => {
-	return db.Login.create({
-		UserID: UserID,
-		UserSessionID: UserSessionID
+const createLogin = (userid, usersessionid) => {
+	return db.login.create({
+		userid: userid,
+		usersessionid: usersessionid
 	});
 };
 
 exports.authenticate = (data) => {
-	const userSessionID = data.id;
-	const firstName = data.name.givenName;
+	const usersessionid = data.id;
+	const firstname = data.name.givenName;
 
-	return db.Session
-		.findByPk(userSessionID)
+	return db.session
+		.findByPk(usersessionid)
 		.then((session) => {
 			// Session doesn't exist, so let's create a new account!
 			if (session === null) {
@@ -23,22 +23,22 @@ exports.authenticate = (data) => {
 		})
 		.catch(() => {
 			// Create a new account
-			return db.User
+			return db.user
 				.create({
-					FirstName: firstName
+					firstname: firstname
 				})
 				.then((user) => {
 					// Create a new session
-					return db.Session.create({
-						UserSessionID: userSessionID,
-						UserID: user.UserID
+					return db.session.create({
+						usersessionid: usersessionid,
+						userid: user.userid
 					});
 				});
 		})
 		.then((session) => {
 			// Create a new login
-			return createLogin(session.UserID, userSessionID).then((login) => {
-				return login.UserSessionID;
+			return createLogin(session.userid, usersessionid).then((login) => {
+				return login.usersessionid;
 			});
 		})
 		.catch((err) => {
@@ -49,29 +49,29 @@ exports.authenticate = (data) => {
 exports.getSession = (token) => {
 	// If the token doesn't exist, it's a guest, so create a new account!
 	if (!token) {
-		return db.User
+		return db.user
 			.create({})
 			.then((user) => {
-				return db.Session
+				return db.session
 					.create({
-						UserID: user.UserID
+						userid: user.userid
 					})
 					.then((session) => {
 						return { user, session };
 					});
 			})
 			.then((data) => {
-				return createLogin(data.session.UserID, data.session.UserSessionID).then((login) => {
-					return { user: data.user, token: login.UserSessionID };
+				return createLogin(data.session.userid, data.session.usersessionid).then((login) => {
+					return { user: data.user, token: login.usersessionid };
 				});
 			});
 	}
 
 	// Find the user's details
-	return db.Session
+	return db.session
 		.findByPk(token)
 		.then((session) => {
-			return db.User.findByPk(session.UserID).then((user) => {
+			return db.user.findByPk(session.userid).then((user) => {
 				return { user, token };
 			});
 		})

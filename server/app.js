@@ -1,10 +1,10 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const session = require('express-session')
+const session = require('express-session');
 const passport = require('passport');
 const auth = require('./auth');
 

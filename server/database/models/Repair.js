@@ -2,32 +2,30 @@ module.exports = (sequelize, DataTypes) => {
 	const Repair = sequelize.define(
 		'Repair',
 		{
-			RepairID: {
+			repairid: {
 				type: DataTypes.INTEGER,
-				allowNull: false,
 				unique: true,
 				primaryKey: true,
 				autoIncrement: true
 			},
-			AvailableMessage: {
+			loginid: {
+				type: DataTypes.INTEGER
+			},
+			availablemessage: {
 				type: DataTypes.STRING
 			},
-			UnavailableMessage: {
+			unavailablemessage: {
 				type: DataTypes.STRING
 			},
-			AvailableBackgroundColor: {
+			availablebackgroundcolor: {
 				type: DataTypes.STRING
 			},
-			UnavailableBackgroundColor: {
+			unavailablebackgroundcolor: {
 				type: DataTypes.STRING
 			}
 		},
 		{ tableName: 'audiocue_repair' }
 	);
-
-	Repair.associate = (models) => {
-		Repair.belongsTo(models.Login, { as: 'login', foreignKey: 'LoginID' });
-	};
 
 	return Repair;
 };

@@ -2,22 +2,20 @@ module.exports = (sequelize, DataTypes) => {
 	const Choice = sequelize.define(
 		'Choice',
 		{
-			ChoiceID: {
+			choiceid: {
 				type: DataTypes.INTEGER,
-				allowNull: false,
 				unique: true,
 				primaryKey: true,
 				autoIncrement: true
 			},
-			BoxNumber: { type: DataTypes.INTEGER },
-			Correct: { type: DataTypes.BOOLEAN }
+			roundid: {
+				type: DataTypes.INTEGER
+			},
+			boxnumber: { type: DataTypes.INTEGER },
+			correct: { type: DataTypes.BOOLEAN }
 		},
 		{ tableName: 'audiocue_choice' }
 	);
-
-	Choice.associate = (models) => {
-		Choice.belongsTo(models.Round, { as: 'round', foreignKey: 'RoundID' });
-	};
 
 	return Choice;
 };

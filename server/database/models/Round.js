@@ -2,23 +2,21 @@ module.exports = (sequelize, DataTypes) => {
 	const Round = sequelize.define(
 		'Round',
 		{
-			RoundID: {
+			roundid: {
 				type: DataTypes.INTEGER,
-				allowNull: false,
 				unique: true,
 				primaryKey: true,
 				autoIncrement: true
 			},
-			HintUsed: { type: DataTypes.BOOLEAN },
-			SoundOption: { type: DataTypes.BOOLEAN }
+			gameid: {
+				type: DataTypes.INTEGER
+				
+			},
+			hintused: { type: DataTypes.BOOLEAN },
+			soundoption: { type: DataTypes.BOOLEAN }
 		},
 		{ tableName: 'audiocue_round' }
 	);
-
-	Round.associate = (models) => {
-		Round.belongsTo(models.Game, { as: 'game', foreignKey: 'GameID' });
-		Round.hasMany(models.Choice, { as: 'choices', foreignKey: 'RoundID' });
-	};
 
 	return Round;
 };
