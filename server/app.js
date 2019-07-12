@@ -11,7 +11,7 @@ const auth = require('./auth');
 const app = express();
 const port = process.env.PORT || 5001;
 
-const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5001', 'http://all.rit.edu', 'http://krutziscool.com','http://all.rit.edu:5001','http://localhost:3000'];
+const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5001', 'http://all.rit.edu','http://all.rit.edu:5001','http://localhost:3000'];
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -30,6 +30,7 @@ app.use(session({
 }));
 app.use(cors({
   origin: function (origin, callback) {
+    console.log('CORS orign is:' + origin);
     if (allowedOrigins.indexOf(origin) !== -1) {
       return callback(null, true);
     }
