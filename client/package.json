@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "/Lab3",
   "dependencies": {
-    "@material-ui/core": "^4.2.0",
+    "@material-ui/core": "latest",
     "@reach/router": "latest",
     "@uiw/react-codemirror": "latest",
     "classnames": "latest",
@@ -15,7 +15,6 @@
     "react-color": "latest",
     "react-dom": "latest",
     "react-redux": "latest",
-    "react-scripts": "latest",
     "react-spinners": "latest",
     "redux": "latest",
     "redux-saga": "latest",
@@ -37,6 +36,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "redux-devtools": "latest"
+    "redux-devtools": "latest",
+    "react-scripts": "latest"
   }
 }

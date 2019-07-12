@@ -4,11 +4,16 @@ import {Link} from "@material-ui/core";
 
 class CatClickNavigate extends Component{
     render() {
+        const {
+            path
+        }
+        = this.props;
         return(
+
             <div id={"catClickMessage"}>
             <p>Cat clicked! Please click the 'next' button to continue.</p>
                 <br/>
-                <Button component={Link} href={"/"} variant="contained" >Next</Button>
+                <Button component={Link} href={path} variant="contained" >Next</Button>
             </div>
         );
     }

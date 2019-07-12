@@ -9,7 +9,7 @@ export const types = {
 export const initialState = {
 	user: null,
 	popupMessage: '',
-	instructionsVisible: false
+	instructionsVisible: true
 };
 
 export default (state = initialState, action) => {

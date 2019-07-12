@@ -7,7 +7,8 @@ import { actions } from './reducers/AppReducer';
 
 import Main from './pages/Main';
 import Game from './pages/Game';
-import CssBaseline from '@material-ui/core/CssBaseline'
+import BlindGame from "./pages/BlindGame";
+import BlindnessInstructions from "./pages/BlindnessInstructions"
 const mapDispatchToProps = {
 	login: actions.login
 };
@@ -19,9 +20,11 @@ class App extends Component {
 
 	render() {
 		return (
-			<Router className="app">
+			<Router basepath={process.env.PUBLIC_URL} className="app">
 				<Main path="/" />
-				<Game path="/game" />
+				<Game path="/Lab3/game" />
+				<BlindnessInstructions path={"/Lab3/BlindnessInstruction"}/>
+				<BlindGame path={"/Lab3/blindGame"}/>
 			</Router>
 		);
 	}
