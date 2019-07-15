@@ -19,7 +19,7 @@ class AccessibleInstructions extends Component{
                         Note: In the actual project we will show instructions on how to make the page more accessible to users. Particpants will also be lead through the activty of repairing the code.</p>
                 <br/>
                 </div>
-                <Button href={"Lab3/AccessibleGame"}>Next</Button>
+                <Button href={"/Lab3/AccessibleGame"}>Next</Button>
 
             </div>
         );
