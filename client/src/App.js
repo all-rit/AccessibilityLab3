@@ -8,7 +8,10 @@ import { actions } from './reducers/AppReducer';
 import Main from './pages/Main';
 import Game from './pages/Game';
 import BlindGame from "./pages/BlindGame";
-import BlindnessInstructions from "./pages/BlindnessInstructions"
+import BlindnessInstructions from "./pages/BlindnessInstructions";
+import AccessibleInstructions from "./pages/AccessibleInstructions";
+import AccessibleGame from "./pages/AccessibleGame";
+import CodeChange from "./pages/CodeChange";
 const mapDispatchToProps = {
 	login: actions.login
 };
@@ -22,9 +25,12 @@ class App extends Component {
 		return (
 			<Router basepath={process.env.PUBLIC_URL} className="app">
 				<Main path="/" />
-				<Game path="/Lab3/game" />
-				<BlindnessInstructions path={"/Lab3/BlindnessInstruction"}/>
-				<BlindGame path={"/Lab3/blindGame"}/>
+				<Game path="/game" />
+				<BlindnessInstructions path={"/BlindnessInstructions"}/>
+				<BlindGame path={"/blindGame"}/>
+				<AccessibleInstructions path={"/AccessibleInstructions"} />
+				<AccessibleGame path={"/AccessibleGame"}/>
+				<CodeChange path={"/CodeChange"}/>
 			</Router>
 		);
 	}

@@ -48,7 +48,7 @@ class BlindGame extends Component {
 					</tr>
 					</tbody>
 				</table>
-				{this._renderSubComp(path)}
+				{this._renderSubComp("/Lab3/AccessibleInstructions")}
 			</div>
 
 		);

@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Link,Button} from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
-class BlindnessInstructions extends Component{
+class AccessibleInstructions extends Component{
 
     render(){
         return(
@@ -12,16 +12,17 @@ class BlindnessInstructions extends Component{
             "                to decipher what these images represent."}/></ListItem>
                 <div>
                     <p>
-                Please install the <Link component={Link} href={"https://chrome.google.com/webstore/"
-            + "detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"}>ChromeVox</Link> screenreader.
-                Please make sure that your screenreader is active and then click the 'next' button to experience what a
-                        similar, simple activity might look like to someone who is blind.</p>
+                        The previous page demonstrated how difficult it was to use a page that was inaccessible.<br/>
+
+                        In order to make the pages readable by a screenreader we need to be add 'alt' attributes to content which will help improve accessibility.<br/>
+
+                        Note: In the actual project we will show instructions on how to make the page more accessible to users. Particpants will also be lead through the activty of repairing the code.</p>
                 <br/>
                 </div>
-                <Button href={"/Lab3/blindGame"}>Next</Button>
+                <Button href={"Lab3/AccessibleGame"}>Next</Button>
 
             </div>
         );
     }
 }
-export default BlindnessInstructions;
+export default AccessibleInstructions;
