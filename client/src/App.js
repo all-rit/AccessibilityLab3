@@ -7,7 +7,7 @@ import { actions } from './reducers/AppReducer';
 
 import Main from './pages/Main';
 import Game from './pages/Game';
-import BlindGame from "./pages/BlindGame";
+import InaccessibleGame from "./pages/InaccessibleGame";
 import BlindnessInstructions from "./pages/BlindnessInstructions";
 import AccessibleInstructions from "./pages/AccessibleInstructions";
 import AccessibleGame from "./pages/AccessibleGame";
@@ -27,7 +27,7 @@ class App extends Component {
 				<Main path="/" />
 				<Game path="/game" />
 				<BlindnessInstructions path={"/BlindnessInstructions"}/>
-				<BlindGame path={"/blindGame"}/>
+				<InaccessibleGame path={"/InAccessibleGame"}/>
 				<AccessibleInstructions path={"/AccessibleInstructions"} />
 				<AccessibleGame path={"/AccessibleGame"}/>
 				<CodeChange path={"/CodeChange"}/>

@@ -18,7 +18,7 @@ class BlindnessInstructions extends Component{
                         similar, simple activity might look like to someone who is blind.</p>
                 <br/>
                 </div>
-                <Button href={"/Lab3/blindGame"}>Next</Button>
+                <Button href={"/Lab3/InAccessibleGame"}>Next</Button>
 
             </div>
         );

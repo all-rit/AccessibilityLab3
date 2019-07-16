@@ -27,21 +27,23 @@ class AcccessibleGame extends Component {
 			console.log('Car image clicked!');
 		};
 
-		const imgStyle = {width:"128px",height:"128px",border:"1px solid black",opacity:"0.0"};
-		const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight:"auto", textAlign:"center"};
-		const pTagStyle = {color: 'white'};
+		const imgStyle = {width:"128px",height:"128px",border:"1px solid black",opacity:"0.0", tabIndex:"0"};
+		const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight:"auto", textAlign:"center", tabIndex:"0"};
+		const textStyle = {color: "white", tabIndex:"0"};
 		return (
 			<div>
-				<p style={pTagStyle}>Click on the image of a cat.</p>
-				<table style={tableStyle}>
+				<h1 style={textStyle} tabIndex={"0"}>Accessible Game</h1>
+				<p style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
+					navigate by tabbing across the page. Press the enter key to select.</p>
+				<table style={tableStyle} tabIndex={"0"}>
 					<tbody>
 					<tr>
-						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={"image of cat"}/></td>
-						<td><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={"image of car"}/></td>
+						<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
+						<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={"image of car"} tabIndex={"0"}/></td>
 					</tr>
 					<tr>
-						<td><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick()} alt={"image of burger"}/></td>
-						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={"image of cat"}/></td>
+						<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick()} alt={"image of burger"} tabIndex={"0"}/></td>
+						<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
 					</tr>
 					</tbody>
 				</table>

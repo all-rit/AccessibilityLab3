@@ -3,7 +3,7 @@ import catImage from "../assets/images/c1.svg";
 import carImage from "../assets/images/c2.svg";
 import burgerImage from "../assets/images/b.png";
 import CatClickNavigate from '../components/helpers/CatClickNavigate.js'
-class BlindGame extends Component {
+class InaccessibleGame extends Component {
 	constructor(props){
 		super(props);
 		this.state = {render:''};
@@ -16,9 +16,7 @@ class BlindGame extends Component {
 		}
 	}
 	render() {
-		const {
-			path
-		} = this.props;
+
 		const catClick = () => {
 			console.log('Cat image clicked!');
 			this.setState({render:'CatClickNavigate'});
@@ -30,12 +28,14 @@ class BlindGame extends Component {
 			console.log('Car image clicked!');
 		};
 
-		const imgStyle = {width:"128px",height:"128px",border:"1px solid black",opacity:"0.0"};
-		const tableStyle = {border: "1px solid black"};
-		const pTagStyle ={color: 'white'};
+		const imgStyle = {width:"128px",height:"128px",border:"1px solid black",opacity:"0.0", tabIndex:"0"};
+		const tableStyle = {border: "1px solid black", tabIndex:"0"};
+		const textStyle ={color: 'white', tabIndex:"0"};
 		return (
 			<div>
-				<p style={pTagStyle}>Click on the image of a cat.</p>
+				<h1 style={textStyle} tabIndex={"0"}>Inaccessible Game</h1>
+				<p style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
+					navigate by tabbing across the page. Press the enter key to select.</p>
 				<table style={tableStyle}>
 					<tbody>
 					<tr>
@@ -55,4 +55,4 @@ class BlindGame extends Component {
 	}
 }
 
-export default BlindGame;
+export default InaccessibleGame;
