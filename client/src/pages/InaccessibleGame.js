@@ -39,12 +39,12 @@ class InaccessibleGame extends Component {
 				<table style={tableStyle}>
 					<tbody>
 					<tr>
-						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()}/></td>
-						<td><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()}/></td>
+						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""}/></td>
+						<td><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={""}/></td>
 					</tr>
 					<tr>
-						<td><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick()}/></td>
-						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()}/></td>
+						<td><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick()} alt={""}/></td>
+						<td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""}/></td>
 					</tr>
 					</tbody>
 				</table>

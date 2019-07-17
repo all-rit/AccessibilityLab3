@@ -18,10 +18,11 @@
     "react-spinners": "latest",
     "redux": "latest",
     "redux-saga": "latest",
-    "victory": "latest"
+    "victory": "latest",
+    "prismjs": "latest"
   },
   "scripts": {
-    "start": "react-scripts start && echo 'Options -MultiViews\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.html [QSA,L]\n' >> ./build/.htaccess",
+    "start": "react-scripts start",
     "build": "react-scripts build && echo 'Options -MultiViews\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.html [QSA,L]\n' >> ./build/.htaccess",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

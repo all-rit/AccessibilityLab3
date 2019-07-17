@@ -12,6 +12,7 @@ import BlindnessInstructions from "./pages/BlindnessInstructions";
 import AccessibleInstructions from "./pages/AccessibleInstructions";
 import AccessibleGame from "./pages/AccessibleGame";
 import CodeChange from "./pages/CodeChange";
+import HelloWorld from "./pages/HelloWorld";
 const mapDispatchToProps = {
 	login: actions.login
 };
@@ -31,6 +32,7 @@ class App extends Component {
 				<AccessibleInstructions path={"/AccessibleInstructions"} />
 				<AccessibleGame path={"/AccessibleGame"}/>
 				<CodeChange path={"/CodeChange"}/>
+				<HelloWorld path={"/HelloWorld"}/>
 			</Router>
 		);
 	}

@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
-import {Link,Button} from '@material-ui/core';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
+import {Button} from '@material-ui/core';
+import Repair from "../components/main/Repair";
 class CodeChange extends Component{
 
     render(){
@@ -11,6 +10,7 @@ class CodeChange extends Component{
                 <div>
                     <p>
                         Update code here:</p>
+                    <Repair />
                 <br/>
                 </div>
                 <Button href={"/"}>Next</Button>
