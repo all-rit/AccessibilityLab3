@@ -25,10 +25,10 @@ export const BOXES_NUM_VALUE = 4;
 export const COUNTDOWN_SECONDS = 3;
 export const TIMER_SECONDS = 20;
 export const HINT_BOX_THINKING_TIMER_SECONDS = 0.5;
-export const BOX_DEFAULT_VALUES = { 1: BOX_UNOPENED, 2: BOX_UNOPENED, 3: BOX_UNOPENED, 4: BOX_UNOPENED };
+export const BOX_DEFAULT_VALUES = {1: BOX_UNOPENED, 2: BOX_UNOPENED, 3: BOX_UNOPENED, 4: BOX_UNOPENED};
 export const CONGRATULATION_MESSAGES = [
-	'Nice one!',
-	'You found that treasure!',
-	"Wow, you're probably an expert treasure hunter!",
-	'Right on!'
+    'Nice one!',
+    'You found that treasure!',
+    "Wow, you're probably an expert treasure hunter!",
+    'Right on!'
 ];

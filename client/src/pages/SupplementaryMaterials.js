@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class SupplementaryMaterials extends Component {
-	render() {
-		return <div>placeholder for supplementary materials</div>;
-	}
+    render() {
+        return <div>placeholder for supplementary materials</div>;
+    }
 }
 
 export default SupplementaryMaterials;

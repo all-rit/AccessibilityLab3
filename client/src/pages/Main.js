@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Header from "../components/main/Header";
 import {actions as appActions} from '../reducers/AppReducer';
 import AppInstructions from '../components/main/AppInstructions'
+
 const mapStateToProps = (state) => {
     return {
         // General
@@ -29,7 +30,8 @@ class Main extends Component {
         const {
             user,
             state,
-            plays} = this.props;
+            plays
+        } = this.props;
 
         return (
             <Fragment>

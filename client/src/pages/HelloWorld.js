@@ -1,13 +1,13 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import carImage from "../assets/images/c2.svg";
 import helloWorldImage from "../assets/images/hello_world.png";
 import {Link} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 
-class HelloWorld extends Component{
-    render(){
-        const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight:"auto", textAlign:"center"};
-        return(
+class HelloWorld extends Component {
+    render() {
+        const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center"};
+        return (
             <div>
                 <h1>Hello World Example Page For Accessibility</h1>
                 <br/>
@@ -29,11 +29,11 @@ class HelloWorld extends Component{
                 <br/>
                 <table tabIndex={"0"} style={tableStyle}>
                     <thead>
-                        <tr>
-                            <th>UserID</th>
-                            <th>Name</th>
-                            <th>Favorite Animal</th>
-                        </tr>
+                    <tr>
+                        <th>UserID</th>
+                        <th>Name</th>
+                        <th>Favorite Animal</th>
+                    </tr>
                     </thead>
                     <tbody>
                     <tr>
@@ -59,9 +59,11 @@ class HelloWorld extends Component{
                     </tbody>
                 </table>
                 <br/>
-                <Button href={"/Lab3/"} component={Link} color={"primary"} variant={"contained"}>Back To Lab 3 Homepage</Button>
+                <Button href={"/Lab3/"} component={Link} color={"primary"} variant={"contained"}>Back To Lab 3
+                    Homepage</Button>
             </div>
         );
     }
 }
+
 export default HelloWorld;
