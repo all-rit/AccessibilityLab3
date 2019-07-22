@@ -25,14 +25,13 @@ const mapDispatchToProps = (dispatch) => {
 
 
 class Main extends Component {
-
     render() {
         const {
             user,
             state,
             plays
         } = this.props;
-
+        const buttonStyle ={marginRight:"10px",marginLeft:"10px"};
         return (
             <Fragment>
                 <div>
@@ -43,7 +42,10 @@ class Main extends Component {
                 </div>
                 <div>
                     <AppInstructions/>
-                    <Button href="/Lab3/game" component={Link}>Start Game!</Button>
+                    <Button href="/Lab3/game" component={Link} variant={"contained"} color={"primary"} style={buttonStyle}>
+                        Beginner Game</Button>
+                    <Button href="/Lab3/AdvancedGame" component={Link} variant={"contained"} color={"secondary"}>
+                        Advanced Game</Button>
                 </div>
             </Fragment>
         );

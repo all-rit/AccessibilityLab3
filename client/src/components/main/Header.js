@@ -9,11 +9,11 @@ class Header extends Component {
     render() {
         const {state, user, plays} = this.props;
         const loginEnabled = !(plays > 0 || (plays === 0 && state !== GAME_IDLE));
-
+        const buttonStyle ={marginTop:"20px", marginLeft:"20px"};
         return (
             <header className="header">
                 <div className={"header_column text-left"}>
-                    <Button href={"/Lab3/HelloWorld"}>Screenreader Tutorial</Button>
+                    <Button href={"/Lab3/HelloWorld"} variant={"contained"} style={buttonStyle}>Screenreader Tutorial</Button>
                 </div>
                 <div className="header__column text-right">
                     <WelcomeMessage user={user} loginEnabled={loginEnabled}/>

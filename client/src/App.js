@@ -6,13 +6,15 @@ import './assets/stylesheets/main.scss';
 import {actions} from './reducers/AppReducer';
 
 import Main from './pages/Main';
-import Game from './pages/Game';
-import InaccessibleGame from "./pages/InaccessibleGame";
-import BlindnessInstructions from "./pages/BlindnessInstructions";
-import AccessibleInstructions from "./pages/AccessibleInstructions";
-import AccessibleGame from "./pages/AccessibleGame";
-import CodeChange from "./pages/CodeChange";
-import HelloWorld from "./pages/HelloWorld";
+import Game from './pages/BeginnerGame/Game';
+import InaccessibleGame from "./pages/BeginnerGame/InaccessibleGame";
+import GameInstructions from "./pages/BeginnerGame/GameInstructions";
+import AccessibleInstructions from "./pages/BeginnerGame/AccessibleInstructions";
+import AccessibleGame from "./pages/BeginnerGame/AccessibleGame";
+import CodeChange from "./pages/BeginnerGame/CodeChange";
+import HelloWorld from "./pages/BeginnerGame/HelloWorld";
+import AdvancedGame from "./pages/AdvancedGame/AdvancedGame";
+import AdvancedInstructions from "./pages/AdvancedGame/AdvancedInstructions";
 
 const mapDispatchToProps = {
     login: actions.login
@@ -28,12 +30,14 @@ class App extends Component {
             <Router basepath={process.env.PUBLIC_URL} className="app">
                 <Main path="/"/>
                 <Game path="/game"/>
-                <BlindnessInstructions path={"/BlindnessInstructions"}/>
+                <GameInstructions path={"/GameInstructions"}/>
                 <InaccessibleGame path={"/InAccessibleGame"}/>
                 <AccessibleInstructions path={"/AccessibleInstructions"}/>
                 <AccessibleGame path={"/AccessibleGame"}/>
                 <CodeChange path={"/CodeChange"}/>
                 <HelloWorld path={"/HelloWorld"}/>
+                <AdvancedGame path={"/AdvancedGame"}/>
+                <AdvancedInstructions path={"/AdvancedInstructions"}/>
             </Router>
         );
     }

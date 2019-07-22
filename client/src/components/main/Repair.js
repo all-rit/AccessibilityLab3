@@ -12,19 +12,17 @@ class Repair extends Component {
         return (
             <div>
 				<pre>
-
-{/*<input type={"text"} name={""}/>*/}
-                    <code className="language-javascript">
+                    <code className="language-html">
 					  {`
-					 	<table style={tableStyle} tabIndex={"0"}>
+					 	<table tabIndex="0">
 					  		<tbody>
 								<tr>
-									<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={(); => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
-									<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage} onClick={(); => carClick()} alt={"image of car"} tabIndex={"0"}/></td>
+									<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="image of cat" tabIndex="0"/></td>
+									<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="image of car" tabIndex="0"/></td>
 								</tr>
 								<tr>
-									<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage} onClick={(); => burgerClick()} alt={"image of burger"} tabIndex={"0"}/></td>
-									<td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={(); => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
+									<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="image of burger" tabIndex="0"/></td>
+									<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="image of cat" tabIndex="0"/></td>
 								</tr>
 							</tbody>
 						</table>

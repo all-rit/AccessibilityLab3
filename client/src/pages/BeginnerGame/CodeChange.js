@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from '@material-ui/core';
-import Repair from "../components/main/Repair";
+import Repair from "../../components/main/Repair";
 
 class CodeChange extends Component {
 
@@ -14,7 +14,7 @@ class CodeChange extends Component {
                     <Repair/>
                     <br/>
                 </div>
-                <Button href={"/"}>Next</Button>
+                <Button href={"/"} variant={"contained"} color={"primary"}>Next</Button>
 
             </div>
         );

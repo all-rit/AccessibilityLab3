@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import catImage from "../assets/images/c1.svg";
-import carImage from "../assets/images/c2.svg";
-import burgerImage from "../assets/images/b.png";
-import CatClickNavigate from '../components/helpers/CatClickNavigate.js'
+import catImage from "../../assets/images/c1.svg";
+import carImage from "../../assets/images/c2.svg";
+import burgerImage from "../../assets/images/b.png";
+import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 
 class Game extends Component {
     constructor(props) {

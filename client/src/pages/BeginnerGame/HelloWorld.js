@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import carImage from "../assets/images/c2.svg";
-import helloWorldImage from "../assets/images/hello_world.png";
+import carImage from "../../assets/images/c2.svg";
+import helloWorldImage from "../../assets/images/hello_world.png";
 import {Link} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 

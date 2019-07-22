@@ -3,7 +3,7 @@ import {Button, Link} from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 
-class BlindnessInstructions extends Component {
+class GameInstructions extends Component {
 
     render() {
         return (
@@ -30,4 +30,4 @@ class BlindnessInstructions extends Component {
     }
 }
 
-export default BlindnessInstructions;
+export default GameInstructions;
