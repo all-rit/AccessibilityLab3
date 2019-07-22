@@ -44,18 +44,18 @@ class InaccessibleGame extends Component {
                 <h1 style={textStyle} tabIndex={"0"}>Inaccessible Game</h1>
                 <p style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
                     navigate by tabbing across the page. Press the enter key to select.</p>
-                <table style={tableStyle}>
+                <table style={tableStyle} tabIndex={"0"}>
                     <tbody>
                     <tr>
-                        <td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""} tabIndex={"0"}/>
                         </td>
-                        <td><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={""}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={""} tabIndex={"0"}/>
                         </td>
                     </tr>
                     <tr>
-                        <td><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick()}
-                                   alt={""}/></td>
-                        <td><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick() }
+                                   alt={""} tabIndex={"0"}/></td>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""} tabIndex={"0"}/>
                         </td>
                     </tr>
                     </tbody>
