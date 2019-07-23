@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button} from '@material-ui/core';
 import Repair from "../../components/main/Repair";
+import CodeUpdateForm from "../../components/main/CodeUpdateForm";
 
 class CodeChange extends Component {
 
@@ -15,7 +16,7 @@ class CodeChange extends Component {
                     <br/>
                 </div>
                 <Button href={"/"} variant={"contained"} color={"primary"}>Next</Button>
-
+            <CodeUpdateForm/>
             </div>
         );
     }
