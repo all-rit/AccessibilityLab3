@@ -8,7 +8,7 @@ class Repair extends Component {
 
     constructor(props){
         super(props);
-        this.setState({altValue:' '});
+        this.state = {altValue:'', actualAltValue: '',textValue:''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,14 +17,24 @@ class Repair extends Component {
     }
 
     handleChange(event){
-        this.setState({altValue: event.target.altValue});
+        this.setState({textValue: event.target.textValue},() => {
+            this.setState({actualAltValue: this.state.textValue},() => {
+                console.log('handled change value: '+ this.state.actualAltValue);
+                Prism.highlightAll();
+            });
+        });
+
     }
     handleSubmit(event){
-        console.log('Alt Tag updated as: '+ this.state.altValue);
         event.preventDefault();
+        this.setState({altValue:this.state.actualAltValue}, () => {
+            console.log('Alt Tag updated as: '+ this.state.altValue);
+            Prism.highlightAll();
+        });
+
     }
     render() {
-        const altValue = eval('`' + (this.state.altValue == null ? ' ' : this.state.altValue) + '`');
+        const altValue = eval('`' + this.state.actualAltValue + '`');
         return (
             <div>
 				<pre>
@@ -48,10 +58,10 @@ class Repair extends Component {
                 <Typography variant={"h6"} align={"center"}>Update code here:</Typography>
                 <br/>
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
-                    <TextField id={"code-field"} label={"AltTag="} value={this.state.altValue}
-                               onChange={this.handleChange} margin={"normal"}/> <br/>
+                    <TextField id={"code-field"} label={"AltTag="} value={this.state.textValue}
+                               onChange={this.handleChange} margin={"normal"} variant={"standard"}/> <br/>
                     <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
-                            color={"primary"} href={"#"}>Update Code</Button>
+                            color={"primary"}>Update Code</Button>
                 </form>
             </div>
         );
