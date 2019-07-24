@@ -17,7 +17,7 @@ class Repair extends Component {
     }
 
     handleChange(event){
-        this.setState({textValue: event.target.textValue},() => {
+        this.setState({textValue: event.target.value},() => {
             this.setState({actualAltValue: this.state.textValue},() => {
                 console.log('handled change value: '+ this.state.actualAltValue);
                 Prism.highlightAll();
@@ -58,7 +58,7 @@ class Repair extends Component {
                 <Typography variant={"h6"} align={"center"}>Update code here:</Typography>
                 <br/>
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
-                    <TextField id={"code-field"} label={"AltTag="} value={this.state.textValue}
+                    <TextField required id={"code-field"} label={"AltTag="} value={this.state.textValue}
                                onChange={this.handleChange} margin={"normal"} variant={"standard"}/> <br/>
                     <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
                             color={"primary"}>Update Code</Button>
