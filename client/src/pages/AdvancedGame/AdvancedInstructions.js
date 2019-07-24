@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Button from "@material-ui/core/Button"
 class AdvancedInstructions extends Component{
     render() {
         return(
@@ -6,6 +7,9 @@ class AdvancedInstructions extends Component{
                 <h1>Advanced Instructions</h1>
                 <br/>
                 <p>Instructions for Advanced Activity.</p>
+                <Button href={"/Lab3/ProblemDiscovery"} variant={"contained"} color={"primary"}>
+                    Next
+                </Button>
             </div>
         );
     }

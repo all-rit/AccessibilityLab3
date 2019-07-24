@@ -15,6 +15,9 @@ import CodeChange from "./pages/BeginnerGame/CodeChange";
 import HelloWorld from "./pages/BeginnerGame/HelloWorld";
 import AdvancedGame from "./pages/AdvancedGame/AdvancedGame";
 import AdvancedInstructions from "./pages/AdvancedGame/AdvancedInstructions";
+import ProblemDiscovery from "./pages/AdvancedGame/ProblemDiscovery";
+import ProblemExplanation from "./pages/AdvancedGame/ProblemExplanation";
+import ProblemFix from "./pages/AdvancedGame/ProblemFix";
 
 const mapDispatchToProps = {
     login: actions.login
@@ -38,6 +41,9 @@ class App extends Component {
                 <HelloWorld path={"/HelloWorld"}/>
                 <AdvancedGame path={"/AdvancedGame"}/>
                 <AdvancedInstructions path={"/AdvancedInstructions"}/>
+                <ProblemDiscovery path={"/ProblemDiscovery"}/>
+                <ProblemExplanation path={"/ProblemExplanation"}/>
+                <ProblemFix path={"/ProblemFix"}/>
             </Router>
         );
     }

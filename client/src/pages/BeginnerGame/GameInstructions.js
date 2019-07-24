@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {Button, Link} from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
+import Typography from "@material-ui/core/Typography";
 
 class GameInstructions extends Component {
 
     render() {
         return (
             <div>
-                <h1>Instructions</h1>
+                <Typography variant={"h4"} aria-label={"Instructions"}> Instructions </Typography>
                 <ListItem component={ListItem}><ListItemText component={ListItemText}
                                                              primary={"You clicked on an image. However, without the ability to see, it may be difficult\n" +
                                                              "                to decipher what these images represent."}/></ListItem>
@@ -23,7 +24,9 @@ class GameInstructions extends Component {
                         similar, simple activity might look like to someone who is blind.</p>
                     <br/>
                 </div>
-                <Button href={"/Lab3/InAccessibleGame"} variant={"contained"} color={"primary"}>Next</Button>
+                <Button href={"/Lab3/InAccessibleGame"} variant={"contained"} color={"primary"}>
+                    Next
+                </Button>
 
             </div>
         );
