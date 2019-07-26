@@ -4,6 +4,7 @@ import "../../assets/stylesheets/prism.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {Typography} from "@material-ui/core";
+import {navigate} from "@reach/router";
 class Repair extends Component {
 
     constructor(props){
@@ -30,6 +31,8 @@ class Repair extends Component {
         this.setState({altValue:this.state.actualAltValue}, () => {
             console.log('Alt Tag updated as: '+ this.state.altValue);
             Prism.highlightAll();
+            window.location.state = {altValue: this.state.altValue};
+            navigate('/Lab3/AccessibleUserUpdatedGame');
         });
 
     }

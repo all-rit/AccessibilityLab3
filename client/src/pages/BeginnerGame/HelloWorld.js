@@ -3,29 +3,36 @@ import carImage from "../../assets/images/c2.svg";
 import helloWorldImage from "../../assets/images/hello_world.png";
 import {Link} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography";
 
 class HelloWorld extends Component {
     render() {
         const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center"};
         return (
             <div>
-                <h1>Hello World Example Page For Accessibility</h1>
+                <Typography variant={"h4"} aria-label={"Hello World Example Page For Accessibility"}>
+                    Hello World Example Page For Accessibility
+                </Typography>
                 <br/>
-                <h2>Images</h2>
+                <Typography variant={"subtitle1"} aria-label={"Images"}>
+                    Images
+                </Typography>
                 <br/>
-                <h3>InAccessible Image</h3>
-                <img src={carImage} alt={""}/>
+                <Typography variant={"subtitle1"} aria-label={"InAccessible Image"}>
+                    InAccessible Image
+                </Typography>
+                <img src={carImage} alt={""} tabIndex={"0"}/>
                 <br/>
-                <h3>Accessible Image</h3>
-                <img src={carImage} alt={"Car"}/>
+                <h3 tabIndex={"0"}>Accessible Image</h3>
+                <img src={carImage} alt={"Car"} tabIndex={"0"}/>
                 <br/>
-                <h3>Example Accessible text</h3>
-                <p>Hello world</p>
+                <h3 tabIndex={"0"}>Example Accessible text</h3>
+                <p tabIndex={"0"}>Hello world</p>
                 <br/>
-                <h3>Example InAccessible text</h3>
-                <img src={helloWorldImage} alt={""} height={"25%"} width={"25%"}/>
+                <h3 tabIndex={"0"}>Example InAccessible text</h3>
+                <img src={helloWorldImage} alt={""} height={"25%"} width={"25%"} tabIndex={"0"}/>
                 <br/>
-                <h3> Table</h3>
+                <h3 tabIndex={"0"}> Table</h3>
                 <br/>
                 <table tabIndex={"0"} style={tableStyle}>
                     <thead>
@@ -59,8 +66,10 @@ class HelloWorld extends Component {
                     </tbody>
                 </table>
                 <br/>
-                <Button href={"/Lab3/"} component={Link} color={"primary"} variant={"contained"}>Back To Lab 3
-                    Homepage</Button>
+                <Button href={"/Lab3/"} component={Link} color={"primary"} variant={"contained"}
+                        tabIndex={"0"}>
+                    Back To Lab 3 Homepage
+                </Button>
             </div>
         );
     }
