@@ -48,7 +48,7 @@ class AcccessibleUserUpdatedGame extends Component {
                     <tbody>
                     <tr>
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
-                                                  onClick={() => catClick()} alt={window.location.state.altValue} tabIndex={"0"}/></td>
+                                                  onClick={() => catClick()} alt={(window.location.state.altValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/></td>
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage}
                                                   onClick={() => carClick()} alt={"image of car"} tabIndex={"0"}/></td>
                     </tr>
