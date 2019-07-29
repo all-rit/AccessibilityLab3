@@ -7,7 +7,7 @@ import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 class Game extends Component {
     constructor(props) {
         super(props);
-        this.state = {render: ''}
+        this.state = {render: ''};
     }
 
     _renderSubComp() {

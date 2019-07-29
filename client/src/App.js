@@ -19,6 +19,7 @@ import ProblemDiscovery from "./pages/AdvancedGame/ProblemDiscovery";
 import ProblemExplanation from "./pages/AdvancedGame/ProblemExplanation";
 import ProblemFix from "./pages/AdvancedGame/ProblemFix";
 import AccessibleUserUpdatedGame from "./pages/BeginnerGame/AccessibleUserUpdatedGame";
+import BeginnerGameConclusion from "./pages/BeginnerGame/BeginnerGameConclusion";
 
 const mapDispatchToProps = {
     login: actions.login
@@ -46,6 +47,7 @@ class App extends Component {
                 <ProblemExplanation path={"/ProblemExplanation"}/>
                 <ProblemFix path={"/ProblemFix"}/>
                 <AccessibleUserUpdatedGame path={"/AccessibleUserUpdatedGame"}/>
+                <BeginnerGameConclusion path={"/BeginnerGameConclusion"}/>
             </Router>
         );
     }
