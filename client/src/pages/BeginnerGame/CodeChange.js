@@ -71,10 +71,10 @@ class CodeChange extends Component {
 			<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="`}
                     </code><input type={"text"} value={this.state.textValue}
                                   onChange={this.handleChange}
-                                  aria-label={"Please type in alt tag contents for "}/>
+                                  aria-label={"Please type in alt tag contents for this image"}/>
                                   <code className="language-html">{`" tabIndex="0"/></td>
 			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code><input type={"text"} value={this.state.textValue1}
-                                                                                                                onChange={this.handleChange1} aria-label={"Please type in alt tag contents for "}/><code className="language-html">{`" tabIndex="0"/></td>
+                                                                                                                onChange={this.handleChange1} aria-label={"Please type in alt tag contents for this image"}/><code className="language-html">{`" tabIndex="0"/></td>
 		</tr>
 		<tr>
 			<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="burger" tabIndex="0"/></td>
