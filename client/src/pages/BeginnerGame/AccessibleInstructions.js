@@ -5,7 +5,10 @@ import ListItem from '@material-ui/core/ListItem';
 import Typography from "@material-ui/core/Typography";
 
 class AccessibleInstructions extends Component {
-
+    constructor(props){
+        super(props);
+        document.body.style = 'background: white';
+    }
     render() {
         return (
             <div>

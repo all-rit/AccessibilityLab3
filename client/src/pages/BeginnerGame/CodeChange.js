@@ -8,6 +8,7 @@ class CodeChange extends Component {
 
     constructor(props){
         super(props);
+        document.body.style = 'background: white';
         this.state = {textValue:'',textValue1: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
@@ -67,10 +68,13 @@ class CodeChange extends Component {
 <table tabIndex="0">
 	<tbody>
 		<tr>
-			<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="`}</code><input type={"text"} value={this.state.textValue}
-                                                                                                                onChange={this.handleChange}/><code className="language-html">{`" tabIndex="0"/></td>
+			<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="`}
+                    </code><input type={"text"} value={this.state.textValue}
+                                  onChange={this.handleChange}
+                                  aria-label={"Please type in alt tag contents for "}/>
+                                  <code className="language-html">{`" tabIndex="0"/></td>
 			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code><input type={"text"} value={this.state.textValue1}
-                                                                                                                onChange={this.handleChange1}/><code className="language-html">{`" tabIndex="0"/></td>
+                                                                                                                onChange={this.handleChange1} aria-label={"Please type in alt tag contents for "}/><code className="language-html">{`" tabIndex="0"/></td>
 		</tr>
 		<tr>
 			<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="burger" tabIndex="0"/></td>
