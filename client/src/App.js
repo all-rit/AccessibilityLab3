@@ -20,6 +20,8 @@ import ProblemExplanation from "./pages/AdvancedGame/ProblemExplanation";
 import ProblemFix from "./pages/AdvancedGame/ProblemFix";
 import AccessibleUserUpdatedGame from "./pages/BeginnerGame/AccessibleUserUpdatedGame";
 import BeginnerGameConclusion from "./pages/BeginnerGame/BeginnerGameConclusion";
+import AdvancedGameConclusion from "./pages/AdvancedGame/AdvancedGameConclusion";
+import ViewFix from "./pages/AdvancedGame/ViewFix";
 
 const mapDispatchToProps = {
     login: actions.login
@@ -48,6 +50,8 @@ class App extends Component {
                 <ProblemFix path={"/ProblemFix"}/>
                 <AccessibleUserUpdatedGame path={"/AccessibleUserUpdatedGame"}/>
                 <BeginnerGameConclusion path={"/BeginnerGameConclusion"}/>
+                <AdvancedGameConclusion path={"/AdvancedGameConclusion"}/>
+                <ViewFix path={"/ViewFix"}/>
             </Router>
         );
     }
