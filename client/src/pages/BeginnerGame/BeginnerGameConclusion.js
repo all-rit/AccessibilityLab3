@@ -3,7 +3,6 @@ import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 class BeginnerGameConclusion extends Component{
     render() {
-        const homeButtonStyle = {marginTop:"20px", marginLeft:"20px"};
         return(
             <div>
                 <Typography variant={"h4"}>
