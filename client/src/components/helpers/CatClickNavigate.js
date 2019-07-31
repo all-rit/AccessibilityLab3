@@ -4,9 +4,6 @@ import {Link} from "@material-ui/core";
 import {navigate} from "@reach/router";
 
 class CatClickNavigate extends Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         const {
