@@ -3,6 +3,7 @@ import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
+import {Typography} from "@material-ui/core";
 
 class Game extends Component {
     constructor(props) {
@@ -32,7 +33,10 @@ class Game extends Component {
         const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center"};
         return (
             <div>
-                <p>Click on the image of a cat.</p>
+                <Typography variant={"h4"} aria-label={"Click on the image of a cat"}>
+                    Click on the image of a cat.
+                </Typography>
+                <br/>
                 <table style={tableStyle} className={"center"}>
                     <tbody>
                     <tr>
