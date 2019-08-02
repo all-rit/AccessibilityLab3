@@ -80,7 +80,6 @@ class ProblemFix extends Component{
                     </code>
                 </pre>
                 <br/>
-
                 <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
                         color={"primary"}>
                     Update Code

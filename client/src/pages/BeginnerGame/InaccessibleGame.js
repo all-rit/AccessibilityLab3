@@ -3,12 +3,15 @@ import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
+import {navigate} from "@reach/router";
 
 class InaccessibleGame extends Component {
     constructor(props) {
         super(props);
         this.state = {render: ''};
         document.body.style = 'background: black';
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.onFocus = this.onFocus.bind(this);
     }
 
     _renderSubComp(path) {
@@ -16,7 +19,16 @@ class InaccessibleGame extends Component {
             return <CatClickNavigate path={path}/>
         }
     }
-
+    handleKeyDown(event){
+        console.log('detected key code is: '+event.keyCode);
+        if(event.keyCode === 27){
+            console.log('Enter key pressed!');
+            navigate("/Lab3/AccessibleInstructions");
+        }
+    }
+    onFocus(event){
+        console.log('focus gained');
+    }
     render() {
 
         const catClick = () => {
@@ -47,15 +59,32 @@ class InaccessibleGame extends Component {
                 <table style={tableStyle} tabIndex={"0"}>
                     <tbody>
                     <tr>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""} tabIndex={"0"}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
+                                                  onClick={() => catClick()} alt={""} tabIndex={"0"}
+                                                  onKeyDown={this.handleKeyDown}
+                                                  onFocus={this.onFocus}
+                                                  onKeyPress={this.handleKeyDown}/>
                         </td>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage} onClick={() => carClick()} alt={""} tabIndex={"0"}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage}
+                                                  onClick={() => carClick()} alt={""} tabIndex={"0"}
+                                                  onKeyDown={this.handleKeyDown}
+                                                  onFocus={this.onFocus}
+                                                  onKeyPress={this.handleKeyDown}/>
                         </td>
                     </tr>
                     <tr>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage} onClick={() => burgerClick() }
-                                   alt={""} tabIndex={"0"}/></td>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage} onClick={() => catClick()} alt={""} tabIndex={"0"}/>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage}
+                                                  onClick={() => burgerClick() } alt={""}
+                                                  tabIndex={"0"}
+                                                  onKeyDown={this.handleKeyDown}
+                                                  onFocus={this.onFocus}
+                                                  onKeyPress={this.handleKeyDown}/></td>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
+                                                  onClick={() => catClick()} alt={""}
+                                                  tabIndex={"0"}
+                                                  onKeyDown={this.handleKeyDown}
+                                                  onKeyPress={this.handleKeyDown}
+                                                  onFocus={this.onFocus}/>
                         </td>
                     </tr>
                     </tbody>

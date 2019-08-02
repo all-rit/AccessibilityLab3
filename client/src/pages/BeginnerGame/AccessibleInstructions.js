@@ -32,7 +32,7 @@ class AccessibleInstructions extends Component {
                    </Typography>
                     <br/>
                 </div>
-                <Button href={"/Lab3/AccessibleGame"} variant={"contained"} color={"primary"}>Next</Button>
+                <Button href={"/Lab3/CodeChange"} variant={"contained"} color={"primary"}>Next</Button>
 
             </div>
         );
