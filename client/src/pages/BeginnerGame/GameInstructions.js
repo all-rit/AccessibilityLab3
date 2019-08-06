@@ -23,7 +23,7 @@ class GameInstructions extends Component {
                         You clicked on an image. However, without the ability to see, it may be
                         difficult to decipher what these images represent.
                         Please make sure you are using
-                        <Link component={Link} href={"https://www.google.com/chrome/"}>Google
+                        <Link component={Link} href={"https://www.google.com/chrome/"}> Google
                             Chrome</Link>. Please install the <Link component={Link}
                                                                     href={"https://chrome.google.com/webstore/"
                                                                     + "detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"}>ChromeVox</Link> screenreader(If
