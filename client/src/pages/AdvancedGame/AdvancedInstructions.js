@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import Button from "@material-ui/core/Button"
-class AdvancedInstructions extends Component{
+
+class AdvancedInstructions extends Component {
     render() {
-        return(
+        return (
             <div>
                 <h1>Advanced Instructions</h1>
                 <br/>
@@ -14,4 +15,5 @@ class AdvancedInstructions extends Component{
         );
     }
 }
+
 export default AdvancedInstructions;

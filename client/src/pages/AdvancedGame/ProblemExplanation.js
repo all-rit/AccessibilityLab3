@@ -1,9 +1,10 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-class ProblemExplanation extends Component{
-    render(){
-        return(
+
+class ProblemExplanation extends Component {
+    render() {
+        return (
             <div>
                 <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
                     Problem Explanation
@@ -27,4 +28,5 @@ class ProblemExplanation extends Component{
         );
     }
 }
+
 export default ProblemExplanation;

@@ -31,18 +31,16 @@ class Main extends Component {
             state,
             plays
         } = this.props;
-        const buttonStyle ={marginRight:"10px",marginLeft:"10px"};
+        const buttonStyle = {marginRight: "10px", marginLeft: "10px"};
         return (
             <Fragment>
                 <div>
                     <Header state={state} user={user} plays={plays}/>
                 </div>
                 <div>
-                    <h1>Accessibility Learning Lab 3</h1>
-                </div>
-                <div>
                     <AppInstructions/>
-                    <Button href="/Lab3/game" component={Link} variant={"contained"} color={"primary"} style={buttonStyle}>
+                    <Button href="/Lab3/game" component={Link} variant={"contained"} color={"primary"}
+                            style={buttonStyle}>
                         Beginner Game</Button>
                     <Button href="/Lab3/AdvancedGame" component={Link} variant={"contained"} color={"secondary"}>
                         Advanced Game</Button>

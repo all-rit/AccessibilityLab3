@@ -4,6 +4,8 @@ import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import {Typography} from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 
 class Game extends Component {
     constructor(props) {
@@ -28,14 +30,19 @@ class Game extends Component {
         const carClick = () => {
             console.log('Car image clicked!');
         };
-
+        const appBarStyle = {flexGrow: "1"};
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black"};
         const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center"};
         return (
             <div>
-                <Typography variant={"h4"} aria-label={"Click on the image of a cat"}>
-                    Click on the image of a cat.
-                </Typography>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Typography variant={"h4"} aria-label={"Click on the image of a cat"}
+                                    color={"inherit"}>
+                            Click on the image of a cat.
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
                 <br/>
                 <table style={tableStyle} className={"center"}>
                     <tbody>

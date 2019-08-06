@@ -4,64 +4,82 @@ import Prism from "prismjs";
 import {navigate} from "@reach/router";
 import Button from "@material-ui/core/Button";
 import "../../assets/stylesheets/prism.css";
+import {Paper} from "@material-ui/core";
+import Snackbar from "@material-ui/core/Snackbar";
+
 class CodeChange extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         document.body.style = 'background: white';
-        this.state = {textValue:'',textValue1: ''};
+        this.state = {textValue: '', textValue1: '',open: false};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         CodeChange.renderButton = CodeChange.renderButton.bind(this);
-        if(window.location.state === undefined){
+        if (window.location.state === undefined) {
             window.location.state = {endButtonEnabled: false}
-        }
-        else{
+        } else {
             window.location.state = {endButtonEnabled: true}
         }
     }
+    handleClose = () => this.setState({ open: false });
     componentDidMount() {
         Prism.highlightAll();
     }
 
-    handleChange(event){
-        this.setState({textValue: event.target.value},() => {
-            console.log('handled change value: '+ this.state.textValue);
+    handleChange(event) {
+        this.setState({textValue: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue);
             Prism.highlightAll();
         });
 
     }
+
     handleChange1(event) {
-        this.setState({textValue1: event.target.value},() => {
-            console.log('handled change value: '+ this.state.textValue1);
+        this.setState({textValue1: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue1);
             Prism.highlightAll();
         });
     }
-    handleSubmit(event){
+
+    handleSubmit(event) {
         event.preventDefault();
-        console.log('Cat Alt Tag updated as: '+ this.state.textValue);
-        console.log('Car Alt Tag updated as: '+ this.state.textValue1);
+        console.log('Cat Alt Tag updated as: ' + this.state.textValue);
+        console.log('Car Alt Tag updated as: ' + this.state.textValue1);
+        if(this.state.textValue === '' || this.state.textValue1 === ''){
+            // this.state = {open: true};
+        }
+        else{
+            window.location.state = {
+                catAltValue: this.state.textValue,
+                carAltValue: this.state.textValue1,
+                endButtonEnabled: true
+            };
+            navigate('/Lab3/AccessibleUserUpdatedGame');
+        }
         Prism.highlightAll();
-        window.location.state = {catAltValue: this.state.textValue, carAltValue: this.state.textValue1, endButtonEnabled: true};
-        navigate('/Lab3/AccessibleUserUpdatedGame');
     }
-    static renderButton(){
+
+    static renderButton() {
         const buttonEnabled = window.location.state.endButtonEnabled;
         const buttonStyle = {marginLeft: '10px'};
-        if(buttonEnabled){
+        if (buttonEnabled) {
             return (<Button href={"/Lab3/BeginnerGameConclusion"} aria-label={"End Activity"}
                             variant={"contained"} color={"secondary"} style={buttonStyle}>
                 End Activity
             </Button>);
         }
     }
+
     render() {
-        //const altValue = eval('`' + this.state.actualAltValue + '`');
+        const paperStyle = {marginLeft: "10px", marginRight: "10px", marginTop: "20px"};
+        const snackBarStyle = {backgroundColor:"red"};
         return (
             <div>
                 {<CodeUpdateHeader/>}
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
+                    <Paper style={paperStyle}>
 				<pre>
                     <code className="language-html">
 					  {`
@@ -73,8 +91,10 @@ class CodeChange extends Component {
                                   onChange={this.handleChange}
                                   aria-label={"Please type in alt tag contents for this image"}/>
                                   <code className="language-html">{`" tabIndex="0"/></td>
-			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code><input type={"text"} value={this.state.textValue1}
-                                                                                                                onChange={this.handleChange1} aria-label={"Please type in alt tag contents for this image"}/><code className="language-html">{`" tabIndex="0"/></td>
+			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code><input
+                    type={"text"} value={this.state.textValue1}
+                    onChange={this.handleChange1} aria-label={"Please type in alt tag contents for this image"}/><code
+                    className="language-html">{`" tabIndex="0"/></td>
 		</tr>
 		<tr>
 			<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="burger" tabIndex="0"/></td>
@@ -84,6 +104,7 @@ class CodeChange extends Component {
 </table>`}
   					</code>
 				</pre>
+                    </Paper>
                     <br/>
                     <br/>
                     <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
@@ -92,6 +113,13 @@ class CodeChange extends Component {
                     </Button>
                     {CodeChange.renderButton()}
                 </form>
+                <Snackbar
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    style={snackBarStyle}
+                >
+                    Code missing. Please enter code.
+                </Snackbar>
             </div>
         );
     };

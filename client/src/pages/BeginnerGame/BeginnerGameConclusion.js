@@ -1,19 +1,37 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
-class BeginnerGameConclusion extends Component{
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Grid from "@material-ui/core/Grid";
+
+class BeginnerGameConclusion extends Component {
     render() {
-        return(
+
+        const appBarStyle = {flexGrow: "1"};
+        const conclusionTypographyStyle = {marginTop:"20px"};
+        return (
             <div>
-                <Typography variant={"h4"}>
-                    Conclusion
-                </Typography>
-                <br/>
-                <Typography variant={"body1"}>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Grid
+                            justify="center"
+                            container
+                            spacing={10}
+                        >
+                            <Grid item>
+                                <Typography variant={"h4"}>
+                                    Conclusion
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Toolbar>
+                </AppBar>
+
+                <Typography variant={"h6"} paragraph={true} style={conclusionTypographyStyle}>
                     You have successfully completed the activity!
                     Click on the home button to return to the main page
                 </Typography>
-                <br/>
                 <Button href={"/Lab3/"} variant={"contained"} color={"primary"}>
                     Home
                 </Button>
@@ -21,4 +39,5 @@ class BeginnerGameConclusion extends Component{
         );
     }
 }
+
 export default BeginnerGameConclusion;

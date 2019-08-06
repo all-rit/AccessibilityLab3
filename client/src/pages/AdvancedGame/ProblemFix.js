@@ -1,60 +1,66 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import "../../assets/stylesheets/prism.css";
 import Prism from "prismjs";
 import {navigate} from "@reach/router";
-class ProblemFix extends Component{
-    constructor(props){
+
+class ProblemFix extends Component {
+    constructor(props) {
         super(props);
-        this.state = {textValue:'',textValue1: ''};
+        this.state = {textValue: '', textValue1: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         ProblemFix.renderButton = ProblemFix.renderButton.bind(this);
-        if(window.location.state === undefined){
+        if (window.location.state === undefined) {
             window.location.state = {endAdvancedActivityButtonEnabled: false}
-        }
-        else{
+        } else {
             window.location.state = {endAdvancedActivityButtonEnabled: true}
         }
     }
+
     componentDidMount() {
         Prism.highlightAll();
     }
-    handleChange(event){
-        this.setState({textValue: event.target.value},() => {
-            console.log('handled change value: '+ this.state.textValue);
+
+    handleChange(event) {
+        this.setState({textValue: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue);
             Prism.highlightAll();
         });
 
     }
+
     handleChange1(event) {
-        this.setState({textValue1: event.target.value},() => {
-            console.log('handled change value: '+ this.state.textValue1);
+        this.setState({textValue1: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue1);
             Prism.highlightAll();
         });
     }
-    handleSubmit(event){
+
+    handleSubmit(event) {
         event.preventDefault();
-        console.log('Cat Alt Tag updated as: '+ this.state.textValue);
-        console.log('Car Alt Tag updated as: '+ this.state.textValue1);
+        console.log('Cat Alt Tag updated as: ' + this.state.textValue);
+        console.log('Car Alt Tag updated as: ' + this.state.textValue1);
         window.location.state = {aria1: this.state.textValue, aria2: this.state.textValue1};
         Prism.highlightAll();
         navigate('/Lab3/ViewFix');
     }
-    static renderButton(){
+
+    static renderButton() {
         const buttonEnabled = window.location.state.endAdvancedActivityButtonEnabled;
         const buttonStyle = {marginLeft: '10px'};
-        if(buttonEnabled){
+        if (buttonEnabled) {
             return (<Button href={"/Lab3/AdvancedGameConclusion"} aria-label={"End Activity"}
                             variant={"contained"} color={"secondary"} style={buttonStyle}>
                 End Activity
             </Button>);
         }
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
                 <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
                     Problem Fix
@@ -79,15 +85,16 @@ class ProblemFix extends Component{
 `}
                     </code>
                 </pre>
-                <br/>
-                <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
-                        color={"primary"}>
-                    Update Code
-                </Button>
+                    <br/>
+                    <Button type={"submit"} aria-label={"Update Code"} variant={"contained"}
+                            color={"primary"}>
+                        Update Code
+                    </Button>
                     {ProblemFix.renderButton()}
                 </form>
             </div>
         );
     }
 }
+
 export default ProblemFix;

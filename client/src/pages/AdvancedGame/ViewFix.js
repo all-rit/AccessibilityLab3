@@ -1,18 +1,21 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {navigate} from "@reach/router";
-class ViewFix extends Component{
-    constructor(props){
+
+class ViewFix extends Component {
+    constructor(props) {
         super(props);
         ViewFix.navOnClick = ViewFix.navOnClick.bind(this);
     }
-    static navOnClick(){
+
+    static navOnClick() {
         navigate("/Lab3/ProblemFix");
     }
-    render(){
 
-        return(
+    render() {
+
+        return (
             <div>
                 <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
                     Problem Explanation
@@ -26,8 +29,10 @@ class ViewFix extends Component{
                     screenreaders.
                 </Typography>
                 <br/>
-                <Button variant={"text"} aria-label={(window.location.state.aria1).replace(/<[^>]*>?/gm, '')}>Ok</Button>
-                <Button variant={"text"} aria-label={(window.location.state.aria2).replace(/<[^>]*>?/gm, '')}>Cancel</Button>
+                <Button variant={"text"}
+                        aria-label={(window.location.state.aria1).replace(/<[^>]*>?/gm, '')}>Ok</Button>
+                <Button variant={"text"}
+                        aria-label={(window.location.state.aria2).replace(/<[^>]*>?/gm, '')}>Cancel</Button>
                 <br/>
 
                 <Button type={"submit"} variant={"contained"} color={"primary"} onClick={ViewFix.navOnClick}>
@@ -37,4 +42,5 @@ class ViewFix extends Component{
         );
     }
 }
+
 export default ViewFix;

@@ -1,13 +1,14 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
-class ProblemDiscovery extends Component{
+
+class ProblemDiscovery extends Component {
     render() {
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black", tabIndex: "0"};
-        return(
+        return (
             <div>
                 <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
                     Discover the Problem
@@ -23,13 +24,13 @@ class ProblemDiscovery extends Component{
                 <br/>
                 <input style={imgStyle} type={"image"} src={catImage}
                        alt={"image of cat"} tabIndex={"0"}/>
-                       <br/>
+                <br/>
                 <input style={imgStyle} type={"image"} src={carImage}
                        alt={"image of car"} tabIndex={"0"}/>
-                       <br/>
+                <br/>
                 <input style={imgStyle} type={"image"} src={burgerImage}
                        alt={"image of burger"} tabIndex={"0"}/>
-                       <br/>
+                <br/>
                 <Button variant={"text"}>Ok</Button>
                 <Button variant={"text"}>Cancel</Button>
                 <br/>
@@ -40,4 +41,5 @@ class ProblemDiscovery extends Component{
         );
     }
 }
+
 export default ProblemDiscovery;

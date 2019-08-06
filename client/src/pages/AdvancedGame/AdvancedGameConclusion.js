@@ -1,9 +1,10 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
-class AdvancedGameConclusion extends Component{
+
+class AdvancedGameConclusion extends Component {
     render() {
-        return(
+        return (
             <div>
                 <Typography variant={"h4"}>
                     Conclusion
@@ -21,4 +22,5 @@ class AdvancedGameConclusion extends Component{
         );
     }
 }
+
 export default AdvancedGameConclusion;
