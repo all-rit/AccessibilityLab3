@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
 import Button from "@material-ui/core/Button";
 import {Typography} from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Grid from "@material-ui/core/Grid";
 
 class AdvancedGame extends Component {
 
     render() {
+        const appBarStyle = {flexGrow: "1"};
         return (
             <div>
-                <Typography aria-label={"Advanced Game"} variant={"h4"} gutterBottom>
-                    Advanced Game
-                </Typography><br/>
-                <Typography aria-label={"instructions"} variant={"body1"} gutterBottom>The learning
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Grid
+                            justify="center"
+                            container
+                            spacing={10}
+                        >
+                            <Grid item>
+                                <Typography aria-label={"Advanced Game"} variant={"h4"} gutterBottom>
+                                    Advanced Game
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Toolbar>
+                </AppBar>
+                <br/>
+                <Typography aria-label={"instructions"} variant={"h6"} paragraph={true} gutterBottom>The learning
                     objective of this lab is for students to learn and apply the Understandable
                     accessibility principle. The game consists of performing
                     some tasks. Click Start game to begin!</Typography><br/>
