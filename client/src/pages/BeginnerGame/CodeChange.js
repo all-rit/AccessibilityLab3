@@ -20,12 +20,20 @@ class CodeChange extends Component {
         if (window.location.state === undefined) {
             window.location.state = {endButtonEnabled: false}
         } else {
-            window.location.state = {endButtonEnabled: true}
+            window.location.state = {endButtonEnabled: true, catAltValue: window.location.state.catAltValue,carAltValue: window.location.state.carAltValue};
         }
     }
     handleClose = () => this.setState({ open: false });
     componentDidMount() {
         Prism.highlightAll();
+        if(window.location.state.catAltValue !== undefined && window.location.state.carAltValue !== undefined){
+            const el0 = document.getElementById("first");
+            el0.value = window.location.state.catAltValue;
+            this.doEvent( el0, 'input' );
+            const el1 = document.getElementById("second");
+            el1.value = window.location.state.carAltValue;
+            this.doEvent( el1, 'input' );
+        }
     }
 
     handleChange(event) {
@@ -71,7 +79,11 @@ class CodeChange extends Component {
             </Button>);
         }
     }
-
+    doEvent( obj, event ) {
+        /* Created by David@Refoua.me */
+        const eventInit = new Event( event, {target: obj, bubbles: true} );
+        return obj ? obj.dispatchEvent(eventInit) : false;
+    }
     render() {
         const paperStyle = {marginLeft: "10px", marginRight: "10px", marginTop: "20px"};
         const snackBarStyle = {backgroundColor:"red"};
@@ -87,12 +99,12 @@ class CodeChange extends Component {
 	<tbody>
 		<tr>
 			<td tabIndex="0"><input type="image" src="cat.png" onClick="(); => catClick()" alt="`}
-                    </code><input type={"text"} value={this.state.textValue}
+                    </code><input type={"text"} id="first" value={this.state.textValue}
                                   onChange={this.handleChange}
                                   aria-label={"Please type in alt tag contents for this image"}/>
                                   <code className="language-html">{`" tabIndex="0"/></td>
 			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code><input
-                    type={"text"} value={this.state.textValue1}
+                    type={"text"} id="second" value={this.state.textValue1}
                     onChange={this.handleChange1} aria-label={"Please type in alt tag contents for this image"}/><code
                     className="language-html">{`" tabIndex="0"/></td>
 		</tr>
