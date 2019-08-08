@@ -1,19 +1,35 @@
 import React, {Component} from "react";
-import {Typography} from "@material-ui/core";
+import {AppBar, Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import StickyFooter from "../../components/helpers/StickyFooter";
+import Toolbar from "@material-ui/core/Toolbar";
+import Grid from "@material-ui/core/Grid";
 
 class ProblemDiscovery extends Component {
     render() {
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black", tabIndex: "0"};
+        const appBarStyle = {flexGrow: "1"};
         return (
             <div>
-                <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
-                    Discover the Problem
-                </Typography><br/>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Grid
+                            justify="center"
+                            container
+                            spacing={10}
+                        >
+                            <Grid item>
+                                <Typography variant={"h4"} aria-label={"Discover the problem"} gutterBottom>
+                                    Discover the Problem
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Toolbar>
+                </AppBar>
+                <br/>
                 <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
                     Can you find the accessibility issues with this page? Try using your screenreader.
                 </Typography><br/>

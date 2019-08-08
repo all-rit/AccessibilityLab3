@@ -19,15 +19,14 @@ class ViewFix extends Component {
         return (
             <div>
                 <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
-                    Problem Explanation
+                    Test Fix
                 </Typography><br/>
-                <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
-                    How do we make the page more accessible?
+                <Typography variant={"h6"} aria-label={"Subtitle Instructions"} gutterBottom>
+                    Is your page now more accessible?
                 </Typography><br/>
                 <Typography variant={"body1"} aria-label={"Body Instructions"} gutterBottom>
-                    The problem with the page is that we do not have the required ARIA attributes that
-                    make the buttons accessible. They cannot be effectively described by the
-                    screenreaders.
+                    If you have updated the buttons with the appropriate aria-labels then you have succeeded.
+                    They can now be effectively described by screenreaders.
                 </Typography>
                 <br/>
                 <Button variant={"text"}
@@ -36,7 +35,7 @@ class ViewFix extends Component {
                         aria-label={(window.location.state.aria2).replace(/<[^>]*>?/gm, '')}>Cancel</Button>
                 <br/>
 
-                <Button type={"submit"} variant={"contained"} color={"primary"} onClick={ViewFix.navOnClick}>
+                <Button variant={"contained"} color={"primary"} onClick={ViewFix.navOnClick}>
                     Next
                 </Button>
                 <StickyFooter/>
