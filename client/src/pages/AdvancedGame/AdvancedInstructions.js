@@ -19,7 +19,8 @@ class AdvancedInstructions extends Component {
                         >
                             <Grid item>
                                 <Typography aria-label={"Advanced Instructions"} variant={"h4"} gutterBottom>
-                                    Instructions for Advanced Activity
+                                    You will have to learn about accessibility by performing a task which will involve
+                                    finding the accessibility issues in a page. Please click next to proceed.
                                 </Typography>
                             </Grid>
                         </Grid>
