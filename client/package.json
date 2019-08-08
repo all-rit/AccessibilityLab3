@@ -5,11 +5,16 @@
   "homepage": "/Lab3",
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.2.1",
     "@reach/router": "latest",
     "@uiw/react-codemirror": "latest",
     "classnames": "latest",
+    "cli-engine": "^4.7.6",
+    "clsx": "^1.0.4",
+    "eslint-config-standard": "^13.0.1",
     "immutability-helper": "latest",
     "node-sass": "latest",
+    "prismjs": "latest",
     "react": "latest",
     "react-autosize-textarea": "latest",
     "react-color": "latest",
@@ -18,8 +23,7 @@
     "react-spinners": "latest",
     "redux": "latest",
     "redux-saga": "latest",
-    "victory": "latest",
-    "prismjs": "latest"
+    "victory": "latest"
   },
   "scripts": {
     "start": "react-scripts start && echo 'Options -MultiViews\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.html [QSA,L]\n' >> ./build/.htaccess",
@@ -37,7 +41,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "redux-devtools": "latest",
-    "react-scripts": "latest"
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "react-scripts": "latest",
+    "redux-devtools": "latest"
   }
 }

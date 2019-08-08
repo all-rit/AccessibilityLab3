@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class AdvancedGameConclusion extends Component {
     render() {
@@ -18,6 +19,7 @@ class AdvancedGameConclusion extends Component {
                 <Button href={"/Lab3/"} variant={"contained"} color={"primary"}>
                     Home
                 </Button>
+                <StickyFooter/>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class AccessibleInstructions extends Component {
 
@@ -47,7 +48,7 @@ class AccessibleInstructions extends Component {
                     </Typography>
                 </Paper>
                 <Button href={"/Lab3/CodeChange"} variant={"contained"} color={"primary"}>Next</Button>
-
+                <StickyFooter/>
             </div>
         );
     }

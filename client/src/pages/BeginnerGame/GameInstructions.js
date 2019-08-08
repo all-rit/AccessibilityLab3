@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Paper from "@material-ui/core/Paper";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class GameInstructions extends Component {
 
@@ -35,7 +36,7 @@ class GameInstructions extends Component {
                 <Button href={"/Lab3/InAccessibleGame"} variant={"contained"} color={"primary"}>
                     Next
                 </Button>
-
+                <StickyFooter/>
             </div>
         );
     }

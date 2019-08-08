@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Header from "../components/main/Header";
 import {actions as appActions} from '../reducers/AppReducer';
 import AppInstructions from '../components/main/AppInstructions'
+import StickyFooter from "../components/helpers/StickyFooter";
 
 const mapStateToProps = (state) => {
     return {
@@ -45,6 +46,7 @@ class Main extends Component {
                     <Button href="/Lab3/AdvancedGame" component={Link} variant={"contained"} color={"secondary"}>
                         Advanced Game</Button>
                 </div>
+                <StickyFooter/>
             </Fragment>
         );
     }

@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import "../../assets/stylesheets/prism.css";
 import Prism from "prismjs";
 import {navigate} from "@reach/router";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class ProblemFix extends Component {
     constructor(props) {
@@ -92,6 +93,7 @@ class ProblemFix extends Component {
                     </Button>
                     {ProblemFix.renderButton()}
                 </form>
+                <StickyFooter/>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button"
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class ProblemDiscovery extends Component {
     render() {
@@ -37,6 +38,7 @@ class ProblemDiscovery extends Component {
                 <Button href={"/Lab3/ProblemExplanation"} variant={"contained"} color={"primary"}>
                     I'm Done
                 </Button>
+                <StickyFooter/>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import {Typography} from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class AdvancedGame extends Component {
 
@@ -35,6 +36,7 @@ class AdvancedGame extends Component {
                         aria-label={"Start Game"}>
                     Start Game
                 </Button>
+                <StickyFooter/>
             </div>
         );
     }

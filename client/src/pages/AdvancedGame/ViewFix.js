@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {navigate} from "@reach/router";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class ViewFix extends Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class ViewFix extends Component {
                 <Button type={"submit"} variant={"contained"} color={"primary"} onClick={ViewFix.navOnClick}>
                     Next
                 </Button>
+                <StickyFooter/>
             </div>
         );
     }

@@ -6,6 +6,7 @@ import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import {Typography} from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import StickyFooter from "../../components/helpers/StickyFooter";
 
 class Game extends Component {
     constructor(props) {
@@ -61,6 +62,7 @@ class Game extends Component {
                     </tbody>
                 </table>
                 {this._renderSubComp()}
+                <StickyFooter/>
             </div>
 
         );
