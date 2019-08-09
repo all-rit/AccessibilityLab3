@@ -17,6 +17,11 @@ import InfoIcon from '@material-ui/icons/Info';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
 
 const variantIcon = {
     success: CheckCircleIcon,
@@ -89,7 +94,7 @@ class CodeChange extends Component {
     constructor(props) {
         super(props);
         document.body.style = 'background: white';
-        this.state = {textValue: '', textValue1: '', textValue2: '', textValue3: '', open: false};
+        this.state = {textValue: '', textValue1: '', textValue2: '', textValue3: '', snackBarOpen: false};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -167,6 +172,7 @@ class CodeChange extends Component {
         })
     }
 
+
     handleSubmit(event) {
         event.preventDefault();
         console.log('Cat Alt Tag updated as: ' + this.state.textValue);
@@ -175,7 +181,7 @@ class CodeChange extends Component {
         console.log('Car Alt Tag updated as: ' + this.state.textValue3);
         if (this.state.textValue === '' || this.state.textValue1 === '' ||
             this.state.textValue2 === '' || this.state.textValue3 === '') {
-            this.setState({open: true});
+            this.setState({snackBarOpen: true});
         } else {
             window.location.state = {
                 catAltValue: this.state.textValue,
@@ -256,7 +262,7 @@ class CodeChange extends Component {
                         vertical: 'bottom',
                         horizontal: 'left',
                     }}
-                    open={this.state.open}
+                    open={this.state.snackBarOpen}
                     autoHideDuration={6000}
                     onClose={this.handleClose}
                 >
