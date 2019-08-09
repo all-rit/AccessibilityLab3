@@ -3,6 +3,7 @@ import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
+import {Typography} from "@material-ui/core";
 
 class AcccessibleUserUpdatedGame extends Component {
     constructor(props) {
@@ -40,9 +41,10 @@ class AcccessibleUserUpdatedGame extends Component {
         const textStyle = {color: "white", tabIndex: "0"};
         return (
             <div>
-                <h1 style={textStyle} tabIndex={"0"}>Accessible Game</h1>
-                <p style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
-                    navigate by tabbing across the page. Press the enter key to select.</p>
+                <Typography variant={"h4"} aria-label={"Accessible Game"} style={textStyle} tabIndex={"0"}>Accessible Game</Typography>
+                <Typography variant={"h6"} aria-label={"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select."}
+                            style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
+                    navigate by tabbing across the page. Press the enter key to select.</Typography>
                 <table style={tableStyle} tabIndex={"0"}>
                     <tbody>
                     <tr>
