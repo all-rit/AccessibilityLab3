@@ -89,9 +89,11 @@ class CodeChange extends Component {
     constructor(props) {
         super(props);
         document.body.style = 'background: white';
-        this.state = {textValue: '', textValue1: '', open: false};
+        this.state = {textValue: '', textValue1: '', textValue2: '', textValue3: '', open: false};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
+        this.handleChange2 = this.handleChange2.bind(this);
+        this.handleChange3 = this.handleChange3.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
         CodeChange.renderButton = CodeChange.renderButton.bind(this);
@@ -101,7 +103,9 @@ class CodeChange extends Component {
             window.location.state = {
                 endButtonEnabled: true,
                 catAltValue: window.location.state.catAltValue,
-                carAltValue: window.location.state.carAltValue
+                carAltValue: window.location.state.carAltValue,
+                burgerAltValue: window.location.state.burgerAltValue,
+                cowAltValue: window.location.state.cowAltValue
             };
         }
     }
@@ -115,6 +119,12 @@ class CodeChange extends Component {
             const el1 = document.getElementById("second");
             el1.value = window.location.state.carAltValue;
             CodeChange.doEvent(el1, 'input');
+            const el2 = document.getElementById("third");
+            el2.value = window.location.state.burgerAltValue;
+            CodeChange.doEvent(el2, 'input');
+            const el3 = document.getElementById("fourth");
+            el3.value = window.location.state.cowAltValue;
+            CodeChange.doEvent(el3, 'input');
         }
     }
 
@@ -133,6 +143,20 @@ class CodeChange extends Component {
         });
     }
 
+    handleChange2(event) {
+        this.setState({textValue2: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue2);
+            Prism.highlightAll();
+        });
+    }
+
+    handleChange3(event) {
+        this.setState({textValue3: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue3);
+            Prism.highlightAll();
+        });
+    }
+
     handleClose(event, reason) {
         if (reason === 'clickaway') {
             return;
@@ -147,12 +171,17 @@ class CodeChange extends Component {
         event.preventDefault();
         console.log('Cat Alt Tag updated as: ' + this.state.textValue);
         console.log('Car Alt Tag updated as: ' + this.state.textValue1);
-        if (this.state.textValue === '' || this.state.textValue1 === '') {
+        console.log('Cat Alt Tag updated as: ' + this.state.textValue2);
+        console.log('Car Alt Tag updated as: ' + this.state.textValue3);
+        if (this.state.textValue === '' || this.state.textValue1 === '' ||
+            this.state.textValue2 === '' || this.state.textValue3 === '') {
             this.setState({open: true});
         } else {
             window.location.state = {
                 catAltValue: this.state.textValue,
                 carAltValue: this.state.textValue1,
+                burgerAltValue: this.state.textValue2,
+                cowAltValue: this.state.textValue3,
                 endButtonEnabled: true
             };
             navigate('/Lab3/AccessibleUserUpdatedGame');
@@ -200,8 +229,14 @@ class CodeChange extends Component {
                     className="language-html">{`" tabIndex="0"/></td>
 		</tr>
 		<tr>
-			<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="burger" tabIndex="0"/></td>
-			<td tabIndex="0"><input type="image" src="cow.png" onClick="(); => cowClick()" alt="cow" tabIndex="0"/></td>
+			<td tabIndex="0"><input type="image" src="burger.png" onClick="(); => burgerClick()" alt="`}</code><input
+                    type={"text"} id="third" value={this.state.textValue2}
+                    onChange={this.handleChange2} aria-label={"Please type in alt tag contents for this image"}/><code
+                    className="language-html"> {`"tabIndex="0"/></td>
+			<td tabIndex="0"><input type="image" src="cow.png" onClick="(); => cowClick()" alt="`}</code><input
+                    type={"text"} id="fourth" value={this.state.textValue3}
+                    onChange={this.handleChange3} aria-label={"Please type in alt tag contents for this image"}/><code
+                    className="language-html">{`" tabIndex="0"/></td>
 		</tr>
 	</tbody>
 </table>`}

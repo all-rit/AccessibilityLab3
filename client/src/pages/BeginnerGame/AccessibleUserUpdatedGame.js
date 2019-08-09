@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
+import cowImage from "../../assets/images/cow.jpg"
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import {Typography} from "@material-ui/core";
@@ -59,10 +60,10 @@ class AcccessibleUserUpdatedGame extends Component {
                     </tr>
                     <tr>
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage}
-                                                  onClick={() => burgerClick()} alt={"image of burger"} tabIndex={"0"}/>
+                                                  onClick={() => burgerClick()} alt={(window.location.state.burgerAltValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/>
                         </td>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
-                                                  onClick={() => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={cowImage}
+                                                  onClick={() => catClick()} alt={(window.location.state.cowAltValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/></td>
                     </tr>
                     </tbody>
                 </table>
