@@ -17,11 +17,6 @@ import InfoIcon from '@material-ui/icons/Info';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogActions from "@material-ui/core/DialogActions";
 
 const variantIcon = {
     success: CheckCircleIcon,
@@ -215,7 +210,8 @@ class CodeChange extends Component {
         const paperStyle = {marginLeft: "10px", marginRight: "10px", marginTop: "20px"};
         return (
             <div>
-                {<CodeUpdateHeader/>}
+                <CodeUpdateHeader heading={"Make Code Changes"} justifyAlignment={"space-between"}
+                                  helpMessage={"#Placeholder"}/>
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
                     <Paper style={paperStyle}>
 				<pre>

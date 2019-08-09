@@ -1,12 +1,10 @@
 import React, {Component} from "react";
-import {AppBar, Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import "../../assets/stylesheets/prism.css";
 import Prism from "prismjs";
 import {navigate} from "@reach/router";
 import StickyFooter from "../../components/helpers/StickyFooter";
-import Toolbar from "@material-ui/core/Toolbar";
-import Grid from "@material-ui/core/Grid";
 import WarningIcon from "@material-ui/icons/Warning";
 import ErrorIcon from '@material-ui/icons/Error';
 import InfoIcon from '@material-ui/icons/Info';
@@ -18,6 +16,8 @@ import CheckCircleIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import clsx from "clsx";
 import Snackbar from "@material-ui/core/Snackbar";
 import {amber, green, red, yellow} from "@material-ui/core/colors";
+import CodeUpdateHeader from "../../components/main/CodeUpdateHeader";
+import Paper from "@material-ui/core/Paper";
 
 const variantIcon = {
     success: CheckCircleIcon,
@@ -97,8 +97,10 @@ class ProblemFix extends Component {
         if (window.location.state === undefined) {
             window.location.state = {endAdvancedActivityButtonEnabled: false}
         } else {
-            window.location.state = {endAdvancedActivityButtonEnabled: true,
-                aria1: window.location.state.aria1, aria2: window.location.state.aria2}
+            window.location.state = {
+                endAdvancedActivityButtonEnabled: true,
+                aria1: window.location.state.aria1, aria2: window.location.state.aria2
+            }
         }
     }
 
@@ -169,30 +171,19 @@ class ProblemFix extends Component {
     }
 
     render() {
-        const appBarStyle = {flexGrow: "1"};
+        const paperStyle = {marginLeft: "10px", marginRight: "10px", marginTop: "20px"};
         return (
             <div>
-                <AppBar position="static" color={"primary"} style={appBarStyle}>
-                    <Toolbar>
-                        <Grid
-                            justify="center"
-                            container
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant={"h4"} aria-label={"Problem Fix"} gutterBottom>
-                                    Problem Fix
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Toolbar>
-                </AppBar>
-                <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
-                    Update the aria-tags to fix the accessibility issues.
-                </Typography><br/>
-                <Typography variant={"body1"} aria-label={"Body Instructions"} gutterBottom>
-                    Make changes and then press update Code.
-                </Typography>
+                <CodeUpdateHeader heading={"Problem Fix"} justifyAlignment={"space-between"}
+                                  helpMessage={"#Placeholder"}/>
+                <Paper style={paperStyle}>
+                    <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
+                        Update the aria-tags to fix the accessibility issues.
+                    </Typography>
+                    <Typography variant={"body1"} aria-label={"Body Instructions"} gutterBottom>
+                        Make changes and then press update code.
+                    </Typography>
+                </Paper>
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
                 <pre>
                     <code className="language-html">

@@ -9,6 +9,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
+import PropTypes from 'prop-types';
 
 class CodeUpdateHeader extends Component {
     constructor(props) {
@@ -20,22 +21,23 @@ class CodeUpdateHeader extends Component {
 
     render() {
         const appBarStyle = {flexGrow: "1"};
+        const {heading, justifyAlignment,helpMessage} = this.props;
         return (
             <div>
                 <AppBar position="static" color={"primary"} style={appBarStyle}>
                     <Toolbar>
                         <Grid
-                            justify="space-between"
+                            justify={justifyAlignment}
                             container
                             spacing={10}
                         >
                             <Grid item>
-                                <Button variant="contained" color="secondary" onClick={this.handleHelpDialogOpen}>
+                                <Button variant="contained" color="secondary" onClick={this.handleHelpDialogOpen} aria-label={"Help"}>
                                     Help
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Typography variant={"h4"} color={"inherit"}>Make Code Changes</Typography>
+                                <Typography variant={"h4"} color={"inherit"} aria-label={heading}>{heading}</Typography>
                             </Grid>
                         </Grid>
                     </Toolbar>
@@ -49,7 +51,7 @@ class CodeUpdateHeader extends Component {
                     <DialogTitle id="alert-dialog-title">{"Help and Instructions to Change Code"}</DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                            #Placeholder
+                            {helpMessage}
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -70,5 +72,9 @@ class CodeUpdateHeader extends Component {
         this.setState({helpDialogOpen: false});
     }
 }
-
+CodeUpdateHeader.propTypes ={
+    heading: PropTypes.string.isRequired,
+    justifyAlignment: PropTypes.string.isRequired,
+    helpMessage: PropTypes.string.isRequired
+};
 export default CodeUpdateHeader;
