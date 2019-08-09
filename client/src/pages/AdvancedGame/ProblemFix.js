@@ -62,8 +62,8 @@ function MySnackbarContentWrapper(props) {
             className={clsx(classes[variant], className)}
             aria-describedby="client-snackbar"
             message={
-                <span id="client-snackbar" className={classes.message} color={amber}>
-                    <Typography variant={"body2"} style={messageStyle} aria-label={message} gutterBottom>
+                <span id="client-snackbar" className={classes.message} color={amber} aria-label={message}>
+                    <Typography variant={"body2"} style={messageStyle} gutterBottom>
                       <Icon className={clsx(classes.icon, classes.iconVariant)}/> {message}
                     </Typography>
         </span>
