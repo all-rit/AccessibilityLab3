@@ -19,6 +19,7 @@
     "react-autosize-textarea": "latest",
     "react-color": "latest",
     "react-dom": "latest",
+    "react-helmet": "^5.2.1",
     "react-redux": "latest",
     "react-spinners": "latest",
     "redux": "latest",
