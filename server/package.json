@@ -13,7 +13,7 @@
     "bookshelf": "latest",
     "cookie-parser": "latest",
     "cookie-session": "latest",
-    "cors": "latest",
+    "cors": "^2.8.5",
     "dotenv": "latest",
     "express": "latest",
     "express-session": "latest",
