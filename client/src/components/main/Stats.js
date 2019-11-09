@@ -4,9 +4,7 @@ import {MILLISECONDS_IN_A_SECOND, TIMEOUT_MIN_MS, TIMER_SECONDS} from '../../con
 
 class Stats extends Component {
     calculatePercentage(time) {
-        const percentage = time / (TIMER_SECONDS * MILLISECONDS_IN_A_SECOND / TIMEOUT_MIN_MS) * 100;
-
-        return percentage;
+        return time / (TIMER_SECONDS * MILLISECONDS_IN_A_SECOND / TIMEOUT_MIN_MS) * 100;
     }
 
     render() {

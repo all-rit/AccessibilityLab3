@@ -12,9 +12,6 @@ const handleSignout = () => {
     })
         .then(res => res.text())
         .then(() => window.location.href = 'http://all.rit.edu/Lab3/')
-        .then(() => {
-            this.setState({'user': null,'loginEnabled': false})
-        })
         .catch(error => console.log(error))
 };
 
