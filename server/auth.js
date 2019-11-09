@@ -1,4 +1,3 @@
-//let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 let GoogleStrategy = require('passport-google-oauth20');
 
 module.exports = (passport) => {
