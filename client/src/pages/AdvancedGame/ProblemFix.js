@@ -139,13 +139,6 @@ class ProblemFix extends Component {
 
         this.setState({open: false}, () => {
             console.log('SnackBar Closed')
-        })
-    }
-
-    handleChange1(event) {
-        this.setState({textValue1: event.target.value}, () => {
-            console.log('handled change value: ' + this.state.textValue1);
-            Prism.highlightAll();
         });
     }
 
@@ -153,7 +146,10 @@ class ProblemFix extends Component {
         event.preventDefault();
         console.log('Cat Alt Tag updated as: ' + this.state.textValue);
         console.log('Car Alt Tag updated as: ' + this.state.textValue1);
-        if (this.state.textValue === '' || this.state.textValue1 === '') {
+        if (window.location.state.aria1 != null && window.location.state.aria2 != null) {
+            window.location.state = {aria1: this.state.textValue, aria2: this.state.textValue1};
+            navigate('/Lab3/ViewFix');
+        } else if (this.state.textValue === '' || this.state.textValue1 === '') {
             this.setState({open: true});
         } else {
             window.location.state = {aria1: this.state.textValue, aria2: this.state.textValue1};
