@@ -174,7 +174,14 @@ class CodeChange extends Component {
         console.log('Car Alt Tag updated as: ' + this.state.textValue1);
         console.log('Cat Alt Tag updated as: ' + this.state.textValue2);
         console.log('Car Alt Tag updated as: ' + this.state.textValue3);
-        if (this.state.textValue === '' || this.state.textValue1 === '' ||
+        if (window.location.state.carAltValue != null &&
+            window.location.state.catAltValue != null &&
+            window.location.state.burgerAltValue != null &&
+            window.location.state.cowAltValue != null &&
+            window.location.state.endButtonEnabled != null) {
+
+            navigate('/Lab3/AccessibleUserUpdatedGame');
+        } else if (this.state.textValue === '' || this.state.textValue1 === '' ||
             this.state.textValue2 === '' || this.state.textValue3 === '') {
             this.setState({snackBarOpen: true});
         } else {
