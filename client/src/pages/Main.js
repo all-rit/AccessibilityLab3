@@ -12,8 +12,6 @@ const mapStateToProps = (state) => {
     return {
         // General
         user: state.app.user,
-        popupMessage: state.app.popupMessage,
-        instructionsVisible: state.app.instructionsVisible,
 
     };
 };

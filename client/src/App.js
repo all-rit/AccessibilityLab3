@@ -24,7 +24,8 @@ import AdvancedGameConclusion from './pages/AdvancedGame/AdvancedGameConclusion'
 import ViewFix from './pages/AdvancedGame/ViewFix';
 
 const mapDispatchToProps = {
-  login: actions.login,
+    login: actions.login,
+    updateUser: actions.updateUser
 };
 
 // eslint-disable-next-line require-jsdoc
