@@ -49,22 +49,22 @@ class Game extends Component {
                     <tbody>
                         <tr>
                             <td>
-                                <button style={imgStyle} onClick={() => catClick()} alt={""}>
-                                    <img src={catImage} />
+                                <button style={imgStyle} onClick={() => catClick()} >
+                                    <img src={catImage} alt={""}/>
                                 </button>
                             </td>
                             <td>
-                                <button style={imgStyle} onClick={() => carClick()} alt={""} >
-                                    <img src={carImage} />
+                                <button style={imgStyle} onClick={() => carClick()}  >
+                                    <img src={carImage} alt={""}/>
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <button style={imgStyle} onClick={() => burgerClick()} alt={""}><img src={burgerImage} /></button>
+                                <button style={imgStyle} onClick={() => burgerClick()} ><img src={burgerImage} alt={""}/></button>
                             </td>
                             <td>
-                                <button style={imgStyle} onClick={() => catClick()} alt={""}><img src={catImage} /></button>
+                                <button style={imgStyle} onClick={() => catClick()} ><img src={catImage} alt={""}/></button>
                             </td>
                         </tr>
                     </tbody>
