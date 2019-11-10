@@ -162,7 +162,7 @@ class CodeChange extends Component {
             return;
         }
 
-        this.setState({open: false}, () => {
+        this.setState({snackBarOpen: false}, () => {
             console.log('SnackBar Closed')
         })
     }
