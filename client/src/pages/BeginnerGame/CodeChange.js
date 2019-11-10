@@ -179,7 +179,13 @@ class CodeChange extends Component {
             window.location.state.burgerAltValue != null &&
             window.location.state.cowAltValue != null &&
             window.location.state.endButtonEnabled != null) {
-
+            window.location.state = {
+                catAltValue: this.state.textValue,
+                carAltValue: this.state.textValue1,
+                burgerAltValue: this.state.textValue2,
+                cowAltValue: this.state.textValue3,
+                endButtonEnabled: true
+            };
             navigate('/Lab3/AccessibleUserUpdatedGame');
         } else if (this.state.textValue === '' || this.state.textValue1 === '' ||
             this.state.textValue2 === '' || this.state.textValue3 === '') {
