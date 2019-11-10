@@ -99,7 +99,8 @@ class ProblemFix extends Component {
         } else {
             window.location.state = {
                 endAdvancedActivityButtonEnabled: true,
-                aria1: window.location.state.aria1, aria2: window.location.state.aria2
+                aria1: window.location.state.aria1,
+                aria2: window.location.state.aria2
             }
         }
     }
