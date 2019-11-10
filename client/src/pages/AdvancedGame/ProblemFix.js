@@ -125,6 +125,13 @@ class ProblemFix extends Component {
 
     }
 
+    handleChange1(event) {
+        this.setState({textValue1: event.target.value}, () => {
+            console.log('handled change value: ' + this.state.textValue1);
+            Prism.highlightAll();
+        });
+    }
+
     handleClose(event, reason) {
         if (reason === 'clickaway') {
             return;
