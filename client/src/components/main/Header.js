@@ -35,7 +35,7 @@ class Header extends Component {
                         </Typography>
                         </Grid>
                         <Grid item>
-                        <WelcomeMessage user={user} loginEnabled={loginEnabled}/>
+                        <WelcomeMessage user={user}/>
                         </Grid>
                     </Grid>
                 </Toolbar>

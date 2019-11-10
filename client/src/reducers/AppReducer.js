@@ -1,6 +1,7 @@
 export const types = {
-    LOGIN: '@accessibility-lab/audio-cue/app/login',
-    UPDATE_USER: '@accessibility-lab/audio-cue/app/update_user',
+    LOGIN: '@accessibility-lab/app/login',
+    LOGOUT: '@accessibility-lab/app/logout',
+    UPDATE_USER: '@accessibility-lab/app/update_user',
 };
 
 export const initialState = {
@@ -14,7 +15,11 @@ export default (state = initialState, action) => {
                 ...state,
                 user: action.user
             };
-
+        case types.LOGOUT:
+            return {
+                ...state,
+                user: action.user
+            };
         default:
             return state;
     }
@@ -22,5 +27,6 @@ export default (state = initialState, action) => {
 
 export const actions = {
     login: () => ({type: types.LOGIN}),
+    logout: () => ({type:types.LOGOUT}),
     updateUser: (user) => ({type: types.UPDATE_USER, user}),
 };

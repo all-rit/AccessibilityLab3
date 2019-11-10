@@ -23,42 +23,48 @@ import BeginnerGameConclusion from './pages/BeginnerGame/BeginnerGameConclusion'
 import AdvancedGameConclusion from './pages/AdvancedGame/AdvancedGameConclusion';
 import ViewFix from './pages/AdvancedGame/ViewFix';
 
+const mapStateToProps = (state) => ({
+    state: state
+});
 const mapDispatchToProps = {
     login: actions.login,
+    logout: actions.logout,
     updateUser: actions.updateUser
 };
 
 // eslint-disable-next-line require-jsdoc
 class App extends Component {
-  // eslint-disable-next-line require-jsdoc
-  componentDidMount() {
-    this.props.login();
-  }
+    // eslint-disable-next-line require-jsdoc
+    componentDidMount() {
+        const {user} = this.props;
+        console.log(user);
+        this.props.login();
+    }
 
-  // eslint-disable-next-line require-jsdoc
-  render() {
-    return (
-      <Router basepath={process.env.PUBLIC_URL} className="app">
-        <Main path="/"/>
-        <Game path="/game"/>
-        <GameInstructions path={'/GameInstructions'}/>
-        <InaccessibleGame path={'/InAccessibleGame'}/>
-        <AccessibleInstructions path={'/AccessibleInstructions'}/>
-        <AccessibleGame path={'/AccessibleGame'}/>
-        <CodeChange path={'/CodeChange'}/>
-        <HelloWorld path={'/HelloWorld'}/>
-        <AdvancedGame path={'/AdvancedGame'}/>
-        <AdvancedInstructions path={'/AdvancedInstructions'}/>
-        <ProblemDiscovery path={'/ProblemDiscovery'}/>
-        <ProblemExplanation path={'/ProblemExplanation'}/>
-        <ProblemFix path={'/ProblemFix'}/>
-        <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'}/>
-        <BeginnerGameConclusion path={'/BeginnerGameConclusion'}/>
-        <AdvancedGameConclusion path={'/AdvancedGameConclusion'}/>
-        <ViewFix path={'/ViewFix'}/>
-      </Router>
-    );
-  }
+    // eslint-disable-next-line require-jsdoc
+    render() {
+        return (
+            <Router basepath={process.env.PUBLIC_URL} className="app">
+                <Main path="/"/>
+                <Game path="/game"/>
+                <GameInstructions path={'/GameInstructions'}/>
+                <InaccessibleGame path={'/InAccessibleGame'}/>
+                <AccessibleInstructions path={'/AccessibleInstructions'}/>
+                <AccessibleGame path={'/AccessibleGame'}/>
+                <CodeChange path={'/CodeChange'}/>
+                <HelloWorld path={'/HelloWorld'}/>
+                <AdvancedGame path={'/AdvancedGame'}/>
+                <AdvancedInstructions path={'/AdvancedInstructions'}/>
+                <ProblemDiscovery path={'/ProblemDiscovery'}/>
+                <ProblemExplanation path={'/ProblemExplanation'}/>
+                <ProblemFix path={'/ProblemFix'}/>
+                <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'}/>
+                <BeginnerGameConclusion path={'/BeginnerGameConclusion'}/>
+                <AdvancedGameConclusion path={'/AdvancedGameConclusion'}/>
+                <ViewFix path={'/ViewFix'}/>
+            </Router>
+        );
+    }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
