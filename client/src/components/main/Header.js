@@ -11,8 +11,7 @@ import Grid from "@material-ui/core/Grid";
 
 class Header extends Component {
     render() {
-        const {state, user, plays} = this.props;
-        const loginEnabled = !(plays > 0 || (plays === 0 && state !== GAME_IDLE));
+        const {user} = this.props;
         const buttonStyle = {marginTop: "5px"};
         const appBarStyle = {flexGrow: "1"};
         return (
