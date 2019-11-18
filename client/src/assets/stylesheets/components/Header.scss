@@ -28,3 +28,8 @@
     cursor: not-allowed;
   }
 }
+
+.MuiGrid-spacing-xs-10{
+  width: calc(100% + 80px);
+  margin: -40px 0px -40px 0px !important;
+}
