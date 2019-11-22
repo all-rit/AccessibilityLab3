@@ -11,7 +11,7 @@ const auth = require('./auth');
 const app = express();
 const port = process.env.PORT || 5001;
 
-const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5001', 'http://all.rit.edu','http://all.rit.edu:5001/user','http://localhost:3000'];
+const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5001', 'http://all.rit.edu','http://all.rit.edu:5001/user','http://localhost:3000','http://all.rit.edu:5001/logout','http://all.rit.edu:5001/'];
 
 app.use(passport.initialize());
 app.use(passport.session());

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-	const Login = sequelize.define(
+	return sequelize.define(
 		'login',
 		{
 			loginid: {
@@ -14,11 +14,9 @@ module.exports = (sequelize, DataTypes) => {
 			usersessionid: {
 				type: DataTypes.NUMBER(21)
 			},
-			location: { type: DataTypes.INET },
-			login: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
+			location: {type: DataTypes.INET},
+			login: {type: DataTypes.DATE, defaultValue: DataTypes.NOW}
 		},
-		{ tableName: 'login' }
+		{tableName: 'login'}
 	);
-
-	return Login;
 };

@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-	const Session = sequelize.define(
+	return sequelize.define(
 		'session',
 		{
-			usersessionid : {
+			usersessionid: {
 				type: DataTypes.NUMBER(21),
 				allowNull: false,
 				unique: true,
@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER
 			}
 		},
-		{ tableName: 'session' }
+		{tableName: 'session'}
 	);
-
-	return Session;
 };
