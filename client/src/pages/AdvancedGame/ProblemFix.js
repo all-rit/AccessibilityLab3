@@ -88,7 +88,6 @@ MySnackbarContentWrapper.propTypes = {
 class ProblemFix extends Component {
     constructor(props) {
         super(props);
-        this.state = {textValue: '', textValue1: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -96,12 +95,14 @@ class ProblemFix extends Component {
         ProblemFix.renderButton = ProblemFix.renderButton.bind(this);
         if (window.location.state === undefined) {
             window.location.state = {endAdvancedActivityButtonEnabled: false}
+            this.state = {textValue: '', textValue1: ''};
         } else {
             window.location.state = {
                 endAdvancedActivityButtonEnabled: true,
                 aria1: window.location.state.aria1,
                 aria2: window.location.state.aria2
-            }
+            };
+            this.state = {textValue: window.location.state.aria1,textValue1:window.location.state.aria2};
         }
     }
 
@@ -146,7 +147,8 @@ class ProblemFix extends Component {
         event.preventDefault();
         console.log('Cat Alt Tag updated as: ' + this.state.textValue);
         console.log('Car Alt Tag updated as: ' + this.state.textValue1);
-        if (window.location.state.aria1 != null && window.location.state.aria2 != null) {
+        if (window.location.state.aria1 != null && window.location.state.aria2 != null &&
+            window.location.state.aria1 !== '' && window.location.state.aria2 !== '') {
             window.location.state = {aria1: this.state.textValue, aria2: this.state.textValue1};
             navigate('/Lab3/ViewFix');
         } else if (this.state.textValue === '' || this.state.textValue1 === '') {
