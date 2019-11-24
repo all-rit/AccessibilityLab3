@@ -8,6 +8,7 @@ import AppBar from "@material-ui/core/AppBar/AppBar";
 
 class AdvancedGameConclusion extends Component {
     render() {
+        const appBarStyle = {flexGrow: "1"};
         return (
             <div>
                 <AppBar position="static" color={"primary"} style={appBarStyle}>
