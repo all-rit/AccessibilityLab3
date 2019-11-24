@@ -94,7 +94,7 @@ class ProblemFix extends Component {
         this.handleClose = this.handleClose.bind(this);
         ProblemFix.renderButton = ProblemFix.renderButton.bind(this);
         if (window.location.state === undefined) {
-            window.location.state = {endAdvancedActivityButtonEnabled: false}
+            window.location.state = {endAdvancedActivityButtonEnabled: false};
             this.state = {textValue: '', textValue1: ''};
         } else {
             window.location.state = {
