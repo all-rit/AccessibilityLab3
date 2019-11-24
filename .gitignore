@@ -11,3 +11,5 @@ backend/\.env
 
 .DS_Store
 \.idea/
+
+*.icloud
