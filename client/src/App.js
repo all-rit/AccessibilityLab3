@@ -37,7 +37,9 @@ class App extends Component {
     // eslint-disable-next-line require-jsdoc
     componentDidMount() {
         const {user} = this.props;
-        console.log(user);
+        if(user!== undefined){
+            console.log(user);
+        }
         this.props.login();
     }
 
