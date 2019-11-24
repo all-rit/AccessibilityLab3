@@ -89,7 +89,6 @@ class CodeChange extends Component {
     constructor(props) {
         super(props);
         document.body.style = 'background: white';
-        this.state = {textValue: '', textValue1: '', textValue2: '', textValue3: '', snackBarOpen: false};
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -98,7 +97,8 @@ class CodeChange extends Component {
         this.handleClose = this.handleClose.bind(this);
         CodeChange.renderButton = CodeChange.renderButton.bind(this);
         if (window.location.state === undefined) {
-            window.location.state = {endButtonEnabled: false}
+            window.location.state = {endButtonEnabled: false};
+            this.state = {textValue: '', textValue1: '', textValue2: '', textValue3: '', snackBarOpen: false};
         } else {
             window.location.state = {
                 endButtonEnabled: true,
@@ -107,6 +107,8 @@ class CodeChange extends Component {
                 burgerAltValue: window.location.state.burgerAltValue,
                 cowAltValue: window.location.state.cowAltValue
             };
+            this.state = {textValue: window.location.state.catAltValue,textValue1:window.location.state.carAltValue,textValue2:window.location.state.burgerAltValue,
+                textValue3:window.location.state.cowAltValue,}
         }
     }
 
