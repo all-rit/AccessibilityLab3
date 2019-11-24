@@ -1,8 +1,10 @@
 import React, {Component} from "react";
-import {Typography} from "@material-ui/core";
+import {AppBar, Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {navigate} from "@reach/router";
 import StickyFooter from "../../components/helpers/StickyFooter";
+import Toolbar from "@material-ui/core/Toolbar";
+import Grid from "@material-ui/core/Grid";
 
 class ViewFix extends Component {
     constructor(props) {
@@ -15,12 +17,25 @@ class ViewFix extends Component {
     }
 
     render() {
-
+        const appBarStyle = {flexGrow: "1"};
         return (
             <div>
-                <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
-                    Test Fix
-                </Typography><br/>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Grid
+                            justify="center"
+                            container
+                            spacing={10}
+                        >
+                            <Grid item>
+                                <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
+                                    Test Fix
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Toolbar>
+                </AppBar>
+                <br/>
                 <Typography variant={"h6"} aria-label={"Subtitle Instructions"} gutterBottom>
                     Is your page now more accessible?
                 </Typography><br/>
