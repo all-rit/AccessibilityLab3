@@ -183,6 +183,15 @@ class ProblemFix extends Component {
                 <CodeUpdateHeader heading={"Problem Fix"} justifyAlignment={"space-between"}
                                   helpMessage={"#Placeholder"}/>
                 <Paper style={paperStyle}>
+                    <Typography variant={"subtitle"} aria-label={"First make changes to the code, if not satisfied try again.\n" +
+                    "                    Then click the 'End Activity' button which will appear when you have made changes "
+                    + "at least once."}
+                                color={"inherit"} tabIndex={"0"}>
+                        First make changes to the code, if not satisfied try again.
+                        Then click the 'End Activity' button, which will appear when you have made changes at least once.
+                    </Typography>
+                </Paper>
+                <Paper style={paperStyle}>
                     <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
                         Update the aria-tags to fix the accessibility issues.
                     </Typography>

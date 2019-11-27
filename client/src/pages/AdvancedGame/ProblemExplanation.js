@@ -14,6 +14,7 @@ import WarningIcon from "@material-ui/icons/Warning";
 import ErrorIcon from '@material-ui/icons/Error';
 import InfoIcon from '@material-ui/icons/Info';
 import CloseIcon from '@material-ui/icons/Close';
+import Link from "@material-ui/core/Link";
 const variantIcon = {
     success: CheckCircleIcon,
     warning: WarningIcon,
@@ -103,10 +104,20 @@ class ProblemExplanation extends Component {
                 <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
                     How do we make the page more accessible?
                 </Typography><br/>
-                <Typography variant={"body1"} aria-label={"Body Instructions"} gutterBottom>
+                <Typography variant={"body1"} aria-label={"Body Instructions"} paragraph={true} gutterBottom>
                     The problem with the page is that we do not have the required ARIA attributes that
                     make the buttons accessible. They cannot be effectively described by the
-                    screenreaders.
+                    screenreaders. Specifically, we do not have the aria-label attribute that screenreaders can make use
+                    of to read text effectively.
+                </Typography>
+                <br/>
+                <Typography variant={"body1"} aria-label={"Aria Label definition"} paragraph={true} gutterBottom>
+                    As per <Link href={"https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/" +
+                "ARIA_Techniques/Using_the_aria-label_attribute"}>developer.mozilla.org</Link>: <br/>
+                    The aria-label attribute is used to define a string that labels the current element.
+                    Use it in cases where a text label is not visible on the screen.
+                    If there is visible text labeling the element, use aria-labelledby instead. This attribute can be
+                    used with any typical HTML element; it is not limited to elements that have an ARIA role assigned.
                 </Typography>
                 <br/>
                 <Button variant={"text"}>Ok</Button>

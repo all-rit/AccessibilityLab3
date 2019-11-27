@@ -35,7 +35,7 @@ export default function StickyFooter() {
           <Container maxWidth="xs">
             <Typography variant="body1" color="textSecondary"
                         aria-label={"Accessibility Learning Labs Footer"}>
-              <Link color="inherit" href="http://all.rit.edu" tabIndex={"0"}>
+              <Link color="inherit" href="http://all.rit.edu" tabIndex={"0"} aria-label={"Accessibility Learning Labs"}>
                 Accessibility Learning Labs
               </Link>
             </Typography>

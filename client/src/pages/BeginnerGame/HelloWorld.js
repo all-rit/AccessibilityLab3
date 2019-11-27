@@ -4,15 +4,23 @@ import helloWorldImage from "../../assets/images/hello_world.png";
 import {Link} from "@material-ui/core";
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import AppBar from "@material-ui/core/AppBar/AppBar";
 
 class HelloWorld extends Component {
     render() {
         const tableStyle = {border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center"};
+        const appBarStyle = { flexGrow: "1" };
         return (
             <div>
-                <Typography variant={"h4"} aria-label={"Hello World Example Page For Accessibility"}>
-                    Hello World Example Page For Accessibility
-                </Typography>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Typography variant={"h4"} aria-label={"Hello World Example Page For Accessibility"}
+                                    color={"inherit"} tabIndex={"0"}>
+                            Hello World Example Page For Accessibility
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
                 <br/>
                 <Typography variant={"subtitle1"} aria-label={"Images"}>
                     Images

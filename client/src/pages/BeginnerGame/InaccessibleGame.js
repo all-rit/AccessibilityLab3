@@ -3,6 +3,7 @@ import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
+import cowImage from "../../assets/images/cow.jpg";
 import {navigate} from "@reach/router";
 import {AppBar} from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -59,7 +60,9 @@ class InaccessibleGame extends Component {
         const carClick = () => {
             console.log('Car image clicked!');
         };
-
+        const cowClick = () => {
+            console.log('Cow image clicked!');
+        };
         const imgStyle = {
             width: "128px", height: "128px", border: "1px solid black", opacity: "0.0",
             tabIndex: "0"
@@ -72,7 +75,7 @@ class InaccessibleGame extends Component {
         const textStyle = {color: 'white', tabIndex: "0"};
         return (
             <div>
-                <AppBar position="static" color={"black"} style={appBarStyle}>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
                     <Toolbar>
                         <Grid
                             justify="center"
@@ -101,7 +104,7 @@ class InaccessibleGame extends Component {
                                                   onFocus={this.onFocusGain}
                                                   onKeyPress={this.handleKeyDown.bind(this, 'c1')}
                                                   onfocusout={this.onFocusLoss.bind(this, 'c1')}
-                                                  className={"c1"}/>
+                                                  className={"c1"} aria-label={"image1"}/>
                         </td>
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={carImage}
                                                   onClick={() => carClick()} alt={""} tabIndex={"0"}
@@ -109,7 +112,7 @@ class InaccessibleGame extends Component {
                                                   onFocus={this.onFocusGain}
                                                   onKeyPress={this.handleKeyDown.bind(this, 'c2')}
                                                   onfocusout={this.onFocusLoss.bind(this, 'c2')}
-                                                  className={"c2"}/>
+                                                  className={"c2"} aria-label={"image2"}/>
                         </td>
                     </tr>
                     <tr>
@@ -120,15 +123,15 @@ class InaccessibleGame extends Component {
                                                   onFocus={this.onFocusGain}
                                                   onKeyPress={this.handleKeyDown.bind(this, 'c3')}
                                                   onfocusout={this.onFocusLoss.bind(this, 'c3')}
-                                                  className={"c3"}/></td>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
-                                                  onClick={() => catClick()} alt={""}
+                                                  className={"c3"} aria-label={"image3"}/></td>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={cowImage}
+                                                  onClick={() => cowClick()} alt={""}
                                                   tabIndex={"0"}
                                                   onKeyDown={this.handleKeyDown}
                                                   onKeyPress={this.handleKeyDown}
                                                   onFocus={this.onFocusGain.bind(this, 'c4')}
                                                   onfocusout={this.onFocusLoss.bind(this, 'c4')}
-                                                  className={"c4"}/>
+                                                  className={"c4"} aria-label={"image4"}/>
                         </td>
                     </tr>
                     </tbody>

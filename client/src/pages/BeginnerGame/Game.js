@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
+import cowImage from "../../assets/images/cow.jpg";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import { Typography } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
@@ -31,6 +32,9 @@ class Game extends Component {
         const carClick = () => {
             console.log('Car image clicked!');
         };
+        const cowClick = () => {
+            console.log('Cow image clicked!');
+        };
         const appBarStyle = { flexGrow: "1" };
         const imgStyle = { width: "128px", height: "128px", border: "1px solid black" };
         const tableStyle = { border: "1px solid black", marginLeft: "auto", marginRight: "auto", textAlign: "center" };
@@ -50,21 +54,25 @@ class Game extends Component {
                         <tr>
                             <td>
                                 <button style={imgStyle} onClick={() => catClick()} >
-                                    <img src={catImage} alt={""}/>
+                                    <img src={catImage} alt={"image1"}/>
                                 </button>
                             </td>
                             <td>
                                 <button style={imgStyle} onClick={() => carClick()}  >
-                                    <img src={carImage} alt={""}/>
+                                    <img src={carImage} alt={"image2"}/>
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <button style={imgStyle} onClick={() => burgerClick()} ><img src={burgerImage} alt={""}/></button>
+                                <button style={imgStyle} onClick={() => burgerClick()} >
+                                    <img src={burgerImage} alt={"image3"}/>
+                                </button>
                             </td>
                             <td>
-                                <button style={imgStyle} onClick={() => catClick()} ><img src={catImage} alt={""}/></button>
+                                <button style={imgStyle} onClick={() => cowClick()} >
+                                    <img src={cowImage} alt={"image4"}/>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

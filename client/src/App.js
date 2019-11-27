@@ -22,7 +22,7 @@ import AccessibleUserUpdatedGame from './pages/BeginnerGame/AccessibleUserUpdate
 import BeginnerGameConclusion from './pages/BeginnerGame/BeginnerGameConclusion';
 import AdvancedGameConclusion from './pages/AdvancedGame/AdvancedGameConclusion';
 import ViewFix from './pages/AdvancedGame/ViewFix';
-
+import ProblemDiscoveryFixedExperience from './pages/AdvancedGame/ProblemDiscoveryFixedExperience';
 const mapStateToProps = (state) => ({
     state: state
 });
@@ -59,6 +59,7 @@ class App extends Component {
                 <AdvancedInstructions path={'/AdvancedInstructions'}/>
                 <ProblemDiscovery path={'/ProblemDiscovery'}/>
                 <ProblemExplanation path={'/ProblemExplanation'}/>
+                <ProblemDiscoveryFixedExperience path ={'/ProblemDiscoveryFixedExperience'}/>
                 <ProblemFix path={'/ProblemFix'}/>
                 <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'}/>
                 <BeginnerGameConclusion path={'/BeginnerGameConclusion'}/>

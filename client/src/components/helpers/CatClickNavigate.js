@@ -20,7 +20,7 @@ class CatClickNavigate extends Component {
     }
 
     render() {
-        const typographyStyle = {color: "white"};
+        const typographyStyle = {color: "black"};
         return (
 
             <div id={"catClickMessage"}>
@@ -28,6 +28,7 @@ class CatClickNavigate extends Component {
                             tabIndex={"0"} style={typographyStyle}>
                     Cat clicked! Please click the 'next' button to continue.
                 </Typography>
+                <br/>
                 <Button component={Link} onClick={CatClickNavigate.handleOnclick} variant="contained">Next</Button>
             </div>
         );

@@ -5,8 +5,10 @@ import cowImage from "../../assets/images/cow.jpg"
 import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import {Typography} from "@material-ui/core";
+import Toolbar from "@material-ui/core/Toolbar";
+import AppBar from "@material-ui/core/AppBar/AppBar";
 
-class AcccessibleUserUpdatedGame extends Component {
+class AccessibleUserUpdatedGame extends Component {
     constructor(props) {
         super(props);
         this.state = {render: ''};
@@ -30,7 +32,9 @@ class AcccessibleUserUpdatedGame extends Component {
         const carClick = () => {
             console.log('Car image clicked!');
         };
-
+        const cowClick = () => {
+            console.log('Cow image clicked!');
+        };
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black", opacity: "0.0", tabIndex: "0"};
         const tableStyle = {
             border: "1px solid black",
@@ -39,10 +43,18 @@ class AcccessibleUserUpdatedGame extends Component {
             textAlign: "center",
             tabIndex: "0"
         };
+        const appBarStyle = { flexGrow: "1" };
         const textStyle = {color: "white", tabIndex: "0"};
         return (
             <div>
-                <Typography variant={"h4"} aria-label={"Accessible Game"} style={textStyle} tabIndex={"0"}>Accessible Game</Typography>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Typography variant={"h4"} aria-label={"Accessible Game"} style={textStyle} tabIndex={"0"}>
+                            Accessible Game
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <br/>
                 <Typography variant={"h6"} aria-label={"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select."}
                             style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
                     navigate by tabbing across the page. Press the enter key to select.</Typography>
@@ -63,7 +75,7 @@ class AcccessibleUserUpdatedGame extends Component {
                                                   onClick={() => burgerClick()} alt={(window.location.state.burgerAltValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/>
                         </td>
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={cowImage}
-                                                  onClick={() => catClick()} alt={(window.location.state.cowAltValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/></td>
+                                                  onClick={() => cowClick()} alt={(window.location.state.cowAltValue).replace(/<[^>]*>?/gm, '')} tabIndex={"0"}/></td>
                     </tr>
                     </tbody>
                 </table>
@@ -74,4 +86,4 @@ class AcccessibleUserUpdatedGame extends Component {
     }
 }
 
-export default AcccessibleUserUpdatedGame;
+export default AccessibleUserUpdatedGame;

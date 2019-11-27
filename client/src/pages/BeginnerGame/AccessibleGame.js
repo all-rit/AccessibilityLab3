@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import catImage from "../../assets/images/c1.svg";
 import carImage from "../../assets/images/c2.svg";
 import burgerImage from "../../assets/images/b.png";
+import cowImage from "../../assets/images/cow.jpg";
 import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
+import Toolbar from "@material-ui/core/Toolbar";
+import {Typography} from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar/AppBar";
 
 class AcccessibleGame extends Component {
     constructor(props) {
@@ -28,7 +32,9 @@ class AcccessibleGame extends Component {
         const carClick = () => {
             console.log('Car image clicked!');
         };
-
+        const cowClick = () => {
+            console.log('Cow image clicked!');
+        };
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black", opacity: "0.0", tabIndex: "0"};
         const tableStyle = {
             border: "1px solid black",
@@ -37,10 +43,18 @@ class AcccessibleGame extends Component {
             textAlign: "center",
             tabIndex: "0"
         };
+        const appBarStyle = { flexGrow: "1" };
         const textStyle = {color: "white", tabIndex: "0"};
         return (
             <div>
-                <h1 style={textStyle} tabIndex={"0"}>Accessible Game</h1>
+                <AppBar position="static" color={"primary"} style={appBarStyle}>
+                    <Toolbar>
+                        <Typography variant={"h4"} aria-label={"Click on the image of a cat"}
+                                    color={"inherit"} tabIndex={"0"}>
+                            Accessible Game
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
                 <p style={textStyle} tabIndex={"0"}>Click on the image of a cat. You can use the keyboard to
                     navigate by tabbing across the page. Press the enter key to select.</p>
                 <table style={tableStyle} tabIndex={"0"}>
@@ -55,8 +69,8 @@ class AcccessibleGame extends Component {
                         <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={burgerImage}
                                                   onClick={() => burgerClick()} alt={"image of burger"} tabIndex={"0"}/>
                         </td>
-                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={catImage}
-                                                  onClick={() => catClick()} alt={"image of cat"} tabIndex={"0"}/></td>
+                        <td tabIndex={"0"}><input style={imgStyle} type={"image"} src={cowImage}
+                                                  onClick={() => cowClick()} alt={"image of cow"} tabIndex={"0"}/></td>
                     </tr>
                     </tbody>
                 </table>

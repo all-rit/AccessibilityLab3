@@ -60,6 +60,7 @@ class CodeUpdateHeader extends Component {
                         </Button>
                     </DialogActions>
                 </Dialog>
+                <br/>
             </div>
         );
     }

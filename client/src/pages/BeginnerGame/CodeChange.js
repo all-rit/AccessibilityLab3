@@ -227,6 +227,13 @@ class CodeChange extends Component {
             <div>
                 <CodeUpdateHeader heading={"Make Code Changes"} justifyAlignment={"space-between"}
                                   helpMessage={"#Placeholder"}/>
+                <Typography variant={"subtitle"} aria-label={"First make changes to the code, if not satisfied try again.\n" +
+                "                    Then click the 'End Activity' button which will appear when you have made changes "
+                + "at least once."}
+                            color={"inherit"} tabIndex={"0"}>
+                    First make changes to the code, if not satisfied try again.
+                    Then click the 'End Activity' button, which will appear when you have made changes at least once.
+                </Typography>
                 <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
                     <Paper style={paperStyle}>
 				<pre>

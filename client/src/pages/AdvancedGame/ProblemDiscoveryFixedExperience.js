@@ -8,7 +8,7 @@ import StickyFooter from "../../components/helpers/StickyFooter";
 import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
 
-class ProblemDiscovery extends Component {
+class ProblemDiscoveryFixedExperience extends Component {
     render() {
         const imgStyle = {width: "128px", height: "128px", border: "1px solid black", tabIndex: "0"};
         const appBarStyle = {flexGrow: "1"};
@@ -22,8 +22,8 @@ class ProblemDiscovery extends Component {
                             spacing={10}
                         >
                             <Grid item>
-                                <Typography variant={"h4"} aria-label={"Discover the problem"} gutterBottom>
-                                    Discover the Problem
+                                <Typography variant={"h4"} aria-label={"Discover the problem"} tabIndex={"0"} gutterBottom>
+                                    Fixed Version of Previous Page
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -31,27 +31,23 @@ class ProblemDiscovery extends Component {
                 </AppBar>
                 <br/>
                 <Typography variant={"subtitle1"} aria-label={"Subtitle Instructions"} gutterBottom>
-                    Can you find the accessibility issues with this page? Try using your screenreader.
+                    The accessibility issues have been fixed here. All images say what their contents are as such like
+                    'cat', 'burger' and 'car' etc. and not 'image of cat', 'image of burger', 'image of car' etc. .
+                    Try using your screenreader now.
                 </Typography><br/>
-                <Typography variant={"body1"} aria-label={"Body Instructions"} gutterBottom>
-                    Write down the problems on a notepad or any other text editor.
-                    Go ahead take a guess. Don't actually click on the Ok and Cancel buttons.
-                    They are there for the example.
-                </Typography>
-                <br/>
                 <input style={imgStyle} type={"image"} src={catImage}
                        alt={"cat"} tabIndex={"0"}/>
                 <br/>
                 <input style={imgStyle} type={"image"} src={carImage}
-                       alt={"image of car"} tabIndex={"0"}/>
+                       alt={"car"} tabIndex={"0"}/>
                 <br/>
                 <input style={imgStyle} type={"image"} src={burgerImage}
-                       alt={"image of burger"} tabIndex={"0"}/>
+                       alt={"burger"} tabIndex={"0"}/>
                 <br/>
-                <Button variant={"text"}>Ok</Button>
-                <Button variant={"text"}>Cancel</Button>
+                <Button variant={"text"} aria-label={"Ok"}>Ok</Button>
+                <Button variant={"text"} aria-label={"Cancel"}>Cancel</Button>
                 <br/>
-                <Button href={"/Lab3/ProblemDiscoveryFixedExperience"} variant={"contained"} color={"primary"}>
+                <Button href={"/Lab3/ProblemExplanation"} variant={"contained"} color={"primary"}>
                     Next
                 </Button>
                 <StickyFooter/>
@@ -60,4 +56,4 @@ class ProblemDiscovery extends Component {
     }
 }
 
-export default ProblemDiscovery;
+export default ProblemDiscoveryFixedExperience;
