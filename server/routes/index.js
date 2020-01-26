@@ -3,6 +3,7 @@ let router = express.Router();
 
 // Controller modules
 let UserController = require('../controllers/UserController');
+let PageController = require('../controllers/PageController');
 
 // User Routes
 router.get('/auth/google', UserController.authenticate);
