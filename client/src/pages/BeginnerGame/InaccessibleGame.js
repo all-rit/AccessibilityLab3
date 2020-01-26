@@ -9,11 +9,12 @@ import {AppBar} from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import PageService from "../../services/PageService";
 
 class InaccessibleGame extends Component {
     constructor(props) {
         super(props);
-        this.state = {render: ''};
+        this.state = {render: '', secondsElapsed:0};
         document.body.style = 'background: black';
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
@@ -23,12 +24,19 @@ class InaccessibleGame extends Component {
             return <CatClickNavigate path={path}/>
         }
     }
+    componentDidMount() {
+        this.interval = setInterval(()=>this.setState({secondsElapsed: this.state.secondsElapsed + 1}), 1000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    };
 
     handleKeyDown(event) {
         console.log('detected key code is: ' + event.keyCode);
         if (event.keyCode === 27) {
             console.log('Enter key pressed!');
-            navigate("/Lab3/AccessibleInstructions");
+            navigate("/Lab4/AccessibleInstructions");
         }
     }
 
@@ -52,6 +60,8 @@ class InaccessibleGame extends Component {
 
         const catClick = () => {
             console.log('Cat image clicked!');
+            const name = "InaccessibleGame";
+            PageService.createPage(name, this.state.secondsElapsed);
             this.setState({render: 'CatClickNavigate'});
         };
         const burgerClick = () => {
@@ -136,7 +146,7 @@ class InaccessibleGame extends Component {
                     </tr>
                     </tbody>
                 </table>
-                {this._renderSubComp("/Lab3/AccessibleInstructions")}
+                {this._renderSubComp("/Lab4/AccessibleInstructions")}
             </div>
 
         );

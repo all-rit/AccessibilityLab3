@@ -8,22 +8,32 @@ import { Typography } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import StickyFooter from "../../components/helpers/StickyFooter";
+import PageService from "../../services/PageService";
 
 class Game extends Component {
     constructor(props) {
         super(props);
-        this.state = { render: '' };
+        this.state = { render: '', secondsElapsed:0 };
     }
 
     _renderSubComp() {
         if (this.state.render === 'CatClickNavigate') {
-            return <CatClickNavigate path={"/Lab3/GameInstructions"} />
+            return <CatClickNavigate path={"/Lab4/GameInstructions"} />
         }
+    }
+    componentDidMount() {
+        this.interval = setInterval(()=>this.setState({secondsElapsed: this.state.secondsElapsed + 1}), 1000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     render() {
         const catClick = () => {
             console.log('Cat image clicked!');
+            const name = "Game";
+            PageService.createPage(name, this.state.secondsElapsed);
             this.setState({ render: 'CatClickNavigate' });
         };
         const burgerClick = () => {

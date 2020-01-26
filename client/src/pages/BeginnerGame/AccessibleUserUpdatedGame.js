@@ -7,22 +7,32 @@ import CatClickNavigate from '../../components/helpers/CatClickNavigate.js'
 import {Typography} from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "@material-ui/core/AppBar/AppBar";
+import PageService from "../../services/PageService";
 
 class AccessibleUserUpdatedGame extends Component {
     constructor(props) {
         super(props);
-        this.state = {render: ''};
+        this.state = {render: '', secondsElapsed:0};
         document.body.style = 'background: black';
     }
 
     _renderSubComp() {
         if (this.state.render === 'CatClickNavigate') {
-            return <CatClickNavigate path={"/Lab3/CodeChange"}/>
+            return <CatClickNavigate path={"/Lab4/CodeChange"}/>
         }
     }
+    componentDidMount() {
+        this.interval = setInterval(()=>this.setState({secondsElapsed: this.state.secondsElapsed + 1}), 1000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    };
 
     render() {
         const catClick = () => {
+            const name = "AccessibleUserUpdatedGame";
+            PageService.createPage(name, this.state.secondsElapsed);
             console.log('Cat image clicked!');
             this.setState({render: 'CatClickNavigate'});
         };
