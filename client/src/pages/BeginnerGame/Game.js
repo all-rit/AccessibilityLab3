@@ -18,7 +18,7 @@ class Game extends Component {
 
     _renderSubComp() {
         if (this.state.render === 'CatClickNavigate') {
-            return <CatClickNavigate path={"/Lab4/GameInstructions"} />
+            return <CatClickNavigate path={"/Lab3/GameInstructions"} />
         }
     }
     componentDidMount() {
