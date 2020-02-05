@@ -16,20 +16,32 @@
   background-image: image("../../images/btn_google_signin_dark_normal_web.png");
 
   &:not(&--disabled):hover {
-    background-image: image("../../images/btn_google_signin_dark_focus_web.png");
+    background-image: image(
+      "../../images/btn_google_signin_dark_focus_web.png"
+    );
   }
 
   &:not(&--disabled):active {
-    background-image: image("../../images/btn_google_signin_dark_pressed_web.png");
+    background-image: image(
+      "../../images/btn_google_signin_dark_pressed_web.png"
+    );
   }
 
   &--disabled {
-    background-image: image("../../images/btn_google_signin_dark_disabled_web.png");
+    background-image: image(
+      "../../images/btn_google_signin_dark_disabled_web.png"
+    );
     cursor: not-allowed;
   }
 }
 
-.MuiGrid-spacing-xs-10{
-  width: calc(100% + 80px);
-  margin: -40px 0px -40px 0px !important;
+.welcome {
+  position: relative;
+
+  &__logout {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -1.15rem;
+    right: 0.05rem;
+  }
 }
