@@ -48,13 +48,13 @@ class GameInstructions extends Component {
             You clicked on an image. However, without the ability to see, it may
             be difficult to decipher what these images represent. Please make
             sure you are using
-            <Link component={Link} href={"https://www.google.com/chrome/"}>
+            <Link component={Link} target="_blank" href={"https://www.google.com/chrome/"}>
               {" "}
               Google Chrome
             </Link>
             . Please install the{" "}
             <Link
-              component={Link}
+              component={Link} target="_blank"
               href={
                 "https://chrome.google.com/webstore/" +
                 "detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"

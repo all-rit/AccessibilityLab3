@@ -143,6 +143,7 @@ class ProblemExplanation extends Component {
         >
           As per{" "}
           <Link
+              target="_blank"
             href={
               "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/" +
               "ARIA_Techniques/Using_the_aria-label_attribute"
