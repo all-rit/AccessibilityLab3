@@ -33,16 +33,18 @@ class Main extends Component {
   }
   render() {
     const { user, state, plays } = this.props;
-    const buttonStyle = {
-      marginRight: "10px",
-      marginLeft: "10px"
+    const buttonStyleLeft = {
+      marginTop:10,
+      marginRight:2
+    };
+    const buttonStyleRight = {
+      marginTop:10,
+      marginLeft:2
     };
     return (
       <Fragment>
-        <div>
-          <Header state={state} user={user} plays={plays} />
-        </div>
-        <div>
+
+        <div class="center-div">
           <AppInstructions />
           <Button
             href="#"
@@ -50,7 +52,7 @@ class Main extends Component {
             component={Link}
             variant={"contained"}
             color={"primary"}
-            style={buttonStyle}
+            style={buttonStyleLeft}
           >
             Beginner Game
           </Button>
@@ -60,9 +62,12 @@ class Main extends Component {
             component={Link}
             variant={"contained"}
             color={"secondary"}
+            style={buttonStyleRight}
+
           >
             Advanced Game
           </Button>
+          <Header state={state} user={user} plays={plays} />
         </div>
       </Fragment>
     );

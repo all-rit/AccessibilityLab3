@@ -6,11 +6,9 @@ import Grid from "@material-ui/core/Grid";
 
 class Header extends Component {
   render() {
-    const buttonStyle = { marginTop: "5px" };
+    const buttonStyle = { marginTop: "5px", margin:"auto"};
     return (
       <Toolbar>
-        <Grid justify="space-between" container spacing={10}>
-          <Grid item>
             <Button
               href={"/Lab3/HelloWorld"}
               variant={"contained"}
@@ -18,8 +16,7 @@ class Header extends Component {
             >
               Screenreader Tutorial
             </Button>
-          </Grid>
-        </Grid>
+
       </Toolbar>
     );
   }

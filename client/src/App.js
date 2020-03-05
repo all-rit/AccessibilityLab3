@@ -184,38 +184,38 @@ class App extends Component {
                 </li>
               </ul>
             </div>
+            <Google />
           </div>
-          <Google />
         </nav>
 
         <div>{section[this.state.count]}</div>
 
-        <button
-          class="btn btn-second btn-xl text-uppercase js-scroll-trigger back "
-          onClick={this.handleDecrement}
-          disabled={this.disappearBack() ? "disabled" : false}
-        >
-          back
-        </button>
-        <button
-          class="btn btn-primary btn-xl text-uppercase js-scroll-trigger next"
-          onClick={this.handleIncrement}
-          disabled={this.disappearNext() ? "disabled" : false}
-        >
-          next
-        </button>
 
+        <div class="container">
+          <button
+              className="btn btn-second btn-xl text-uppercase js-scroll-trigger back "
+              onClick={this.handleDecrement}
+              disabled={this.disappearBack() ? "disabled" : false}
+          >
+            back
+          </button>
+          <button
+              className="btn btn-primary btn-xl text-uppercase js-scroll-trigger next"
+              onClick={this.handleIncrement}
+              disabled={this.disappearNext() ? "disabled" : false}
+          >
+            next
+          </button>
         <footer class="footer">
           <div class="btn-change">
-            <p>
-              <Change />
-              <br />
-              <br />
-              These buttons are disabled so as to not interfere with the
-              accessibility-related portions of the lab.
-            </p>
+            <Change />
+          </div>
+          <div class="btn-information">
+            These buttons are disabled so as to not interfere with the
+            accessibility-related portions of the lab.
           </div>
         </footer>
+      </div>
       </div>
     );
   }
