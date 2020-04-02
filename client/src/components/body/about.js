@@ -23,15 +23,13 @@ const About = ({ title, description, links }) => {
           </div>
         </div>
       </section>
-      <div class="study">
-      <p>
+      <div class="row">
         In this lab, you will learn about why it is important to create software
-        that is accessible to users who utilize screen readers.
+        that is accessible to users who utilize screenreaders.
         You will learn about using alt tags,
         increase your understanding through an interactive module about 
-        screen readers and alt tags, watch related videos, and take a quiz
+        screenreaders and alt tags, watch related videos, and take a quiz 
         to test your knowledge. Click "Next" to start!
-      </p>
       </div>
     </div>
   );
