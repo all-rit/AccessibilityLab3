@@ -43,9 +43,19 @@ class Game extends Component {
 
   render() {
     const catClick = () => {
+      console.log("Cat image clicked!");
       const name = "Game";
       PageService.createPage(name, this.state.secondsElapsed);
       this.setState({ render: "CatClickNavigate" });
+    };
+    const burgerClick = () => {
+      console.log("Burger image clicked!");
+    };
+    const carClick = () => {
+      console.log("Car image clicked!");
+    };
+    const cowClick = () => {
+      console.log("Cow image clicked!");
     };
     const imgStyle = {
       width: "128px",
