@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 class ViewFix extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +15,14 @@ class ViewFix extends Component {
   }
 
   static navOnClick() {
-    navigate("/ProblemFix");
+    navigate(process.env.PUBLIC_URL +"/ProblemFix");
   }
+    componentDidMount() {
+        const { data, actions } = this.props;
+        actions.updateState(GAME_PLAYING);
+    }
 
-  render() {
+    render() {
     const appBarStyle = { flexGrow: "1" };
     return (
       <div>

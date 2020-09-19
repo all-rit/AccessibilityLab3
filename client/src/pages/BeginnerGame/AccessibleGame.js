@@ -12,7 +12,7 @@ import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
 
-class AcccessibleGame extends Component {
+class AccessibleGame extends Component {
   constructor(props) {
     super(props);
     this.state = { render: "", secondsElapsed: 0 };
@@ -140,4 +140,4 @@ class AcccessibleGame extends Component {
   }
 }
 
-export default AcccessibleGame;
+export default AccessibleGame;

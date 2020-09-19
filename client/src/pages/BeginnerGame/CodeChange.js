@@ -20,6 +20,7 @@ import Typography from "@material-ui/core/Typography";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 const variantIcon = {
   success: CheckCircleIcon,
@@ -136,6 +137,8 @@ class CodeChange extends Component {
   }
 
   componentDidMount() {
+    const { data, actions } = this.props;
+    actions.updateState(GAME_PLAYING);
     Prism.highlightAll();
     if (
       window.location.state.catAltValue !== undefined &&
@@ -158,28 +161,24 @@ class CodeChange extends Component {
 
   handleChange(event) {
     this.setState({ textValue: event.target.value }, () => {
-      console.log("handled change value: " + this.state.textValue);
       Prism.highlightAll();
     });
   }
 
   handleChange1(event) {
     this.setState({ textValue1: event.target.value }, () => {
-      console.log("handled change value: " + this.state.textValue1);
       Prism.highlightAll();
     });
   }
 
   handleChange2(event) {
     this.setState({ textValue2: event.target.value }, () => {
-      console.log("handled change value: " + this.state.textValue2);
       Prism.highlightAll();
     });
   }
 
   handleChange3(event) {
     this.setState({ textValue3: event.target.value }, () => {
-      console.log("handled change value: " + this.state.textValue3);
       Prism.highlightAll();
     });
   }
@@ -190,16 +189,11 @@ class CodeChange extends Component {
     }
 
     this.setState({ snackBarOpen: false }, () => {
-      console.log("SnackBar Closed");
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("Cat Alt Tag updated as: " + this.state.textValue);
-    console.log("Car Alt Tag updated as: " + this.state.textValue1);
-    console.log("Cat Alt Tag updated as: " + this.state.textValue2);
-    console.log("Car Alt Tag updated as: " + this.state.textValue3);
     if (
       window.location.state.carAltValue != null &&
       window.location.state.catAltValue != null &&
@@ -214,7 +208,7 @@ class CodeChange extends Component {
         cowAltValue: this.state.textValue3,
         endButtonEnabled: true
       };
-      navigate("/AccessibleUserUpdatedGame");
+      navigate(process.env.PUBLIC_URL +"/AccessibleUserUpdatedGame");
     } else if (
       this.state.textValue === "" ||
       this.state.textValue1 === "" ||
@@ -230,7 +224,7 @@ class CodeChange extends Component {
         cowAltValue: this.state.textValue3,
         endButtonEnabled: true
       };
-      navigate("/AccessibleUserUpdatedGame");
+      navigate(process.env.PUBLIC_URL +"/AccessibleUserUpdatedGame");
     }
     Prism.highlightAll();
   }

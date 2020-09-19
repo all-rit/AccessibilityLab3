@@ -8,11 +8,15 @@ import { navigate } from "@reach/router";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
-
+import {GAME_IDLE, GAME_PLAYING} from "../../constants";
 class AdvancedGameConclusion extends Component {
   handleSubmit() {
     navigate(process.env.PUBLIC_URL + "/");
   }
+    componentDidMount() {
+        const { data, actions } = this.props;
+        actions.updateState(GAME_IDLE);
+    }
   render() {
     const appBarStyle = { flexGrow: "1" };
     return (
@@ -46,3 +50,4 @@ class AdvancedGameConclusion extends Component {
 }
 
 export default AdvancedGameConclusion;
+

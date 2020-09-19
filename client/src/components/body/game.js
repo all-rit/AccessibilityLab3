@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import {Router} from '@reach/router';
 import './../../assets/stylesheets/main.scss';
 
-import {actions} from './../../reducers/AppReducer';
+import {actions as appActions} from './../../reducers/AppReducer';
+import { actions as gameActions } from "../../reducers/GameReducer";
 
 import Main from './../../pages/Main';
 import FullGame from './../../pages/BeginnerGame/Game';
@@ -26,20 +27,23 @@ import ProblemDiscoveryFixedExperience from './../../pages/AdvancedGame/ProblemD
 import './../../vendor/bootstrap/css/bootstrap.min.css';
 import './../../css/agency.min.css';
 import './../../css/style.css';
+import {bindActionCreators} from "redux";
 
 const mapStateToProps = (state) => ({
   state: state,
 });
-const mapDispatchToProps = {
-  login: actions.login,
-  logout: actions.logout,
-  updateUser: actions.updateUser,
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators({ ...appActions, ...gameActions }, dispatch),
+    login: appActions.login
+  };
 };
+
 
 class Game extends Component {
   // eslint-disable-next-line require-jsdoc
   componentDidMount() {
-    const {user} = this.props;
+    const {user, actions} = this.props;
     if (user !== undefined) {
       console.log(user);
     }
@@ -48,8 +52,9 @@ class Game extends Component {
 
   // eslint-disable-next-line require-jsdoc
   render() {
+    const {actions} = this.props;
     return (
-      <div class="container">
+      <div class="container bottomSpace" >
         <section class="page-section">
           <div class="container">
             <div class="row">
@@ -65,25 +70,26 @@ class Game extends Component {
         </section>
         <Router basepath={process.env.PUBLIC_URL} className="app">
           <Main path="/" />
-          <FullGame path="/game" />
-          <GameInstructions path={'/GameInstructions'} />
-          <InaccessibleGame path={'/InAccessibleGame'} />
-          <AccessibleInstructions path={'/AccessibleInstructions'} />
-          <AccessibleGame path={'/AccessibleGame'} />
-          <CodeChange path={'/CodeChange'} />
-          <HelloWorld path={'/HelloWorld'} />
-          <AdvancedGame path={'/AdvancedGame'} />
-          <AdvancedInstructions path={'/AdvancedInstructions'} />
-          <ProblemDiscovery path={'/ProblemDiscovery'} />
-          <ProblemExplanation path={'/ProblemExplanation'} />
+          <FullGame path="/game" actions={actions}/>
+          <GameInstructions path={'/GameInstructions'} actions={actions}/>
+          <InaccessibleGame path={'/InAccessibleGame'} actions={actions}/>
+          <AccessibleInstructions path={'/AccessibleInstructions'} actions={actions}/>
+          <AccessibleGame path={'/AccessibleGame'} actions={actions}/>
+          <CodeChange path={'/CodeChange'} actions={actions}/>
+          <HelloWorld path={'/HelloWorld'} actions={actions}/>
+          <AdvancedGame path={'/AdvancedGame'} actions={actions}/>
+          <AdvancedInstructions path={'/AdvancedInstructions'} actions={actions}/>
+          <ProblemDiscovery path={'/ProblemDiscovery'} actions={actions}/>
+          <ProblemExplanation path={'/ProblemExplanation'} actions={actions}/>
           <ProblemDiscoveryFixedExperience
             path={'/ProblemDiscoveryFixedExperience'}
+            actions={actions}
           />
-          <ProblemFix path={'/ProblemFix'} />
-          <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'} />
-          <BeginnerGameConclusion path={'/BeginnerGameConclusion'} />
-          <AdvancedGameConclusion path={'/AdvancedGameConclusion'} />
-          <ViewFix path={'/ViewFix'} />
+          <ProblemFix path={'/ProblemFix'} actions={actions}/>
+          <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'} actions={actions}/>
+          <BeginnerGameConclusion path={'/BeginnerGameConclusion'} actions={actions}/>
+          <AdvancedGameConclusion path={'/AdvancedGameConclusion'} actions={actions}/>
+          <ViewFix path={'/ViewFix'} actions={actions}/>
         </Router>
       </div>
     );

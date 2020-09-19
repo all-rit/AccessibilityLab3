@@ -8,11 +8,17 @@ import { navigate } from "@reach/router";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 class GameInstructions extends Component {
   handleSubmit() {
     navigate(process.env.PUBLIC_URL + "/InAccessibleGame");
   }
+    componentDidMount() {
+        const { data, actions } = this.props;
+        actions.updateState(GAME_PLAYING);
+    }
+
   render() {
     const appBarStyle = { flexGrow: "1" };
     const paperStyle = {

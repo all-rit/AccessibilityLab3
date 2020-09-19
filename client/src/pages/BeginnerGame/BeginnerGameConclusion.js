@@ -5,16 +5,20 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
 import { navigate } from "@reach/router";
+import {GAME_IDLE, GAME_PLAYING} from "../../constants";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
-
 class BeginnerGameConclusion extends Component {
   handleSubmit() {
     navigate(process.env.PUBLIC_URL + "/");
   }
+    componentDidMount() {
+        const { data, actions } = this.props;
+        actions.updateState(GAME_IDLE);
+    }
   render() {
-    const appBarStyle = { flexGrow: "1" };
+      const appBarStyle = { flexGrow: "1" };
     const conclusionTypographyStyle = { marginTop: "20px" };
     return (
       <div>

@@ -14,6 +14,7 @@
     "immutability-helper": "latest",
     "node-sass": "latest",
     "prismjs": "latest",
+    "rc-color-picker": "^1.2.6",
     "react": "latest",
     "react-autosize-textarea": "latest",
     "react-color": "latest",
@@ -22,6 +23,7 @@
     "react-redux": "latest",
     "react-router": "^5.1.2",
     "react-spinners": "latest",
+    "reactstrap": "^8.6.0",
     "redux": "latest",
     "redux-saga": "latest",
     "victory": "latest"

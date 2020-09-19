@@ -20,6 +20,7 @@ import Paper from "@material-ui/core/Paper";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 const variantIcon = {
   success: CheckCircleIcon,
@@ -124,6 +125,8 @@ class ProblemFix extends Component {
   }
 
   componentDidMount() {
+    const { data, actions } = this.props;
+    actions.updateState(GAME_PLAYING);
     Prism.highlightAll();
     if (
       window.location.state.aria1 !== undefined &&
@@ -176,7 +179,7 @@ class ProblemFix extends Component {
         aria1: this.state.textValue,
         aria2: this.state.textValue1
       };
-      navigate("/ViewFix");
+      navigate(process.env.PUBLIC_URL +"/ViewFix");
     } else if (this.state.textValue === "" || this.state.textValue1 === "") {
       this.setState({ open: true });
     } else {
@@ -184,7 +187,7 @@ class ProblemFix extends Component {
         aria1: this.state.textValue,
         aria2: this.state.textValue1
       };
-      navigate("/ViewFix");
+      navigate(process.env.PUBLIC_URL +"/ViewFix");
     }
     Prism.highlightAll();
   }
@@ -282,7 +285,7 @@ class ProblemFix extends Component {
               id={"second"}
             />
             <code>
-              {`">Cancel</button>                        
+              {`">Cancel</button>
 `}
             </code>
           </pre>

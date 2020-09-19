@@ -11,6 +11,7 @@ import PageService from "../../services/PageService";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 class AccessibleUserUpdatedGame extends Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class AccessibleUserUpdatedGame extends Component {
     }
   }
   componentDidMount() {
+    const { data, actions } = this.props;
+    actions.updateState(GAME_PLAYING);
     this.interval = setInterval(
       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
       1000
@@ -39,18 +42,9 @@ class AccessibleUserUpdatedGame extends Component {
     const catClick = () => {
       const name = "AccessibleUserUpdatedGame";
       PageService.createPage(name, this.state.secondsElapsed);
-      console.log("Cat image clicked!");
       this.setState({ render: "CatClickNavigate" });
     };
-    const burgerClick = () => {
-      console.log("Burger image clicked!");
-    };
-    const carClick = () => {
-      console.log("Car image clicked!");
-    };
-    const cowClick = () => {
-      console.log("Cow image clicked!");
-    };
+
     const imgStyle = {
       width: "128px",
       height: "128px",

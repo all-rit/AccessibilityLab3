@@ -10,7 +10,7 @@ class Header extends Component {
     return (
       <Toolbar>
             <Button
-              href={"/Lab3/HelloWorld"}
+              href={process.env.PUBLIC_URL +"/HelloWorld"}
               variant={"contained"}
               style={buttonStyle}
             >

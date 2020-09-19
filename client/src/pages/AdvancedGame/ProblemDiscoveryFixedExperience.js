@@ -10,11 +10,16 @@ import { navigate } from "@reach/router";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 class ProblemDiscoveryFixedExperience extends Component {
   handleSubmit() {
     navigate(process.env.PUBLIC_URL + "/ProblemExplanation");
   }
+    componentDidMount() {
+        const { data, actions } = this.props;
+        actions.updateState(GAME_PLAYING);
+    }
   render() {
     const imgStyle = {
       width: "128px",

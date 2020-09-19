@@ -5,6 +5,7 @@ import { Link } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Header from "../components/main/Header";
 import { actions as appActions } from "../reducers/AppReducer";
+import { actions as gameActions } from "../reducers/GameReducer";
 import AppInstructions from "../components/main/AppInstructions";
 import { navigate } from "@reach/router";
 import "./../vendor/bootstrap/css/bootstrap.min.css";
@@ -20,7 +21,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({ ...appActions }, dispatch)
+    actions: bindActionCreators({ ...appActions, ...gameActions }, dispatch)
   };
 };
 
@@ -32,7 +33,7 @@ class Main extends Component {
     navigate(process.env.PUBLIC_URL + "/AdvancedGame");
   }
   render() {
-    const { user, state, plays } = this.props;
+    const { user, state, plays, actions } = this.props;
     const buttonStyleLeft = {
       marginTop:10,
       marginRight:2
@@ -63,7 +64,6 @@ class Main extends Component {
             variant={"contained"}
             color={"secondary"}
             style={buttonStyleRight}
-
           >
             Advanced Game
           </Button>

@@ -7,10 +7,12 @@ import CatClickNavigate from "../../components/helpers/CatClickFirstNavigate.js"
 import { Typography } from "@material-ui/core";
 import PageService from "../../services/PageService";
 import { navigate } from "@reach/router";
-
+import {GAME_PLAYING} from "../../constants";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+
+
 
 class Game extends Component {
   handleSubmit() {
@@ -27,6 +29,8 @@ class Game extends Component {
     }
   }
   componentDidMount() {
+    const { data, actions } = this.props;
+    actions.updateState(GAME_PLAYING);
     this.interval = setInterval(
       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
       1000
@@ -39,19 +43,9 @@ class Game extends Component {
 
   render() {
     const catClick = () => {
-      console.log("Cat image clicked!");
       const name = "Game";
       PageService.createPage(name, this.state.secondsElapsed);
       this.setState({ render: "CatClickNavigate" });
-    };
-    const burgerClick = () => {
-      console.log("Burger image clicked!");
-    };
-    const carClick = () => {
-      console.log("Car image clicked!");
-    };
-    const cowClick = () => {
-      console.log("Cow image clicked!");
     };
     const imgStyle = {
       width: "128px",

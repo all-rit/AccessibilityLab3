@@ -13,6 +13,7 @@ import PageService from "../../services/PageService";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
+import {GAME_PLAYING} from "../../constants";
 
 class InaccessibleGame extends Component {
   constructor(props) {
@@ -28,6 +29,8 @@ class InaccessibleGame extends Component {
     }
   }
   componentDidMount() {
+    const { data, actions } = this.props;
+    actions.updateState(GAME_PLAYING);
     this.interval = setInterval(
       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
       1000
@@ -39,15 +42,12 @@ class InaccessibleGame extends Component {
   }
 
   handleKeyDown(event) {
-    console.log("detected key code is: " + event.keyCode);
     if (event.keyCode === 27) {
-      console.log("Enter key pressed!");
       navigate(process.env.PUBLIC_URL + "/AccessibleInstructions");
     }
   }
 
   onFocusGain(event, className) {
-    console.log("focus gained");
     const element = document.getElementsByClassName(className);
     for (var i = 0; i < element.length; i++) {
       element[i].style = { borderColor: "red" };
@@ -64,20 +64,11 @@ class InaccessibleGame extends Component {
 
   render() {
     const catClick = () => {
-      console.log("Cat image clicked!");
       const name = "InaccessibleGame";
       PageService.createPage(name, this.state.secondsElapsed);
       this.setState({ render: "CatClickNavigate" });
     };
-    const burgerClick = () => {
-      console.log("Burger image clicked!");
-    };
-    const carClick = () => {
-      console.log("Car image clicked!");
-    };
-    const cowClick = () => {
-      console.log("Cow image clicked!");
-    };
+
     const imgStyle = {
       width: "128px",
       height: "128px",
