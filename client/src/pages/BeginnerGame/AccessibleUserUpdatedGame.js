@@ -68,11 +68,11 @@ class AccessibleUserUpdatedGame extends Component {
       textAlign: "center",
       tabIndex: "0"
     };
-    const appBarStyle = { flexGrow: "1" };
+    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     const textStyle = { color: "white", tabIndex: "0" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+        <AppBar position="static"  style={appBarStyle}>
           <Toolbar>
             <Typography
               variant={"h4"}
@@ -105,10 +105,10 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={catImage}
                   onClick={() => catClick()}
-                  alt={window.location.state.catAltValue.replace(
-                    /<[^>]*>?/gm,
-                    ""
-                  )}
+                  alt={window.location.state ? window.location.state.catAltValue.replace(
+                      /<[^>]*>?/gm,
+                      ""
+                  ): ""}
                   tabIndex={"0"}
                 />
               </td>
@@ -118,10 +118,10 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={carImage}
                   onClick={() => carClick()}
-                  alt={window.location.state.carAltValue.replace(
-                    /<[^>]*>?/gm,
-                    ""
-                  )}
+                  alt={window.location.state ? window.location.state.carAltValue.replace(
+                      /<[^>]*>?/gm,
+                      ""
+                  ): ""}
                   tabIndex={"0"}
                 />
               </td>
@@ -133,10 +133,10 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={burgerImage}
                   onClick={() => burgerClick()}
-                  alt={window.location.state.burgerAltValue.replace(
-                    /<[^>]*>?/gm,
-                    ""
-                  )}
+                  alt={window.location.state ? window.location.state.burgerAltValue.replace(
+                      /<[^>]*>?/gm,
+                      ""
+                  ): ""}
                   tabIndex={"0"}
                 />
               </td>
@@ -146,10 +146,10 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={cowImage}
                   onClick={() => cowClick()}
-                  alt={window.location.state.cowAltValue.replace(
+                  alt={window.location.state ? window.location.state.cowAltValue.replace(
                     /<[^>]*>?/gm,
                     ""
-                  )}
+                  ): ""}
                   tabIndex={"0"}
                 />
               </td>

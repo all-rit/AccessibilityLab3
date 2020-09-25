@@ -114,6 +114,9 @@ hr.horiz {
 .hidden {
   display: none;
 }
+.smallInput{
+  width:150px;
+}
 body {
   background-color: white;
 }

@@ -29,7 +29,7 @@ class AccessibleInstructions extends Component {
       marginRight: "10px",
       marginTop: "20px"
     };
-    const appBarStyle = { flexGrow: "1" };
+    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     return (
       <div>
         <AppBar position="static" color={"primary"} style={appBarStyle}>
@@ -81,7 +81,7 @@ class AccessibleInstructions extends Component {
           href="#"
           onClick={this.handleSubmit}
           variant={"contained"}
-          color={"primary"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
         >
           Next
         </Button>

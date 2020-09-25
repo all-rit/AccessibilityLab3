@@ -20,7 +20,7 @@ class GameInstructions extends Component {
     }
 
   render() {
-    const appBarStyle = { flexGrow: "1" };
+    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     const paperStyle = {
       marginLeft: "10px",
       marginRight: "10px",
@@ -28,7 +28,7 @@ class GameInstructions extends Component {
     };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+        <AppBar position="static"  style={appBarStyle}>
           <Toolbar>
             <Typography variant={"h4"} aria-label={"Instructions"}>
               Instructions{" "}
@@ -76,10 +76,9 @@ class GameInstructions extends Component {
         </Paper>
         <br />
         <Button
-          href="#"
           onClick={this.handleSubmit}
           variant={"contained"}
-          color={"primary"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           aria-label={"Next"}
         >
           Next

@@ -264,7 +264,6 @@ class CodeChange extends Component {
         <CodeUpdateHeader
           heading={"Make Code Changes"}
           justifyAlignment={"space-between"}
-          helpMessage={"#Placeholder"}
         />
         <Typography
           variant={"subtitle"}
@@ -280,9 +279,9 @@ class CodeChange extends Component {
           the 'End Activity' button, which will appear when you have made
           changes at least once.
         </Typography>
-        <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"}>
+        <form onSubmit={this.handleSubmit} noValidate autoComplete={"off"} >
           <Paper style={paperStyle}>
-            <pre>
+            <pre style={{whiteSpace: "initial"}}>
               <code className="language-html">
                 {`
 <table tabIndex="0">
@@ -296,6 +295,7 @@ class CodeChange extends Component {
                 value={this.state.textValue}
                 onChange={this.handleChange}
                 aria-label={"Please type in alt tag contents for this image"}
+                className="smallInput"
               />
               <code className="language-html">{`" tabIndex="0"/></td>
 			<td tabIndex="0"><input type="image" src="car.png" onClick="(); => carClick()" alt="`}</code>
@@ -305,6 +305,7 @@ class CodeChange extends Component {
                 value={this.state.textValue1}
                 onChange={this.handleChange1}
                 aria-label={"Please type in alt tag contents for this image"}
+                className="smallInput"
               />
               <code className="language-html">{`" tabIndex="0"/></td>
 		</tr>
@@ -316,6 +317,7 @@ class CodeChange extends Component {
                 value={this.state.textValue2}
                 onChange={this.handleChange2}
                 aria-label={"Please type in alt tag contents for this image"}
+                className="smallInput"
               />
               <code className="language-html">
                 {" "}
@@ -328,6 +330,7 @@ class CodeChange extends Component {
                 value={this.state.textValue3}
                 onChange={this.handleChange3}
                 aria-label={"Please type in alt tag contents for this image"}
+                className="smallInput"
               />
               <code className="language-html">
                 {`" tabIndex="0"/></td>
@@ -343,7 +346,7 @@ class CodeChange extends Component {
             type={"submit"}
             aria-label={"Update Code"}
             variant={"contained"}
-            color={"primary"}
+            className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           >
             Update Code
           </Button>

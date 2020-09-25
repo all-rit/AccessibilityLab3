@@ -63,6 +63,7 @@ class App extends Component {
 
   render() {
     const {state, actions} = this.props;
+    console.log(state);
     return (
 
         <div>

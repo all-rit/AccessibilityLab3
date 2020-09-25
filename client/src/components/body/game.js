@@ -55,7 +55,7 @@ class Game extends Component {
     const {actions} = this.props;
     return (
       <div class="container bottomSpace" >
-        <section class="page-section">
+        <section class="page-section" style={{paddingBottom:0}}>
           <div class="container">
             <div class="row">
               <div class="col-lg-12 text-center">

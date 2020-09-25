@@ -21,7 +21,7 @@ class CatClickNavigate extends Component {
   render() {
     const typographyStyle = { color: "black" };
     return (
-      <div id={"catClickMessage"}>
+      <div id={"catClickMessage"} >
         <Typography
           variant={"h6"}
           aria-label={
@@ -34,9 +34,9 @@ class CatClickNavigate extends Component {
         </Typography>
         <br />
         <Button
-          component={Link}
           onClick={CatClickNavigate.handleOnclick}
           variant="contained"
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
         >
           Next
         </Button>
