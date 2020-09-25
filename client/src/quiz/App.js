@@ -4,7 +4,6 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import logo from './svg/logo.svg';
 import './App.css';
-
 class App extends Component {
     constructor(props) {
         super(props);

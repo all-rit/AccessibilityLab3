@@ -2,7 +2,7 @@ import React from 'react';
 import './../../vendor/bootstrap/css/bootstrap.min.css';
 import './../../css/agency.min.css';
 import './../../css/style.css';
-import Quiz from "../../components/body/quiz";
+import Quiz from "./../../quiz/App"
 
 const Reading = ({title, description, links}) => {
   if (links === undefined) {
@@ -11,7 +11,7 @@ const Reading = ({title, description, links}) => {
 
   return (
     <div class="container">
-      <section class="page-section" style={{paddingBottom: '25px'}}>
+      <section class="page-section" style={{paddingBottom: '0px'}}>
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
@@ -24,7 +24,7 @@ const Reading = ({title, description, links}) => {
           </div>
         </div>
       </section>
-      <Quiz/>
+    <Quiz/>
     </div>
   );
 };
