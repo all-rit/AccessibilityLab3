@@ -18,10 +18,9 @@ class AdvancedGameConclusion extends Component {
         actions.updateState(GAME_IDLE);
     }
   render() {
-    const appBarStyle = { flexGrow: "1" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>
@@ -36,14 +35,16 @@ class AdvancedGameConclusion extends Component {
           to return to the main page
         </Typography>
         <br />
-        <Button
-          href="#"
-          onClick={this.handleSubmit}
-          variant={"contained"}
-          color={"primary"}
-        >
-          Home
-        </Button>
+          <div style={{textAlign:"center"}}>
+            <Button
+              href="#"
+              onClick={this.handleSubmit}
+              variant={"contained"}
+              className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
+            >
+              Home
+            </Button>
+          </div>
       </div>
     );
   }

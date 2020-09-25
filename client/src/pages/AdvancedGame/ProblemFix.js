@@ -294,7 +294,7 @@ class ProblemFix extends Component {
             type={"submit"}
             aria-label={"Update Code"}
             variant={"contained"}
-            color={"primary"}
+            className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           >
             Update Code
           </Button>

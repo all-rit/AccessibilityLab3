@@ -95,11 +95,10 @@ class InaccessibleGame extends Component {
       textAlign: "center",
       tabIndex: "0"
     };
-    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     const textStyle = { color: "white", tabIndex: "0" };
     return (
       <div>
-        <AppBar position="static"  style={appBarStyle}>
+        <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid
               justify="center"

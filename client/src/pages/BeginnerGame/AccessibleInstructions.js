@@ -29,10 +29,9 @@ class AccessibleInstructions extends Component {
       marginRight: "10px",
       marginTop: "20px"
     };
-    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+        <AppBar position="static" className = "appBar">
           <Toolbar>
             <Typography
               variant={"h4"}

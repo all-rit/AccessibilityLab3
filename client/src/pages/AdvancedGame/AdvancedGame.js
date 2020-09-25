@@ -19,10 +19,9 @@ class AdvancedGame extends Component {
         actions.updateState(GAME_PLAYING);
     }
   render() {
-    const appBarStyle = { flexGrow: "1" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>
@@ -53,8 +52,8 @@ class AdvancedGame extends Component {
           href="#"
           onClick={this.handleSubmit}
           variant={"contained"}
-          color={"primary"}
           aria-label={"Start Game"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
         >
           Start Game
         </Button>

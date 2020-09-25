@@ -22,10 +22,9 @@ class HelloWorld extends Component {
       marginRight: "auto",
       textAlign: "center"
     };
-    const appBarStyle = { flexGrow: "1" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+        <AppBar position="static" className = "appBar">
           <Toolbar>
             <Typography
               variant={"h4"}
@@ -96,16 +95,18 @@ class HelloWorld extends Component {
           </tbody>
         </table>
         <br />
+          <div style={{textAlign: "center"}}>
         <Button
           href="#"
           onClick={this.handleSubmit}
           component={Link}
-          color={"primary"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           variant={"contained"}
           tabIndex={"0"}
         >
           Back To Lab 3 Homepage
         </Button>
+          </div>
       </div>
     );
   }

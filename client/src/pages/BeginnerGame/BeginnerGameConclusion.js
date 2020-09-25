@@ -18,11 +18,10 @@ class BeginnerGameConclusion extends Component {
         actions.updateState(GAME_IDLE);
     }
   render() {
-      const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     const conclusionTypographyStyle = { marginTop: "20px" };
     return (
       <div>
-        <AppBar position="static" style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>

@@ -23,10 +23,9 @@ class ViewFix extends Component {
     }
 
     render() {
-    const appBarStyle = { flexGrow: "1" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>
@@ -72,7 +71,7 @@ class ViewFix extends Component {
 
         <Button
           variant={"contained"}
-          color={"primary"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           onClick={ViewFix.navOnClick}
         >
           Next

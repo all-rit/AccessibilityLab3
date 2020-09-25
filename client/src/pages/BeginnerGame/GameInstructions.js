@@ -20,7 +20,6 @@ class GameInstructions extends Component {
     }
 
   render() {
-    const appBarStyle = { flexGrow: "1", backgroundColor: "#484848"};
     const paperStyle = {
       marginLeft: "10px",
       marginRight: "10px",
@@ -28,7 +27,7 @@ class GameInstructions extends Component {
     };
     return (
       <div>
-        <AppBar position="static"  style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Typography variant={"h4"} aria-label={"Instructions"}>
               Instructions{" "}

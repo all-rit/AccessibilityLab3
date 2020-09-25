@@ -2,6 +2,7 @@ import React from 'react';
 import './../../vendor/bootstrap/css/bootstrap.min.css';
 import './../../css/agency.min.css';
 import './../../css/style.css';
+import Quiz from "../../components/body/quiz";
 
 const Reading = ({title, description, links}) => {
   if (links === undefined) {
@@ -23,9 +24,7 @@ const Reading = ({title, description, links}) => {
           </div>
         </div>
       </section>
-      <div class="row">
-        Quiz questions that come from concepts throughout each part of the lab.
-      </div>
+      <Quiz/>
     </div>
   );
 };

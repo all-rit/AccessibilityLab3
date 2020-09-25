@@ -27,10 +27,9 @@ class ProblemDiscoveryFixedExperience extends Component {
       border: "1px solid black",
       tabIndex: "0"
     };
-    const appBarStyle = { flexGrow: "1" };
     return (
       <div>
-        <AppBar position="static" color={"primary"} style={appBarStyle}>
+          <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>
@@ -93,7 +92,7 @@ class ProblemDiscoveryFixedExperience extends Component {
           href="#"
           onClick={this.handleSubmit}
           variant={"contained"}
-          color={"primary"}
+          className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
         >
           Next
         </Button>
