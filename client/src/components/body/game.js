@@ -5,7 +5,7 @@ import './../../assets/stylesheets/main.scss';
 
 import {actions as appActions} from './../../reducers/AppReducer';
 import { actions as gameActions } from "../../reducers/GameReducer";
-
+import { actions as repairActions } from '../../reducers/RepairReducer';
 import Main from './../../pages/Main';
 import FullGame from './../../pages/BeginnerGame/Game';
 import InaccessibleGame from './../../pages/BeginnerGame/InaccessibleGame';
@@ -30,11 +30,12 @@ import './../../css/style.css';
 import {bindActionCreators} from "redux";
 
 const mapStateToProps = (state) => ({
-  state: state,
+  state: state
 });
+
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({ ...appActions, ...gameActions }, dispatch),
+    actions: bindActionCreators({ ...appActions, ...gameActions, ...repairActions }, dispatch),
     login: appActions.login
   };
 };
@@ -52,7 +53,7 @@ class Game extends Component {
 
   // eslint-disable-next-line require-jsdoc
   render() {
-    const {actions} = this.props;
+    const {actions, state} = this.props;
     return (
       <div class="container bottomSpace" >
         <section class="page-section" style={{paddingBottom:0}}>
@@ -75,7 +76,7 @@ class Game extends Component {
           <InaccessibleGame path={'/InAccessibleGame'} actions={actions}/>
           <AccessibleInstructions path={'/AccessibleInstructions'} actions={actions}/>
           <AccessibleGame path={'/AccessibleGame'} actions={actions}/>
-          <CodeChange path={'/CodeChange'} actions={actions}/>
+          <CodeChange path={'/CodeChange'} actions={actions} data={state} />
           <HelloWorld path={'/HelloWorld'} actions={actions}/>
           <AdvancedGame path={'/AdvancedGame'} actions={actions}/>
           <AdvancedInstructions path={'/AdvancedInstructions'} actions={actions}/>
@@ -86,7 +87,7 @@ class Game extends Component {
             actions={actions}
           />
           <ProblemFix path={'/ProblemFix'} actions={actions}/>
-          <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'} actions={actions}/>
+          <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'} actions={actions} data={state}/>
           <BeginnerGameConclusion path={'/BeginnerGameConclusion'} actions={actions}/>
           <AdvancedGameConclusion path={'/AdvancedGameConclusion'} actions={actions}/>
           <ViewFix path={'/ViewFix'} actions={actions}/>

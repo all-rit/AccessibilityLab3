@@ -11,7 +11,7 @@ import {Google} from "./components/header/buttons/google";
 import "./vendor/bootstrap/css/bootstrap.min.css";
 import "./css/agency.min.css";
 import "./css/style.css";
-import {actions as gameActions, actions as appActions} from './reducers/AppReducer';
+import {actions as gameActions, actions as appActions, actions as repairActions} from './reducers/AppReducer';
 import {bindActionCreators} from 'redux';
 import {connect} from "react-redux";
 import {GAME_PLAYING} from "./constants";
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ ...appActions, ...gameActions }, dispatch)
+  actions: bindActionCreators({ ...appActions, ...gameActions,...repairActions }, dispatch)
 });
 
 class App extends Component {

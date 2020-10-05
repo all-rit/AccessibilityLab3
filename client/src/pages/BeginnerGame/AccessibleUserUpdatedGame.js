@@ -12,7 +12,6 @@ import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
 import {GAME_PLAYING} from "../../constants";
-
 class AccessibleUserUpdatedGame extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +27,7 @@ class AccessibleUserUpdatedGame extends Component {
   componentDidMount() {
     const { data, actions } = this.props;
     actions.updateState(GAME_PLAYING);
+    actions.enableEnd(true);
     this.interval = setInterval(
       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
       1000
@@ -39,6 +39,7 @@ class AccessibleUserUpdatedGame extends Component {
   }
 
   render() {
+    const { data, actions } = this.props;
     const catClick = () => {
       const name = "AccessibleUserUpdatedGame";
       PageService.createPage(name, this.state.secondsElapsed);
@@ -104,10 +105,7 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={catImage}
                   onClick={() => catClick()}
-                  alt={window.location.state ? window.location.state.catAltValue.replace(
-                      /<[^>]*>?/gm,
-                      ""
-                  ): ""}
+                  alt={data.repair.catAltValue}
                   tabIndex={"0"}
                 />
               </td>
@@ -117,10 +115,7 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={carImage}
                   onClick={() => carClick()}
-                  alt={window.location.state ? window.location.state.carAltValue.replace(
-                      /<[^>]*>?/gm,
-                      ""
-                  ): ""}
+                  alt={data.repair.carAltValue}
                   tabIndex={"0"}
                 />
               </td>
@@ -132,10 +127,7 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={burgerImage}
                   onClick={() => burgerClick()}
-                  alt={window.location.state ? window.location.state.burgerAltValue.replace(
-                      /<[^>]*>?/gm,
-                      ""
-                  ): ""}
+                  alt={data.repair.burgerAltValue}
                   tabIndex={"0"}
                 />
               </td>
@@ -145,10 +137,7 @@ class AccessibleUserUpdatedGame extends Component {
                   type={"image"}
                   src={cowImage}
                   onClick={() => cowClick()}
-                  alt={window.location.state ? window.location.state.cowAltValue.replace(
-                    /<[^>]*>?/gm,
-                    ""
-                  ): ""}
+                  alt={data.repair.cowAltValue}
                   tabIndex={"0"}
                 />
               </td>
