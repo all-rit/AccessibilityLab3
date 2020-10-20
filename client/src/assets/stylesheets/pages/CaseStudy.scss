@@ -13,9 +13,11 @@
   &__list {
     text-align: left;
     list-style-type: disc;
-
+    width: fit-content;
+    margin: 0 auto 3rem;
     > li {
       margin-bottom: 1rem;
+      font-size: 20px;
     }
   }
 
@@ -41,10 +43,22 @@
   }
 
   > div {
-    font-size: 0.9rem;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: 2rem;
+  }
+  
+  > .flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  
+  > .center {
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
