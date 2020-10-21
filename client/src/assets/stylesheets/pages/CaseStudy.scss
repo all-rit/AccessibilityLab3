@@ -13,10 +13,9 @@
   &__list {
     text-align: left;
     list-style-type: disc;
-    width: fit-content;
-    margin: 0 auto 3rem;
+    margin-left: 2.5rem;
     > li {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       font-size: 20px;
     }
   }
