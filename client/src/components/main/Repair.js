@@ -380,9 +380,7 @@ class Repair extends Component {
 						Update
 					</button>
 				</div>
-
-				<div className="code_editor__background" onClick={handlers.closeRepair} />
-			</div>
+		</div>
 		);
 	}
 }
