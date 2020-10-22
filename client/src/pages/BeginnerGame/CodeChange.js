@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import CodeUpdateHeader from "../../components/main/CodeUpdateHeader";
-import { navigate } from "@reach/router";
-import Button from "@material-ui/core/Button";
 import "../../assets/stylesheets/prism.css";
-import { Paper } from "@material-ui/core";
-import Snackbar from "@material-ui/core/Snackbar";
 import CheckCircleIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import { amber, green, red, yellow } from "@material-ui/core/colors";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
@@ -19,7 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";
-import {GAME_PLAYING, GAME_IDLE} from "../../constants";
+import {GAME_PLAYING} from "../../constants";
 import Repair from "../../components/main/Repair";
 import GameButtons from "../../components/main/GameButtons";
 import Popup from "../../components/main/Popup";
@@ -104,7 +100,7 @@ class CodeChange extends Component {
     document.body.style = "background: white";
   }
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
   }
 
@@ -118,11 +114,11 @@ class CodeChange extends Component {
       data, actions
     } = this.props;
 
-    const paperStyle = {
-      marginLeft: "10px",
-      marginRight: "10px",
-      marginTop: "20px"
-    };
+    // const paperStyle = {
+    //   marginLeft: "10px",
+    //   marginRight: "10px",
+    //   marginTop: "20px"
+    // };
     return (
       <div>
         <CodeUpdateHeader

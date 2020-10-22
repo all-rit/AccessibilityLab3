@@ -70,11 +70,11 @@ class Repair extends Component {
 
 
 	render() {
-		const paperStyle = {
-			marginLeft: "10px",
-			marginRight: "10px",
-			marginTop: "20px"
-		};
+		// const paperStyle = {
+		// 	marginLeft: "10px",
+		// 	marginRight: "10px",
+		// 	marginTop: "20px"
+		// };
 		const { visible, data, handlers } = this.props;
 		const jsFileClasses = classNames({
 			code_editor__file: true,

@@ -97,7 +97,7 @@ class ProblemExplanation extends Component {
     navigate(process.env.PUBLIC_URL + "/ProblemFix");
   }
     componentDidMount() {
-        const { data, actions } = this.props;
+        const { actions } = this.props;
         actions.updateState(GAME_PLAYING);
     }
   render() {

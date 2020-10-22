@@ -25,7 +25,7 @@ class AccessibleUserUpdatedGame extends Component {
     }
   }
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
     actions.enableEnd(true);
     this.interval = setInterval(
@@ -39,7 +39,7 @@ class AccessibleUserUpdatedGame extends Component {
   }
 
   render() {
-    const { data, actions } = this.props;
+    const { data } = this.props;
     const catClick = () => {
       const name = "AccessibleUserUpdatedGame";
       PageService.createPage(name, this.state.secondsElapsed);
