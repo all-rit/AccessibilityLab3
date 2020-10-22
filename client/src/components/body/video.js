@@ -33,7 +33,7 @@ const Video = ({ link, title }) => {
             {/*<div class="row">*/}
                 {/*<p>Accessibility for Blind/Visually-Impaired Users</p>*/}
             {/*</div>*/}
-        {/*</div>*/}
+        </div>
     );
 };
 
