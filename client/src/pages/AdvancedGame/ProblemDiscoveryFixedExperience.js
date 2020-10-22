@@ -17,7 +17,7 @@ class ProblemDiscoveryFixedExperience extends Component {
     navigate(process.env.PUBLIC_URL + "/ProblemExplanation");
   }
     componentDidMount() {
-        const { data, actions } = this.props;
+        const { actions } = this.props;
         actions.updateState(GAME_PLAYING);
     }
   render() {

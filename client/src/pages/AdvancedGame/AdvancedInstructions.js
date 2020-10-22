@@ -15,7 +15,7 @@ class AdvancedInstructions extends Component {
     navigate(process.env.PUBLIC_URL + "/ProblemDiscovery");
   }
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
   }
   render() {

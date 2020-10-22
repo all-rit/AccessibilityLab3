@@ -20,7 +20,7 @@ class AccessibleInstructions extends Component {
     navigate(process.env.PUBLIC_URL + "/CodeChange");
   }
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
   }
   render() {

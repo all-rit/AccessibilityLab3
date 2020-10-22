@@ -43,7 +43,7 @@ const mapDispatchToProps = dispatch => {
 class Game extends Component {
   // eslint-disable-next-line require-jsdoc
   componentDidMount() {
-    const {user, actions} = this.props;
+    const {user} = this.props;
     if (user !== undefined) {
       console.log(user);
     }

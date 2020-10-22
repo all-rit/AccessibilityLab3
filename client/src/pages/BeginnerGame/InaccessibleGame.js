@@ -29,7 +29,7 @@ class InaccessibleGame extends Component {
     }
   }
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
     this.interval = setInterval(
       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),

@@ -125,7 +125,7 @@ class ProblemFix extends Component {
   }
 
   componentDidMount() {
-    const { data, actions } = this.props;
+    const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
     Prism.highlightAll();
     if (

@@ -33,7 +33,7 @@ class Main extends Component {
     navigate(process.env.PUBLIC_URL + "/AdvancedGame");
   }
   render() {
-    const { user, state, plays, actions } = this.props;
+    const { user, state, plays } = this.props;
     const buttonStyleLeft = {
       marginTop:10,
       marginRight:2

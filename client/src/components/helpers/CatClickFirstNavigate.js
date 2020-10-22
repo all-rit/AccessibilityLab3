@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
-import { Link } from "@material-ui/core";
 import { navigate } from "@reach/router";
 import Typography from "@material-ui/core/Typography";
 

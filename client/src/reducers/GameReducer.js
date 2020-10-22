@@ -1,4 +1,3 @@
-import update from 'immutability-helper';
 import {GAME_IDLE} from '../constants';
 
 export const types = {
