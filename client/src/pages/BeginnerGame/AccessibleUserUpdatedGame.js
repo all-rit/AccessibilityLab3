@@ -39,7 +39,7 @@ class AccessibleUserUpdatedGame extends Component {
   }
 
   render() {
-    const { data, actions } = this.props;
+    const { data } = this.props;
     const catClick = () => {
       const name = "AccessibleUserUpdatedGame";
       PageService.createPage(name, this.state.secondsElapsed);
