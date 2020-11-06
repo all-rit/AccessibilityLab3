@@ -55,6 +55,11 @@ class AccessibleUserUpdatedGame extends Component {
     const cowClick = () => {
       console.log("Cow image clicked!");
     };
+    const textToSpeech = (text) => {
+      let synth = window.speechSynthesis;
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
     const imgStyle = {
       width: "128px",
       height: "128px",
@@ -107,6 +112,7 @@ class AccessibleUserUpdatedGame extends Component {
                   onClick={() => catClick()}
                   alt={data.repair.catAltValue}
                   tabIndex={"0"}
+                  onFocus={()=> textToSpeech(data.repair.catAltValue)}
                 />
               </td>
               <td tabIndex={"0"}>
@@ -117,6 +123,8 @@ class AccessibleUserUpdatedGame extends Component {
                   onClick={() => carClick()}
                   alt={data.repair.carAltValue}
                   tabIndex={"0"}
+                  onFocus={()=> textToSpeech(data.repair.carAltValue)}
+
                 />
               </td>
             </tr>
@@ -129,6 +137,7 @@ class AccessibleUserUpdatedGame extends Component {
                   onClick={() => burgerClick()}
                   alt={data.repair.burgerAltValue}
                   tabIndex={"0"}
+                  onFocus={()=> textToSpeech(data.repair.burgerAltValue)}
                 />
               </td>
               <td tabIndex={"0"}>
@@ -139,6 +148,7 @@ class AccessibleUserUpdatedGame extends Component {
                   onClick={() => cowClick()}
                   alt={data.repair.cowAltValue}
                   tabIndex={"0"}
+                  onFocus={()=> textToSpeech(data.repair.cowAltValue)}
                 />
               </td>
             </tr>
