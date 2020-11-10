@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import Header from "../components/main/Header";
 import { actions as appActions } from "../reducers/AppReducer";
 import { actions as gameActions } from "../reducers/GameReducer";
 import AppInstructions from "../components/main/AppInstructions";
@@ -67,7 +66,6 @@ class Main extends Component {
           >
             Advanced Game
           </Button>
-          <Header state={state} user={user} plays={plays} />
         </div>
       </Fragment>
     );

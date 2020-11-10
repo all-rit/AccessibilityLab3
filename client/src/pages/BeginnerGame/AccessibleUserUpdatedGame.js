@@ -45,6 +45,9 @@ class AccessibleUserUpdatedGame extends Component {
       PageService.createPage(name, this.state.secondsElapsed);
       console.log("Cat image clicked!");
       this.setState({ render: "CatClickNavigate" });
+      window.speechSynthesis.cancel();
+      let utterance = new SpeechSynthesisUtterance("Cat image clicked. Please navigate to the next button on the bottom left of the page.");
+      window.speechSynthesis.speak(utterance);
     };
     const burgerClick = () => {
       console.log("Burger image clicked!");
@@ -55,8 +58,9 @@ class AccessibleUserUpdatedGame extends Component {
     const cowClick = () => {
       console.log("Cow image clicked!");
     };
-    const textToSpeech = (text) => {
+    const textToSpeech = (e, text) => {
       let synth = window.speechSynthesis;
+      synth.cancel();
       let utterThis = new SpeechSynthesisUtterance(text);
       synth.speak(utterThis);
     };
@@ -82,6 +86,7 @@ class AccessibleUserUpdatedGame extends Component {
               aria-label={"Accessible Game"}
               style={textStyle}
               tabIndex={"0"}
+              onFocus={(e) => textToSpeech(e,"Accessible Game")}
             >
               Accessible Game
             </Typography>
@@ -95,6 +100,7 @@ class AccessibleUserUpdatedGame extends Component {
           }
           style={textStyle}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e,"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select.")}
         >
           Click on the image of a cat. You can use the keyboard to navigate by
           tabbing across the page. Press the enter key to select.
@@ -107,7 +113,7 @@ class AccessibleUserUpdatedGame extends Component {
                   style={imgStyle}
                   onClick={() => catClick()}
                   tabIndex={"0"}
-                  onFocus={()=> textToSpeech(data.repair.catAltValue)}
+                  onFocus={(e)=> textToSpeech(e, data.repair.catAltValue)}
                 />
               </td>
               <td tabIndex={"1"}>
@@ -115,8 +121,7 @@ class AccessibleUserUpdatedGame extends Component {
                   style={imgStyle}
                   onClick={() => carClick()}
                   tabIndex={"0"}
-                  onFocus={()=> textToSpeech(data.repair.carAltValue)}
-
+                  onFocus={(e)=> textToSpeech(e, data.repair.carAltValue)}
                 />
               </td>
             </tr>
@@ -126,7 +131,7 @@ class AccessibleUserUpdatedGame extends Component {
                   style={imgStyle}
                   onClick={() => burgerClick()}
                   tabIndex={"0"}
-                  onFocus={()=> textToSpeech(data.repair.burgerAltValue)}
+                  onFocus={(e)=> textToSpeech(e, data.repair.burgerAltValue)}
                 />
               </td>
               <td tabIndex={"1"}>
@@ -134,7 +139,7 @@ class AccessibleUserUpdatedGame extends Component {
                   style={imgStyle}
                   onClick={() => cowClick()}
                   tabIndex={"0"}
-                  onFocus={()=> textToSpeech(data.repair.cowAltValue)}
+                  onFocus={(e)=> textToSpeech(e, data.repair.cowAltValue)}
                 />
               </td>
             </tr>

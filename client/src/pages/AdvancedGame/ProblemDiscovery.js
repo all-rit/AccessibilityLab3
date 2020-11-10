@@ -68,7 +68,7 @@ class ProblemDiscovery extends Component {
           style={imgStyle}
           type={"image"}
           src={catImage}
-          alt={"cat"}
+          alt={"image of cat"}
           tabIndex={"0"}
         />
         <br />
