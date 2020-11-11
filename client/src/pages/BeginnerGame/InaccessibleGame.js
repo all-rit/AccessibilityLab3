@@ -116,6 +116,7 @@ class InaccessibleGame extends Component {
                   color={"white"}
                   aria-label={"Inaccessible Game"}
                   tabIndex={"0"}
+                  onFocus={(e) => textToSpeech(e,"Inaccessible Game")}
                 >
                   Inaccessible Game
                 </Typography>
@@ -127,6 +128,7 @@ class InaccessibleGame extends Component {
           variant={"h6"} 
           style={textStyle} 
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e,"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select.")}
         >
           Click on the image of a cat. You can use the keyboard to navigate by
           tabbing across the page. Press the enter key to select.

@@ -12,24 +12,48 @@ class ViewFix extends Component {
   constructor(props) {
     super(props);
     ViewFix.navOnClick = ViewFix.navOnClick.bind(this);
+    this.state = {
+      aria1: "Ok button",
+      aria2: "Cancel button"
+    }
   }
 
   static navOnClick() {
     navigate(process.env.PUBLIC_URL +"/ProblemFix");
   }
-    componentDidMount() {
-        const { actions } = this.props;
-        actions.updateState(GAME_PLAYING);
-    }
+  
+  componentDidMount() {
+      const { actions } = this.props;
+      actions.updateState(GAME_PLAYING);
+      if (window.location.state) {
+        this.setState({
+          aria1: window.location.state.aria1.replace(/<[^>]*>?/gm, ""),
+          aria2: window.location.state.aria2.replace(/<[^>]*>?/gm, "")
+        });
+      }
+  }
 
-    render() {
+  render() {
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    
     return (
       <div>
-          <AppBar position="static" className = "appBar">
+        <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid justify="center" container spacing={10}>
               <Grid item>
-                <Typography variant={"h4"} aria-label={"Title"} gutterBottom>
+                <Typography 
+                  variant={"h4"}
+                  aria-label={"Title"}
+                  gutterBottom
+                  tabindex={"0"}
+                  onFocus={(e) => textToSpeech(e, "Test Fix")}
+                >
                   Test Fix
                 </Typography>
               </Grid>
@@ -41,6 +65,8 @@ class ViewFix extends Component {
           variant={"h6"}
           aria-label={"Subtitle Instructions"}
           gutterBottom
+          tabindex={"0"}
+          onFocus={(e) => textToSpeech(e, "Is your page now more accessible?")}
         >
           Is your page now more accessible?
         </Typography>
@@ -49,6 +75,9 @@ class ViewFix extends Component {
           variant={"body1"}
           aria-label={"Body Instructions"}
           gutterBottom
+          tabindex={"0"}
+          onFocus={(e) => textToSpeech(e, "If you have updated the buttons with the appropriate " + 
+          "aria-labels then you have succeeded. They can now be effectively described by screenreaders.")}
         >
           If you have updated the buttons with the appropriate aria-labels then
           you have succeeded. They can now be effectively described by
@@ -57,22 +86,25 @@ class ViewFix extends Component {
         <br />
         <Button
           variant={"text"}
-          aria-label={window.location.state.aria1.replace(/<[^>]*>?/gm, "")}
+          aria-label={this.state.aria1}
+          onFocus={(e) => textToSpeech(e, this.state.aria1)}
         >
           Ok
         </Button>
         <Button
           variant={"text"}
-          aria-label={window.location.state.aria2.replace(/<[^>]*>?/gm, "")}
+          aria-label={this.state.aria2}
+          onFocus={(e) => textToSpeech(e, this.state.aria2)}
         >
           Cancel
         </Button>
         <br />
-
+        <br />
         <Button
           variant={"contained"}
           className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
           onClick={ViewFix.navOnClick}
+          onFocus={(e) => textToSpeech(e, "Next")}
         >
           Next
         </Button>
