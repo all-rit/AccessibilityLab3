@@ -3,11 +3,11 @@ import Button from "@material-ui/core/Button";
 import { navigate } from "@reach/router";
 import Typography from "@material-ui/core/Typography";
 
-class CatClickNavigate extends Component {
+class CatClickFirstNavigate extends Component {
   constructor(props) {
     super(props);
     const { path } = this.props;
-    CatClickNavigate.handleOnclick = CatClickNavigate.handleOnclick.bind(
+    CatClickFirstNavigate.handleOnclick = CatClickFirstNavigate.handleOnclick.bind(
       this,
       path
     );
@@ -18,7 +18,7 @@ class CatClickNavigate extends Component {
   }
 
   render() {
-    const typographyStyle = { color: "black" };
+    const typographyStyle = { color: "white" };
     return (
       <div id={"catClickMessage"} >
         <Typography
@@ -33,7 +33,7 @@ class CatClickNavigate extends Component {
         </Typography>
         <br />
         <Button
-          onClick={CatClickNavigate.handleOnclick}
+          onClick={CatClickFirstNavigate.handleOnclick}
           variant="contained"
           className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
         >
@@ -44,4 +44,4 @@ class CatClickNavigate extends Component {
   }
 }
 
-export default CatClickNavigate;
+export default CatClickFirstNavigate;

@@ -223,6 +223,7 @@ class ProblemFix extends Component {
       marginRight: "10px",
       marginTop: "20px"
     };
+    
     return (
       <div>
         <CodeUpdateHeader
