@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-// import catImage from "../../assets/images/c1.svg";
-// import carImage from "../../assets/images/c2.svg";
-// import cowImage from "../../assets/images/cow.jpg";
-// import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from "../../components/helpers/CatClickNavigate.js";
 import { Typography } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
