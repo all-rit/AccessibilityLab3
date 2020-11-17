@@ -46,9 +46,9 @@ class ProblemDiscoveryFixedExperience extends Component {
                   aria-label={"Discover the problem"}
                   tabIndex={"0"}
                   gutterBottom
-                  onFocus={(e) => textToSpeech(e, "Fixed version of previous page.")}
+                  onFocus={(e) => textToSpeech(e, "Repaired version of previous page.")}
                 >
-                  Fixed Version of Previous Page
+                  Repaired Version of Previous Page
                 </Typography>
               </Grid>
             </Grid>
@@ -60,9 +60,9 @@ class ProblemDiscoveryFixedExperience extends Component {
           aria-label={"Subtitle Instructions"}
           gutterBottom
           tabindex={"0"}
-          onFocus={(e) => textToSpeech(e, "The accessibility issues have been fixed here. All images say what their contents are as such like 'cat', 'burger' and 'car' etc. and not 'image of cat', 'image of burger', 'image of car' etc. . Try using your screenreader now.")}
+          onFocus={(e) => textToSpeech(e, "The accessibility issues have been repaired here. All images say what their contents are as such like 'cat', 'burger' and 'car' etc. and not 'image of cat', 'image of burger', 'image of car' etc. . Try using your screenreader now.")}
         >
-          The accessibility issues have been fixed here. All images say what
+          The accessibility issues have been repaired here. All images say what
           their contents are as such like 'cat', 'burger' and 'car' etc. and not
           'image of cat', 'image of burger', 'image of car' etc. . Try using
           your screenreader now.

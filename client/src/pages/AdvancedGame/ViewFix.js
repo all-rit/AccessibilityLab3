@@ -54,7 +54,7 @@ class ViewFix extends Component {
                   tabindex={"0"}
                   onFocus={(e) => textToSpeech(e, "Test Fix")}
                 >
-                  Test Fix
+                  Test Repair
                 </Typography>
               </Grid>
             </Grid>
