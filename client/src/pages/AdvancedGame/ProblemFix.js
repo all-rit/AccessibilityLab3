@@ -227,7 +227,7 @@ class ProblemFix extends Component {
     return (
       <div>
         <CodeUpdateHeader
-          heading={"Problem Fix"}
+          heading={"Problem Repair"}
           justifyAlignment={"space-between"}
           helpMessage={"#Placeholder"}
         />
@@ -253,7 +253,7 @@ class ProblemFix extends Component {
             aria-label={"Subtitle Instructions"}
             gutterBottom
           >
-            Update the aria-tags to fix the accessibility issues.
+            Update the aria-tags to repair the accessibility issues.
           </Typography>
           <Typography
             variant={"body1"}
