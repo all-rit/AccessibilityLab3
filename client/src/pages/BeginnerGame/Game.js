@@ -5,7 +5,7 @@ import burgerImage from "../../assets/images/b.png";
 import cowImage from "../../assets/images/cow.jpg";
 import CatClickNavigate from "../../components/helpers/CatClickFirstNavigate.js";
 import { Typography } from "@material-ui/core";
-import PageService from "../../services/PageService";
+import {PageService} from "../../services/PageService";
 import { navigate } from "@reach/router";
 import {GAME_PLAYING} from "../../constants";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";

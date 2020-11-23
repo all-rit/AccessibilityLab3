@@ -1,6 +1,6 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import {types} from '../reducers/AppReducer';
-import AuthService from '../services/AuthService';
+import {AuthService} from '../services/AuthService';
 
 function authApi() {
     return AuthService.getUser();

@@ -13,7 +13,7 @@ export const initialState = {
   popupMessage: ''
 };
 
-export default (state = initialState, action) => {
+export const AppReducer =  (state = initialState, action) => {
   switch (action.type) {
     case types.UPDATE_USER:
       return {

@@ -1,4 +1,4 @@
-export default {
+export const API = {
     get: (path) => {
         return fetch(path, {credentials: 'include', method: 'GET'});
     },

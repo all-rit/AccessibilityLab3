@@ -7,7 +7,7 @@ import CatClickNavigate from "../../components/helpers/CatClickNavigate.js";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Typography } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar/AppBar";
-import PageService from "../../services/PageService";
+import {PageService} from "../../services/PageService";
 import "./../../vendor/bootstrap/css/bootstrap.min.css";
 import "./../../css/agency.min.css";
 import "./../../css/style.css";

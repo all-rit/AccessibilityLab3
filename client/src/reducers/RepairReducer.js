@@ -14,8 +14,7 @@ export const initialState = {
 	repairVisible: false,
 	changesApplied: false
 };
-
-export default (state = initialState, action) => {
+export const RepairReducer =  (state = initialState, action) => {
 	switch (action.type) {
 		case types.UPDATE_REPAIR:
 			return {
