@@ -21,12 +21,20 @@ class ProblemDiscovery extends Component {
         actions.updateState(GAME_PLAYING);
     }
   render() {
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    
     const imgStyle = {
       width: "128px",
       height: "128px",
       border: "1px solid black",
       tabIndex: "0"
     };
+    
     return (
       <div>
           <AppBar position="static" className = "appBar">
@@ -37,6 +45,8 @@ class ProblemDiscovery extends Component {
                   variant={"h4"}
                   aria-label={"Discover the problem"}
                   gutterBottom
+                  tabIndex={"0"}
+                  onFocus={(e) => textToSpeech(e, "Discover the problem")}
                 >
                   Discover the Problem
                 </Typography>
@@ -49,6 +59,8 @@ class ProblemDiscovery extends Component {
           variant={"subtitle1"}
           aria-label={"Subtitle Instructions"}
           gutterBottom
+          tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "Can you find the accessibility issues with this page? Try using your screenreader.")}
         >
           Can you find the accessibility issues with this page? Try using your
           screenreader.
@@ -58,6 +70,8 @@ class ProblemDiscovery extends Component {
           variant={"body1"}
           aria-label={"Body Instructions"}
           gutterBottom
+          tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "Write down the problems on a notepad or any other text editor. Go ahead take a guess. Don't actually click on the Ok and Cancel buttons. They are there for the example.")}
         >
           Write down the problems on a notepad or any other text editor. Go
           ahead take a guess. Don't actually click on the Ok and Cancel buttons.
@@ -70,6 +84,7 @@ class ProblemDiscovery extends Component {
           src={catImage}
           alt={"cat"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "cat")}
         />
         <br />
         <input
@@ -78,6 +93,7 @@ class ProblemDiscovery extends Component {
           src={carImage}
           alt={"image of car"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "image of car")}
         />
         <br />
         <input
@@ -86,16 +102,18 @@ class ProblemDiscovery extends Component {
           src={burgerImage}
           alt={"image of burger"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "image of burger")}
         />
         <br />
-        <Button variant={"text"}>Ok</Button>
-        <Button variant={"text"}>Cancel</Button>
+        <Button variant={"text"} onFocus={(e) => textToSpeech(e, "ok button")}>Ok</Button>
+        <Button variant={"text"} onFocus={(e) => textToSpeech(e, "cancel button")}>Cancel</Button>
         <br />
         <Button
           href="#"
           onClick={this.handleSubmit}
-          variant={"contained"}
+          variant={"contained"} 
           className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
+          onFocus={(e) => textToSpeech(e, "Next")}
         >
           Next
         </Button>

@@ -21,12 +21,20 @@ class ProblemDiscoveryFixedExperience extends Component {
         actions.updateState(GAME_PLAYING);
     }
   render() {
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    
     const imgStyle = {
       width: "128px",
       height: "128px",
       border: "1px solid black",
       tabIndex: "0"
     };
+    
     return (
       <div>
           <AppBar position="static" className = "appBar">
@@ -38,8 +46,9 @@ class ProblemDiscoveryFixedExperience extends Component {
                   aria-label={"Discover the problem"}
                   tabIndex={"0"}
                   gutterBottom
+                  onFocus={(e) => textToSpeech(e, "Repaired version of previous page.")}
                 >
-                  Fixed Version of Previous Page
+                  Repaired Version of Previous Page
                 </Typography>
               </Grid>
             </Grid>
@@ -50,8 +59,10 @@ class ProblemDiscoveryFixedExperience extends Component {
           variant={"subtitle1"}
           aria-label={"Subtitle Instructions"}
           gutterBottom
+          tabindex={"0"}
+          onFocus={(e) => textToSpeech(e, "The accessibility issues have been repaired here. All images say what their contents are as such like 'cat', 'burger' and 'car' etc. and not 'image of cat', 'image of burger', 'image of car' etc. . Try using your screenreader now.")}
         >
-          The accessibility issues have been fixed here. All images say what
+          The accessibility issues have been repaired here. All images say what
           their contents are as such like 'cat', 'burger' and 'car' etc. and not
           'image of cat', 'image of burger', 'image of car' etc. . Try using
           your screenreader now.
@@ -63,6 +74,7 @@ class ProblemDiscoveryFixedExperience extends Component {
           src={catImage}
           alt={"cat"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "cat")}
         />
         <br />
         <input
@@ -71,6 +83,7 @@ class ProblemDiscoveryFixedExperience extends Component {
           src={carImage}
           alt={"car"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "car")}
         />
         <br />
         <input
@@ -79,12 +92,13 @@ class ProblemDiscoveryFixedExperience extends Component {
           src={burgerImage}
           alt={"burger"}
           tabIndex={"0"}
+          onFocus={(e) => textToSpeech(e, "burger")}
         />
         <br />
-        <Button variant={"text"} aria-label={"Ok"}>
+        <Button variant={"text"} aria-label={"Ok"} onFocus={(e) => textToSpeech(e, "ok")}>
           Ok
         </Button>
-        <Button variant={"text"} aria-label={"Cancel"}>
+        <Button variant={"text"} aria-label={"Cancel"} onFocus={(e) => textToSpeech(e, "cancel")}>
           Cancel
         </Button>
         <br />
@@ -93,6 +107,7 @@ class ProblemDiscoveryFixedExperience extends Component {
           onClick={this.handleSubmit}
           variant={"contained"}
           className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
+          onFocus={(e) => textToSpeech(e, "Next")}
         >
           Next
         </Button>

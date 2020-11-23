@@ -20,6 +20,13 @@ class GameInstructions extends Component {
     }
 
   render() {
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    
     const paperStyle = {
       marginLeft: "10px",
       marginRight: "10px",
@@ -27,7 +34,7 @@ class GameInstructions extends Component {
     };
     return (
       <div>
-          <AppBar position="static" className = "appBar">
+        <AppBar position="static" className = "appBar">
           <Toolbar>
             <Typography variant={"h4"} aria-label={"Instructions"}>
               Instructions{" "}
@@ -42,11 +49,13 @@ class GameInstructions extends Component {
             aria-label={
               "You clicked on an image." +
               " However, without the ability to see, it may be\n" +
-              "                        difficult to decipher what these images represent.\n" +
-              "                        Please make sure you are using Google Chrome. Please install the screen " +
-              "reader from the Chrome webstore. Please make sure that ChromeVox is active and then click the " +
+              " difficult to decipher what these images represent.\n" +
+              " Please make sure you are using Google Chrome." +
+              "Please click the " +
               "'next' button to experience what a similar, simple activity might look like to someone who is " +
-              "blind."
+              "blind." + 
+              "For the following activity, please ensure that you have volume enabled on your device." + 
+              "Click on the button below to test the functionality of the screen reader."
             }
             tabIndex={"0"}
           >
@@ -55,23 +64,25 @@ class GameInstructions extends Component {
             sure you are using
             <Link component={Link} target="_blank" href={"https://www.google.com/chrome/"}>
               {" "}
-              Google Chrome
+              Google Chrome.{" "}
             </Link>
-            . Please install the{" "}
-            <Link
-              component={Link} target="_blank"
-              href={
-                "https://chrome.google.com/webstore/" +
-                "detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"
-              }
-            >
-              ChromeVox
-            </Link>{" "}
-            screenreader(If not already installed). Please make sure that
-            ChromeVox is active and then click the 'next' button to experience
-            what a similar, simple activity might look like to someone who is
-            blind.
+            For the following activity, please ensure that you have volume enabled on your device.
+            <br />
+            <br />
+            Click on the button below to test the functionality of the screen reader.
           </Typography>
+          <br />
+          <div className="container text-center">
+            <button 
+              className="btn btn-second btn-xl text-uppercase js-scroll-trigger mx-auto"
+              key="repair"
+              aria-label={"Test"}
+              onClick={(e) => textToSpeech(e, "Test")}
+            >
+              Test
+            </button>
+          </div>
+          <br />
         </Paper>
         <br />
         <Button

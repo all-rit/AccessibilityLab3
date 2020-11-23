@@ -17,9 +17,18 @@ class CatClickNavigate extends Component {
   static handleOnclick(path) {
     navigate(process.env.PUBLIC_URL + path);
   }
-
+  
+  
   render() {
-    const typographyStyle = { color: "black" };
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    
+    const typographyStyle = { color: "white" };
+    
     return (
       <div id={"catClickMessage"}>
         <Typography
@@ -29,6 +38,7 @@ class CatClickNavigate extends Component {
           }
           tabIndex={"0"}
           style={typographyStyle}
+          onFocus={(e) => textToSpeech(e, "Cat clicked! Please click the next button to continue.")}
         >
           Cat clicked! Please click the 'next' button to continue.
         </Typography>
@@ -38,6 +48,7 @@ class CatClickNavigate extends Component {
           onClick={CatClickNavigate.handleOnclick}
           variant="contained"
           className = "btn btn-second btn-xl text-uppercase js-scroll-trigger leftButton"
+          onFocus={(e) => textToSpeech(e, "Next")}
         >
           Next
         </Button>
