@@ -65,6 +65,25 @@ class InaccessibleGame extends Component {
     }
   }
 
+  shuffleArray(array) {
+    var currentIndex = array.length,
+        temporaryValue,
+        randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
   render() {
     const catClick = () => {
       console.log("Cat image clicked!");
@@ -81,6 +100,10 @@ class InaccessibleGame extends Component {
     const cowClick = () => {
       console.log("Cow image clicked!");
     };
+
+    const buttons =[catClick,burgerClick,carClick,cowClick]
+    const randomButtons=this.shuffleArray(buttons)
+
     const textToSpeech = (e, text) => {
       let synth = window.speechSynthesis;
       synth.cancel();
@@ -139,7 +162,7 @@ class InaccessibleGame extends Component {
               <td tabIndex={"1"}>
                 <button
                   style={imgStyle}
-                  onClick={() => catClick()}
+                  onClick={() => randomButtons[0]()}
                   tabIndex={"0"}
                   onFocus={(e) => textToSpeech(e, "Image 1")}
                 />
@@ -147,7 +170,7 @@ class InaccessibleGame extends Component {
               <td tabIndex={"1"}>
                 <input
                   style={imgStyle}
-                  onClick={() => carClick()}
+                  onClick={() => randomButtons[1]()}
                   tabIndex={"0"}
                   onFocus={(e) => textToSpeech(e, "Image 2")}
                 />
@@ -157,7 +180,7 @@ class InaccessibleGame extends Component {
               <td tabIndex={"1"}>
                 <input
                   style={imgStyle}
-                  onClick={() => burgerClick()}
+                  onClick={() => randomButtons[2]()}
                   tabIndex={"0"}
                   onFocus={(e) => textToSpeech(e, "Image 3")}
                 />
@@ -165,7 +188,7 @@ class InaccessibleGame extends Component {
               <td tabIndex={"1"}>
                 <input
                   style={imgStyle}
-                  onClick={() => cowClick()}
+                  onClick={() => randomButtons[3]()}
                   tabIndex={"0"}
                   onFocus={(e) => textToSpeech(e, "Image 4")}
                 />
