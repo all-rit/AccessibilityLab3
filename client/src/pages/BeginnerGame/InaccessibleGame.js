@@ -21,6 +21,7 @@ class InaccessibleGame extends Component {
     this.state = { render: "", secondsElapsed: 0 };
     document.body.style = "background: black";
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.randomButtons=[];
   }
 
   _renderSubComp(path) {
@@ -84,7 +85,7 @@ class InaccessibleGame extends Component {
 
     return array;
   }
-  render() {
+  setupButons(){
     const catClick = () => {
       console.log("Cat image clicked!");
       const name = "InaccessibleGame";
@@ -113,13 +114,6 @@ class InaccessibleGame extends Component {
       border: "1px solid black",
       backgroundColor: "black"
     };
-    const tableStyle = {
-      border: "1px solid black",
-      marginLeft: "auto",
-      marginRight: "auto",
-      textAlign: "center",
-    };
-    const textStyle = { color: "white", tabIndex: "0" };
 
     var buttons =[
       <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 1")} />,
@@ -131,8 +125,25 @@ class InaccessibleGame extends Component {
     var renderedButtons= buttons.map(function(button,index){
       return <td key={index} tabIndex={"1"}>{button}</td>
     });
-    const randomButtons= this.shuffleArray(renderedButtons) 
+    this.randomButtons= this.shuffleArray(renderedButtons) 
+    
+  }
 
+  render() {
+    this.setupButons()
+    const textToSpeech = (e, text) => {
+      let synth = window.speechSynthesis;
+      synth.cancel();
+      let utterThis = new SpeechSynthesisUtterance(text);
+      synth.speak(utterThis);
+    };
+    const tableStyle = {
+      border: "1px solid black",
+      marginLeft: "auto",
+      marginRight: "auto",
+      textAlign: "center",
+    };
+    const textStyle = { color: "white", tabIndex: "0" };
     return (
       <div>      
         <AppBar position="static" className = "appBar">
@@ -170,12 +181,12 @@ class InaccessibleGame extends Component {
           
           <tbody>
             <tr>
-              {randomButtons[0]}
-              {randomButtons[1]}
+              {this.randomButtons[0]}
+              {this.randomButtons[1]}
             </tr>
             <tr>
-              {randomButtons[2]}
-              {randomButtons[3]}
+              {this.randomButtons[2]}
+              {this.randomButtons[3]}
             </tr>
           </tbody>
         </table>
