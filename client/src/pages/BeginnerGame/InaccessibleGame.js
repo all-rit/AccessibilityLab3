@@ -101,9 +101,6 @@ class InaccessibleGame extends Component {
       console.log("Cow image clicked!");
     };
 
-    const buttons =[catClick,burgerClick,carClick,cowClick]
-    const randomButtons=this.shuffleArray(buttons)
-
     const textToSpeech = (e, text) => {
       let synth = window.speechSynthesis;
       synth.cancel();
@@ -123,8 +120,21 @@ class InaccessibleGame extends Component {
       textAlign: "center",
     };
     const textStyle = { color: "white", tabIndex: "0" };
+
+    var buttons =[
+      <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 1")} />,
+      <input style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 2")} />,
+      <input style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 3")} />,
+      <input style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 4")} />
+    ]
+
+    var renderedButtons= buttons.map(function(button,index){
+      return <td key={index} tabIndex={"1"}>{button}</td>
+    });
+    const randomButtons= this.shuffleArray(renderedButtons) 
+
     return (
-      <div>
+      <div>      
         <AppBar position="static" className = "appBar">
           <Toolbar>
             <Grid
@@ -157,42 +167,15 @@ class InaccessibleGame extends Component {
           tabbing across the page. Press the enter key to select.
         </Typography>
         <table style={tableStyle} tabIndex={"0"}>
+          
           <tbody>
             <tr>
-              <td tabIndex={"1"}>
-                <button
-                  style={imgStyle}
-                  onClick={() => randomButtons[0]()}
-                  tabIndex={"0"}
-                  onFocus={(e) => textToSpeech(e, "Image 1")}
-                />
-              </td>
-              <td tabIndex={"1"}>
-                <input
-                  style={imgStyle}
-                  onClick={() => randomButtons[1]()}
-                  tabIndex={"0"}
-                  onFocus={(e) => textToSpeech(e, "Image 2")}
-                />
-              </td>
+              {randomButtons[0]}
+              {randomButtons[1]}
             </tr>
             <tr>
-              <td tabIndex={"1"}>
-                <input
-                  style={imgStyle}
-                  onClick={() => randomButtons[2]()}
-                  tabIndex={"0"}
-                  onFocus={(e) => textToSpeech(e, "Image 3")}
-                />
-              </td>
-              <td tabIndex={"1"}>
-                <input
-                  style={imgStyle}
-                  onClick={() => randomButtons[3]()}
-                  tabIndex={"0"}
-                  onFocus={(e) => textToSpeech(e, "Image 4")}
-                />
-              </td>
+              {randomButtons[2]}
+              {randomButtons[3]}
             </tr>
           </tbody>
         </table>
