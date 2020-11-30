@@ -21,7 +21,7 @@ class InaccessibleGame extends Component {
     this.state = { render: "", secondsElapsed: 0 };
     document.body.style = "background: black";
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.randomButtons=[];
+    this.renderedButtons=[];
   }
 
   _renderSubComp(path) {
@@ -32,10 +32,10 @@ class InaccessibleGame extends Component {
   componentDidMount() {
     const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
-    // this.interval = setInterval(
-    //   () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
-    //   1000
-    // );
+    this.interval = setInterval(
+       () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
+       1000
+     );
   }
 
   componentWillUnmount() {
@@ -124,8 +124,8 @@ class InaccessibleGame extends Component {
 
     var renderedButtons= buttons.map(function(button,index){
       return <td key={index} tabIndex={"1"}>{button}</td>
-    });
-    this.randomButtons= this.shuffleArray(renderedButtons) 
+    })
+    this.renderedButtons= renderedButtons
     
   }
 
@@ -182,12 +182,12 @@ class InaccessibleGame extends Component {
           
           <tbody>
             <tr>
-              {this.randomButtons[0]}
-              {this.randomButtons[1]}
+              {this.renderedButtons[2]}
+              {this.renderedButtons[3]}
             </tr>
             <tr>
-              {this.randomButtons[2]}
-              {this.randomButtons[3]}
+              {this.renderedButtons[1]}
+              {this.renderedButtons[0]}
             </tr>
           </tbody>
         </table>
