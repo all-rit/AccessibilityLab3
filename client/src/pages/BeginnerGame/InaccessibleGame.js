@@ -32,10 +32,10 @@ class InaccessibleGame extends Component {
   componentDidMount() {
     const { actions } = this.props;
     actions.updateState(GAME_PLAYING);
-    this.interval = setInterval(
-      () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
-      1000
-    );
+    // this.interval = setInterval(
+    //   () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
+    //   1000
+    // );
   }
 
   componentWillUnmount() {
@@ -85,7 +85,7 @@ class InaccessibleGame extends Component {
 
     return array;
   }
-  setupButons(){
+  setupButtons(){
     const catClick = () => {
       console.log("Cat image clicked!");
       const name = "InaccessibleGame";
@@ -117,9 +117,9 @@ class InaccessibleGame extends Component {
 
     var buttons =[
       <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 1")} />,
-      <input style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 2")} />,
-      <input style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 3")} />,
-      <input style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 4")} />
+      <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 2")} />,
+      <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 3")} />,
+      <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 4")} />
     ]
 
     var renderedButtons= buttons.map(function(button,index){
@@ -130,7 +130,8 @@ class InaccessibleGame extends Component {
   }
 
   render() {
-    this.setupButons()
+    console.log(this.state)
+    this.setupButtons()
     const textToSpeech = (e, text) => {
       let synth = window.speechSynthesis;
       synth.cancel();
