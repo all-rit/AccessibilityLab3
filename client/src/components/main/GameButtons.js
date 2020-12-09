@@ -16,7 +16,7 @@ class GameButtons extends Component {
     const startButton = (
       <button
         className="btn btn-primary btn-xl text-uppercase js-scroll-triggergreen rightButton"
-        onClick={()=>navigate(process.env.PUBLIC_URL +"/AccessibleUserUpdatedGame")}
+        onClick={()=>navigate(process.env.PUBLIC_URL +"/UserUpdatedGame", {state:{updated: true}})}
         key="start"
       >
         {startMessage}

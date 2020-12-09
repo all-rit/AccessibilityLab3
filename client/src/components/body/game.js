@@ -8,7 +8,7 @@ import { actions as gameActions } from "../../reducers/GameReducer";
 import { actions as repairActions } from '../../reducers/RepairReducer';
 import Main from './../../pages/Main';
 import FullGame from './../../pages/BeginnerGame/Game';
-import InaccessibleGame from './../../pages/BeginnerGame/InaccessibleGame';
+import UserUpdatedGame from '../../pages/BeginnerGame/UserUpdatedGame';
 import GameInstructions from './../../pages/BeginnerGame/GameInstructions';
 import AccessibleInstructions from './../../pages/BeginnerGame/AccessibleInstructions';
 import AccessibleGame from './../../pages/BeginnerGame/AccessibleGame';
@@ -19,7 +19,6 @@ import AdvancedInstructions from './../../pages/AdvancedGame/AdvancedInstruction
 import ProblemDiscovery from './../../pages/AdvancedGame/ProblemDiscovery';
 import ProblemExplanation from './../../pages/AdvancedGame/ProblemExplanation';
 import ProblemFix from './../../pages/AdvancedGame/ProblemFix';
-import AccessibleUserUpdatedGame from './../../pages/BeginnerGame/AccessibleUserUpdatedGame';
 import BeginnerGameConclusion from './../../pages/BeginnerGame/BeginnerGameConclusion';
 import AdvancedGameConclusion from './../../pages/AdvancedGame/AdvancedGameConclusion';
 import ViewFix from './../../pages/AdvancedGame/ViewFix';
@@ -73,7 +72,7 @@ class Game extends Component {
           <Main path="/" />
           <FullGame path="/game" actions={actions}/>
           <GameInstructions path={'/GameInstructions'} actions={actions}/>
-          <InaccessibleGame path={'/InAccessibleGame'} actions={actions}/>
+          <UserUpdatedGame path={'/UserUpdatedGame'} actions={actions} data={state}/>
           <AccessibleInstructions path={'/AccessibleInstructions'} actions={actions}/>
           <AccessibleGame path={'/AccessibleGame'} actions={actions}/>
           <CodeChange path={'/CodeChange'} actions={actions} data={state} />
@@ -87,7 +86,6 @@ class Game extends Component {
             actions={actions}
           />
           <ProblemFix path={'/ProblemFix'} actions={actions}/>
-          <AccessibleUserUpdatedGame path={'/AccessibleUserUpdatedGame'} actions={actions} data={state}/>
           <BeginnerGameConclusion path={'/BeginnerGameConclusion'} actions={actions}/>
           <AdvancedGameConclusion path={'/AdvancedGameConclusion'} actions={actions}/>
           <ViewFix path={'/ViewFix'} actions={actions}/>
