@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-// import catImage from "../../assets/images/c1.svg";
-// import carImage from "../../assets/images/c2.svg";
-// import burgerImage from "../../assets/images/b.png";
 import CatClickNavigate from "../../components/helpers/CatClickNavigate.js";
-// import cowImage from "../../assets/images/cow.jpg";
 import { navigate } from "@reach/router";
 import { AppBar } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -18,10 +14,9 @@ import {GAME_PLAYING} from "../../constants";
 class InaccessibleGame extends Component {
   constructor(props) {
     super(props);
-    this.state = { render: "", secondsElapsed: 0 };
+    this.state = { render: "", secondsElapsed: 0, renderedButtons: []};
     document.body.style = "background: black";
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.renderedButtons=[];
   }
 
   _renderSubComp(path) {
@@ -36,6 +31,8 @@ class InaccessibleGame extends Component {
        () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
        1000
      );
+    this.setState({renderedButtons: this.setupButtons() })
+
   }
 
   componentWillUnmount() {
@@ -86,6 +83,7 @@ class InaccessibleGame extends Component {
     return array;
   }
   setupButtons(){
+    console.log('calling setup')
     const catClick = () => {
       console.log("Cat image clicked!");
       const name = "InaccessibleGame";
@@ -101,13 +99,6 @@ class InaccessibleGame extends Component {
     const cowClick = () => {
       console.log("Cow image clicked!");
     };
-
-    const textToSpeech = (e, text) => {
-      let synth = window.speechSynthesis;
-      synth.cancel();
-      let utterThis = new SpeechSynthesisUtterance(text);
-      synth.speak(utterThis);
-    };
     const imgStyle = {
       width: "128px",
       height: "128px",
@@ -116,28 +107,25 @@ class InaccessibleGame extends Component {
     };
 
     var buttons =[
-      <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 1")} />,
-      <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 2")} />,
-      <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 3")} />,
-      <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => textToSpeech(e, "Image 4")} />
+      <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 1")} />,
+      <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 2")} />,
+      <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 3")} />,
+      <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 4")} />
     ]
-
     var renderedButtons= buttons.map(function(button,index){
       return <td key={index} tabIndex={"1"}>{button}</td>
     })
-    this.renderedButtons= renderedButtons
-    
+    return this.shuffleArray(renderedButtons);
   }
 
+  textToSpeech = (e, text) => {
+    let synth = window.speechSynthesis;
+    synth.cancel();
+    let utterThis = new SpeechSynthesisUtterance(text);
+    synth.speak(utterThis);
+  };
   render() {
-    console.log(this.state)
-    this.setupButtons()
-    const textToSpeech = (e, text) => {
-      let synth = window.speechSynthesis;
-      synth.cancel();
-      let utterThis = new SpeechSynthesisUtterance(text);
-      synth.speak(utterThis);
-    };
+
     const tableStyle = {
       border: "1px solid black",
       marginLeft: "auto",
@@ -161,7 +149,7 @@ class InaccessibleGame extends Component {
                   color={"white"}
                   aria-label={"Inaccessible Game"}
                   tabIndex={"0"}
-                  onFocus={(e) => textToSpeech(e,"Inaccessible Game")}
+                  onFocus={(e) => this.textToSpeech(e,"Inaccessible Game")}
                 >
                   Inaccessible Game
                 </Typography>
@@ -173,7 +161,7 @@ class InaccessibleGame extends Component {
           variant={"h6"} 
           style={textStyle} 
           tabIndex={"0"}
-          onFocus={(e) => textToSpeech(e,"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select.")}
+          onFocus={(e) => this.textToSpeech(e,"Click on the image of a cat. You can use the keyboard to navigate by tabbing across the page. Press the enter key to select.")}
         >
           Click on the image of a cat. You can use the keyboard to navigate by
           tabbing across the page. Press the enter key to select.
@@ -182,12 +170,12 @@ class InaccessibleGame extends Component {
           
           <tbody>
             <tr>
-              {this.renderedButtons[2]}
-              {this.renderedButtons[3]}
+              {this.state.renderedButtons[0]}
+              {this.state.renderedButtons[1]}
             </tr>
             <tr>
-              {this.renderedButtons[1]}
-              {this.renderedButtons[0]}
+              {this.state.renderedButtons[2]}
+              {this.state.renderedButtons[3]}
             </tr>
           </tbody>
         </table>
