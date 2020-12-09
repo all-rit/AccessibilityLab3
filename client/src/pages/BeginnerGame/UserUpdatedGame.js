@@ -11,7 +11,7 @@ import "./../../css/agency.min.css";
 import "./../../css/style.css";
 import {GAME_PLAYING} from "../../constants";
 
-class InaccessibleGame extends Component {
+class UserUpdatedGame extends Component {
   constructor(props) {
     super(props);
     this.state = { render: "", secondsElapsed: 0, renderedButtons: []};
@@ -31,6 +31,9 @@ class InaccessibleGame extends Component {
        () => this.setState({ secondsElapsed: this.state.secondsElapsed + 1 }),
        1000
      );
+    if(this.props.location.state.updated) {
+      actions.enableEnd(true);
+    }
     this.setState({renderedButtons: this.setupButtons() })
 
   }
@@ -86,7 +89,7 @@ class InaccessibleGame extends Component {
     console.log('calling setup')
     const catClick = () => {
       console.log("Cat image clicked!");
-      const name = "InaccessibleGame";
+      const name = "UserUpdatedGame";
       PageService.createPage(name, this.state.secondsElapsed);
       this.setState({ render: "CatClickNavigate" });
     };
@@ -105,16 +108,36 @@ class InaccessibleGame extends Component {
       border: "1px solid black",
       backgroundColor: "black"
     };
-
-    var buttons =[
-      <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 1")} />,
-      <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 2")} />,
-      <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 3")} />,
-      <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"} onFocus={(e) => this.textToSpeech(e, "Image 4")} />
-    ]
+    let buttons = []
+    if(this.props.location.state.updated){
+      const { data } = this.props;
+      buttons = [
+        <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, data.repair.catAltValue)}/>,
+        <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, data.repair.burgerAltValue)}/>,
+        <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, data.repair.carAltValue)}/>,
+        <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, data.repair.cowAltValue)}/>
+      ]
+    }
+    else {
+      buttons = [
+        <button style={imgStyle} onClick={() => catClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, "Image 1")}/>,
+        <button style={imgStyle} onClick={() => burgerClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, "Image 2")}/>,
+        <button style={imgStyle} onClick={() => carClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, "Image 3")}/>,
+        <button style={imgStyle} onClick={() => cowClick()} tabIndex={"0"}
+                onFocus={(e) => this.textToSpeech(e, "Image 4")}/>
+      ]
+    }
     var renderedButtons= buttons.map(function(button,index){
       return <td key={index} tabIndex={"1"}>{button}</td>
     })
+
     return this.shuffleArray(renderedButtons);
   }
 
@@ -151,7 +174,7 @@ class InaccessibleGame extends Component {
                   tabIndex={"0"}
                   onFocus={(e) => this.textToSpeech(e,"Inaccessible Game")}
                 >
-                  Inaccessible Game
+                  {this.props.location.state.updated ? "Accessible Game": "Inaccessible Game"}
                 </Typography>
               </Grid>
             </Grid>
@@ -179,10 +202,10 @@ class InaccessibleGame extends Component {
             </tr>
           </tbody>
         </table>
-        {this._renderSubComp("/AccessibleInstructions")}
+        {this._renderSubComp(this.props.location.state.updated ? "/CodeChange": "/AccessibleInstructions")}
       </div>
     );
   }
 }
 
-export default InaccessibleGame;
+export default UserUpdatedGame;

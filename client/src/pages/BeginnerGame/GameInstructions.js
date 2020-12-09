@@ -12,7 +12,7 @@ import {GAME_PLAYING} from "../../constants";
 
 class GameInstructions extends Component {
   handleSubmit() {
-    navigate(process.env.PUBLIC_URL + "/InAccessibleGame");
+    navigate(process.env.PUBLIC_URL + "/UserUpdatedGame", {state:{updated:false}});
   }
     componentDidMount() {
         const { actions } = this.props;
