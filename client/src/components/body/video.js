@@ -19,20 +19,34 @@ const Video = ({ link, title }) => {
             <div class="row">
                 <h4>Here are some videos to aid in understanding the material.</h4>
             </div>
-            {/*<div class="row">*/}
-                {/*<iframe*/}
-                    {/*title="Audio Cues"*/}
-                    {/*width="560"*/}
-                    {/*height="315"*/}
-                    {/*src="https://www.youtube.com/embed/1by5J7c5Vz4"*/}
-                    {/*frameborder="0"*/}
-                    {/*allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"*/}
-                    {/*allowfullscreen*/}
-                {/*></iframe>*/}
-            {/*</div>*/}
-            {/*<div class="row">*/}
-                {/*<p>Accessibility for Blind/Visually-Impaired Users</p>*/}
-            {/*</div>*/}
+            <div class="row">
+                <iframe
+                    title="Audio Cues"
+                    height="315"
+                    width="500"
+                    src="https://www.youtube.com/embed/1by5J7c5Vz4"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+           </div>
+            <div class="row">
+                <p>Accessibility for Blind/Visually-Impaired Users</p>
+            </div>
+            <div class="row">
+                <iframe
+                    title="Audio Cues"
+                    height="315"
+                    width="500"
+                    src="//www.youtube.com/embed/94swlF55tVc?"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+           </div>
+           <div class="row">
+                <p>How a blind developer uses accessibility features in Visual Studio</p>
+            </div>
         </div>
     );
 };
