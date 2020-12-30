@@ -34,7 +34,7 @@ const Reading = ({ title, description, links }) => {
               <br />
               <br />
               <h2 class="section-heading text-uppercase">
-                Screenreader Lab: Reading
+                Screen Reader Lab: Reading
               </h2>
             </div>
           </div>
@@ -50,16 +50,13 @@ const Reading = ({ title, description, links }) => {
         <div className="flex">
           <Pie data={data} height={100} />
         </div>
-        <p className="center">
-          Currently, as high as 80% of all visual impairment is preventable or curable
-        </p>
-        <p className="center">
-          Globally the number of people of all ages visually impaired is estimated to be 285 million, of whom 39 million are blind.
-        </p>
-        <p className="center">
-          People of age 50 and over account for 82% of the blind.
-        </p>
         <p>
+          Currently, as high as 80% of all visual impairment is preventable or curable.
+
+          Globally the number of people of all ages visually impaired is estimated to be 285 million, of whom 39 million are blind.
+
+          People of age 50 and over account for 82% of the blind.
+
           Understanding the degree of visual impairment and its causes is important in adequately allocating resources to various health areas of work.
         </p>
       
@@ -75,12 +72,12 @@ const Reading = ({ title, description, links }) => {
           <li>Uncorrected refractive errors</li>
         </ul>
       
-        <h1>Affect that impaired vision has on the computing world</h1>
+        <h1>Affect That Impaired Vision Has on the Computing World</h1>
         <p>
           By acknowledging that visual impairment is a major global health issue, the computing world made necessary advances in screen readers. Screen readers have increased in both availability and popularity. One example of such screen readers is JAWS (Job Access With Speech) which is the world’s most popular screen reader. Screen readers now include many more features that allow the visually impaired to get through life much more easily. 
         </p>
       
-        <h1>Some usability tips for screen reader friendly interfaces:</h1>
+        <h1>Some Usability Tips for Screen Reader Friendly Interfaces:</h1>
         <ul className="study__list">
           <li>Use many headings and subheadings</li>
           <li>Code headings correctly with proper size</li>
@@ -97,8 +94,6 @@ const Reading = ({ title, description, links }) => {
           <a href="https://www.who.int/">https://www.who.int/</a>
           <a href="https://www.brailleinstitute.org/">https://www.brailleinstitute.org/</a>
         </div>
-        
-        
       </div>
     </div>
   );
