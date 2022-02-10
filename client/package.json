@@ -13,7 +13,7 @@
     "cli-engine": "^4.7.6",
     "clsx": "^1.0.4",
     "immutability-helper": "latest",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prismjs": "latest",
     "rc-color-picker": "^1.2.6",
     "react": "latest",
